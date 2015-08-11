@@ -1,0 +1,27 @@
+section {
+  @include make-row;
+
+  &.with-illustration {
+    .illustration {
+      @include make-sm-column(5);
+    }
+
+    .text {
+      @include make-sm-column(7);
+    }
+  }
+}
+
+h2,
+h3 {
+  font-variant: small-caps;
+}
+
+h3 {
+  font-weight: 400;
+}
+
+.lead {
+  font-size: 18px;
+  font-weight: 400;
+}
