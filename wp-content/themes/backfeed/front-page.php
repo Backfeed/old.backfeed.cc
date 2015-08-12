@@ -1,8 +1,8 @@
 <div class="col-xs-12">
 
-    <section id="about" class="with-illustration">
+    <section id="about" class="row with-illustration">
         <div class="illustration">
-            <img src="wp-content/themes/backfeed/assets/images/compass.png" alt="Compass">
+            <img src="/wp-content/themes/backfeed/assets/images/compass.png" alt="Compass">
         </div>
         <div class="text">
             <h2>About Backfeed</h2>
@@ -12,11 +12,11 @@
         </div>
     </section>
 
-    <aside class="tagline"></aside>
+    <aside class="tagline">Backfeed, helping the transition into more agile and decentralized organisations</aside>
 
-    <section id="vision" class="with-illustration">
+    <section id="vision" class="row with-illustration">
         <div class="illustration">
-            <img src="wp-content/themes/backfeed/assets/images/woman_with_idea.png" alt="Woman with Idea">
+            <img src="/wp-content/themes/backfeed/assets/images/woman_with_idea.png" alt="Woman with Idea">
         </div>
         <div class="text">
             <h2>Our Vision</h2>
@@ -28,15 +28,39 @@
         </div>
     </section>
 
-    <aside class="tagline"></aside>
+    <aside class="tagline">Backfeed, unlocking the potential of the collaborative sharing economy</aside>
 
-    <section id="use-cases" class="only-text"></section>
+    <img id="use-cases-image" class="center-block" src="/wp-content/themes/backfeed/assets/images/people_using.png" alt="People Using" />
 
-    <aside class="tagline"></aside>
+    <section id="use-cases" class="row only-text">
+        <h2>Use Cases</h2>
+        <ul class="row">
+            <li class="use-cases-case">
+                <h3 class="use-cases-title">Grassroots organizations</h3>
+                <p>for those who value decentralization as an organisational principle, we provide the ability to organize through a grassroots bottom-up governance model.</p>
+            </li>
+            <li class="use-cases-case">
+                <h3 class="use-cases-title">Legacy organizations</h3>
+                <p>for those who value innovation and creativity, we provide the ability to create open spaces for generative action through distributed governance models..</p>
+            </li>
+        </ul>
+        <ul class="row">
+            <li class="use-cases-case">
+                <h3 class="use-cases-title">Transient organizations</h3>
+                <p>for those who need to orchestrate temporary and ad-hoc collaboration for a specific purpose, we provide an hybrid orchestration processes that can be fine-tuned to the emerging requirements. For example, orchestrating Collective Intelligence, hackathons, & other decentralized collaborations.</p>
+            </li>
+            <li class="use-cases-case">
+                <h3 class="use-cases-title">Crowdsourcing-based organizations</h3>
+                <p>for those who rely on the power of the crowds, we provide the ability to evaluate contributions and to reward contributors in a fair and equitable way, by turning collaborators into actual shareholders.</p>
+            </li>
+        </ul>
+    </section>
 
-    <section id="technology" class="with-illustration">
+    <aside class="tagline">backfeed, Reinventing Organizations with Equitable Distribution of Co-Created Value</aside>
+
+    <section id="technology" class="row with-illustration">
         <div class="illustration">
-            <img src="wp-content/themes/backfeed/assets/images/technology.png" alt="Technology">
+            <img src="/wp-content/themes/backfeed/assets/images/technology.png" alt="Technology">
         </div>
         <div class="text">
             <h2>Technology</h2>
@@ -55,7 +79,57 @@
         </div>
     </section>
 
-    <section id="team"></section>
+    <section id="team" class="row">
+        <h2>Our Team</h2>
+        <div class="team-members">
+            <div class="team-member">
+                <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+                    <div class="flipper">
+                        <div class="front">
+                            <img class="team-member-avatar" src="/wp-content/themes/backfeed/assets/images/team/matan.png" alt="Avatar" />
+                            <div class="team-member-name">Matan Field</div>
+                            <div class="team-member-role">Chief Evangelist</div>
+                            <div class="ellipsis"></div>
+                        </div>
+                        <div class="back">
+                            PhD in physics and founder of La'zooz, a decentralized ride sharing app
+                            <div class="social-icons">
+                                <span class="glyphicon glyphicon-search"></span>
+                                <span class="glyphicon glyphicon-search"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="team-member">
+                <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+                    <div class="flipper">
+                        <div class="front">
+                            <img class="team-member-avatar" src="/wp-content/themes/backfeed/assets/images/team/matan.png" alt="Avatar" />
+                            <div class="team-member-name">Matan Field</div>
+                            <div class="team-member-role">Chief Evangelist</div>
+                            <div class="ellipsis"></div>
+                        </div>
+                        <div class="back">
+                            PhD in physics and founder of La'zooz, a decentralized ride sharing app
+                            <div class="social-icons">
+                                <span class="glyphicon glyphicon-search"></span>
+                                <span class="glyphicon glyphicon-search"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    <section id="partners"></section>
+    <section id="partners" class="row">
+        <h2>Partners</h2>
+        <div class="partners">
+            <img src="/wp-content/themes/backfeed/assets/images/partners/partner1.png" alt="">
+            <img src="/wp-content/themes/backfeed/assets/images/partners/partner2.png" alt="">
+            <img src="/wp-content/themes/backfeed/assets/images/partners/partner3.png" alt="">
+            <img src="/wp-content/themes/backfeed/assets/images/partners/partner4.png" alt="">
+        </div>
+    </section>
 </div>
