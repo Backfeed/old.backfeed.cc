@@ -97,7 +97,7 @@
                         </div>
                         <div class="back">
                             PhD in physics and founder of La'zooz, a decentralized ride sharing app
-                            <div class="social-icons">
+                            <div class="team-member-social-icons">
                                 <span class="glyphicon glyphicon-search"></span>
                                 <span class="glyphicon glyphicon-search"></span>
                             </div>
@@ -116,7 +116,7 @@
                         </div>
                         <div class="back">
                             PhD in physics and founder of La'zooz, a decentralized ride sharing app
-                            <div class="social-icons">
+                            <div class="team-member-social-icons">
                                 <span class="glyphicon glyphicon-search"></span>
                                 <span class="glyphicon glyphicon-search"></span>
                             </div>
@@ -136,4 +136,5 @@
             <a href="#"><img src="/wp-content/themes/backfeed/assets/images/partners/partner4.png" alt=""></a>
         </div>
     </section>
+
 </div>
