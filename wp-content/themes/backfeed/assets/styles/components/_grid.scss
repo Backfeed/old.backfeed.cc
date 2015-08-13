@@ -8,3 +8,15 @@
 .sidebar {
   @include make-sm-column($sidebar-sm-columns);
 }
+
+section {
+  &.with-illustration {
+    .illustration {
+      @include make-md-column(5);
+    }
+
+    .text {
+      @include make-md-column(7);
+    }
+  }
+}

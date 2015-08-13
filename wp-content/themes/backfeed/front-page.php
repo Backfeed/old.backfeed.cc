@@ -2,7 +2,7 @@
 
     <section id="about" class="row with-illustration">
         <div class="illustration">
-            <img src="/wp-content/themes/backfeed/assets/images/compass.png" alt="Compass">
+            <img class="img-responsive center-block" src="/wp-content/themes/backfeed/assets/images/compass.png" alt="Compass">
         </div>
         <div class="text">
             <h2>About Backfeed</h2>
@@ -12,11 +12,13 @@
         </div>
     </section>
 
-    <aside class="tagline">Backfeed, helping the transition into more agile and decentralized organisations</aside>
+    <aside class="tagline">Backfeed, helping the transition into more agile and decentralized organisations
+        <img class="connector hidden-xs hidden-sm" id="connector-a" src="/wp-content/themes/backfeed/assets/images/connector-a.png" />
+    </aside>
 
     <section id="vision" class="row with-illustration">
         <div class="illustration">
-            <img src="/wp-content/themes/backfeed/assets/images/woman_with_idea.png" alt="Woman with Idea">
+            <img class="img-responsive center-block" src="/wp-content/themes/backfeed/assets/images/woman_with_idea.png" alt="Woman with Idea">
         </div>
         <div class="text">
             <h2>Our Vision</h2>
@@ -28,9 +30,11 @@
         </div>
     </section>
 
-    <aside class="tagline">Backfeed, unlocking the potential of the collaborative sharing economy</aside>
+    <aside class="tagline">Backfeed, unlocking the potential of the collaborative sharing economy
+        <img class="connector hidden-xs hidden-sm" id="connector-b" src="/wp-content/themes/backfeed/assets/images/connector-b.png" />
+    </aside>
 
-    <img id="use-cases-image" class="center-block" src="/wp-content/themes/backfeed/assets/images/people_using.png" alt="People Using" />
+    <img id="use-cases-image" class="img-responsive center-block" src="/wp-content/themes/backfeed/assets/images/people_using.png" alt="People Using" />
 
     <section id="use-cases" class="row only-text">
         <h2>Use Cases</h2>
@@ -60,7 +64,7 @@
 
     <section id="technology" class="row with-illustration">
         <div class="illustration">
-            <img src="/wp-content/themes/backfeed/assets/images/technology.png" alt="Technology">
+            <img class="img-responsive center-block" src="/wp-content/themes/backfeed/assets/images/technology.png" alt="Technology">
         </div>
         <div class="text">
             <h2>Technology</h2>
@@ -126,10 +130,10 @@
     <section id="partners" class="row">
         <h2>Partners</h2>
         <div class="partners">
-            <img src="/wp-content/themes/backfeed/assets/images/partners/partner1.png" alt="">
-            <img src="/wp-content/themes/backfeed/assets/images/partners/partner2.png" alt="">
-            <img src="/wp-content/themes/backfeed/assets/images/partners/partner3.png" alt="">
-            <img src="/wp-content/themes/backfeed/assets/images/partners/partner4.png" alt="">
+            <a href="#"><img src="/wp-content/themes/backfeed/assets/images/partners/partner1.png" alt=""></a>
+            <a href="#"><img src="/wp-content/themes/backfeed/assets/images/partners/partner2.png" alt=""></a>
+            <a href="#"><img src="/wp-content/themes/backfeed/assets/images/partners/partner3.png" alt=""></a>
+            <a href="#"><img src="/wp-content/themes/backfeed/assets/images/partners/partner4.png" alt=""></a>
         </div>
     </section>
 </div>

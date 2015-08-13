@@ -1,20 +1,8 @@
-.main {
-  background-image: url('/wp-content/themes/backfeed/assets/images/main-illustration.png');
-  background-repeat: no-repeat;
-  background-position: -127px 217px;
-}
-
-section {
-  &.with-illustration {
-    .illustration {
-      @include make-sm-column(5);
-    }
-
-    .text {
-      @include make-sm-column(7);
-    }
-  }
-}
+//.main {
+//  background-image: url('/wp-content/themes/backfeed/assets/images/main-illustration.png');
+//  background-repeat: no-repeat;
+//  background-position: -127px 217px;
+//}
 
 aside.tagline {
   font-size: 22px;
@@ -29,6 +17,15 @@ aside.tagline {
   &:after {
     content: ' >';
     color: $brand-primary;
+  }
+
+  margin-top: 30px;
+  margin-bottom: 30px;
+
+  @media (min-width: $screen-md-min) {
+    margin-top: 0;
+    margin-bottom: 0;
+    position: relative;
   }
 }
 
@@ -50,102 +47,21 @@ ul {
   list-style-image: url('/wp-content/themes/backfeed/assets/images/list-style-image-sm.png')
 }
 
-#use-cases ul {
-  list-style-image: url('/wp-content/themes/backfeed/assets/images/list-style-image.png')
-}
-
-.use-cases-case {
-  @include make-sm-column(6);
-  padding-left: 0;
-}
-
-.use-cases-title {
-  font-size: 18px;
-  font-variant: small-caps;
-  margin-top: 0;
-  margin-bottom: 0;
-}
-
-.team-members {
-  @include make-row();
-}
-
-.team-member {
-  @include make-sm-column(3);
-  margin-bottom: 70px;
-}
-
-.team-member-avatar {
-  width: 100px;
-}
-
-.team-member-name {
-  font-size: 18px;
-  font-variant: small-caps;
-}
-
-.team-member-role {
-  font-size: 14px;
-}
-
 .ellipsis {
   color: #f60b6e;
   font-size: 24px;
   font-weight: 600;
+  line-height: 0.2;
 
   &:after {
     content: "\2026";
   }
 }
 
-.social-icons {
-  display: flex;
-  justify-content: space-around;
-  margin-top: 10px;
-}
-
-.partners {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-}
-
-#about {
-  margin-top: 145px;
-  margin-bottom: 125px;
-}
-
-#vision {
-  margin-top: 155px;
-  margin-bottom: 65px;
-}
-
-#use-cases-image {
-  margin-top: 25px;
-}
-
-#use-cases {
-  margin-bottom: 95px;
-  &>h2 {
-    margin-bottom: 50px;
-  }
-}
-
-#technology {
-  margin-top: 100px;
-  margin-bottom: 80px;
-}
-
-#team {
-  &>h2 {
-    margin-bottom: 60px;
-  }
-}
-
 /* entire container, keeps perspective */
 .flip-container {
   perspective: 1000;
+  @include center-block;
 }
 /* flip the pane when hovered */
 .flip-container:hover .flipper, .flip-container.hover .flipper {
