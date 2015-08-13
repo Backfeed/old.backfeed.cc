@@ -66,7 +66,7 @@ function asset_path($filename) {
 }
 
 function assets() {
-  wp_enqueue_style('google_fonts', 'http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300italic,300,600', false, null);
+  wp_enqueue_style('google_fonts', 'http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300italic,300,600,700', false, null);
   wp_enqueue_style('sage_css', asset_path('styles/main.css'), false, null);
 
   if (is_single() && comments_open() && get_option('thread_comments')) {

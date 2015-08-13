@@ -64,3 +64,26 @@ function widgets_init() {
   ]);
 }
 add_action('widgets_init', __NAMESPACE__ . '\\widgets_init');
+
+function init() {
+  register_post_type('team-members', [
+    'label' => 'Team Members',
+    'labels' => [
+      'singular_name' => 'Team Member'
+    ],
+    'public' => true,
+    'rewrite' => false,
+    'supports' => ['title']
+  ]);
+
+  register_post_type('partners', [
+      'label' => 'Partners',
+      'labels' => [
+          'singular_name' => 'Partner'
+      ],
+      'public' => true,
+      'rewrite' => false,
+      'supports' => ['title']
+  ]);
+}
+add_action('init', __NAMESPACE__ . '\\init');

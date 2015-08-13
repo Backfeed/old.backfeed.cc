@@ -1,0 +1,83 @@
+.brand {
+  padding-top: 2px;
+}
+
+#top-header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin: 10px;
+
+  @media (min-width: 1087px) {
+    justify-content: space-between;
+  }
+
+  .social-icons {
+    display: flex;
+    align-items: center;
+
+    @media (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
+      margin-top: 10px;
+    }
+
+    .social-icons-label {
+      color: rgba(0,0,0,0.5);
+      font-size: 14px;
+    }
+
+    i {
+      color: black;
+      padding: 10px;
+
+      &.fa-envelope {
+        background-color: $brand-primary;
+      }
+    }
+  }
+}
+
+#main-header {
+  background-color: #0b2530;
+  margin-bottom: 20px;
+
+  #top-logo-menu {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin-top: 40px;
+    margin-bottom: 40px;
+
+    @media (min-width: $screen-md-min) {
+      justify-content: space-between;
+    }
+
+    .nav {
+      display: inline-flex;
+      flex-wrap: wrap;
+      justify-content: center;
+
+      &>li>a {
+        text-transform: uppercase;
+        color: rgba(255, 255, 255, .6);
+        font-weight: 600;
+
+        &:focus,
+        &:hover {
+          text-decoration: none;
+          background-color: initial;
+        }
+      }
+    }
+  }
+}
+
+.subscribe-box {
+  text-align: center;
+
+  .form-control-static {
+    font-weight: 100;
+    color: black;
+  }
+}

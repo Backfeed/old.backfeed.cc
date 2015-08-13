@@ -15,9 +15,10 @@ $font-size-h3: 24px;
 $headings-font-weight: 300;
 
 //== Buttons
-$btn-font-weight: 600;
+$btn-font-weight: 700;
 $btn-primary-color: #3e606f;
-$btn-primary-border: #3e606f;
+$btn-primary-border: $brand-primary;
+$btn-border-radius-base: 0;
 
 //== Grid system
 $main-sm-columns:       12;
@@ -28,3 +29,9 @@ $grid-gutter-width: 20px;
 $navbar-height: 47px;
 $navbar-default-color: black;
 $navbar-default-bg: #fefefd;
+
+//== Forms
+$input-border-radius: 0;
+
+$fa-font-path: "//netdna.bootstrapcdn.com/font-awesome/4.4.0/fonts";
+$fa-font-size-base: 15px;

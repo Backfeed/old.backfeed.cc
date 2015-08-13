@@ -83,58 +83,78 @@
         </div>
     </section>
 
+    <?php
+    $posts = get_posts([
+        'posts_per_page'	=> -1,
+        'post_type'			=> 'team-members'
+    ]);
+
+    if($posts): ?>
+
     <section id="team" class="row">
         <h2>Our Team</h2>
         <div class="team-members">
-            <div class="team-member">
-                <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
-                    <div class="flipper">
-                        <div class="front">
-                            <img class="team-member-avatar" src="/wp-content/themes/backfeed/assets/images/team/matan.png" alt="Avatar" />
-                            <div class="team-member-name">Matan Field</div>
-                            <div class="team-member-role">Chief Evangelist</div>
-                            <div class="ellipsis"></div>
-                        </div>
-                        <div class="back">
-                            PhD in physics and founder of La'zooz, a decentralized ride sharing app
-                            <div class="team-member-social-icons">
-                                <span class="glyphicon glyphicon-search"></span>
-                                <span class="glyphicon glyphicon-search"></span>
+
+            <?php foreach($posts as $post):
+                setup_postdata($post) ?>
+
+                <div class="team-member">
+                    <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+                        <div class="flipper">
+                            <div class="front">
+
+                                <img class="team-member-avatar" src="<?php the_field('avatar'); ?>" alt="Avatar" />
+                                <div class="team-member-name"><?php the_field('name'); ?></div>
+                                <div class="team-member-role"><?php the_field('role'); ?></div>
+                                <div class="ellipsis"></div>
+
+                            </div><div class="back">
+
+                                <?php the_field('description'); ?>
+
+                                <?php if(have_rows('social_links')): ?><div class="team-member-social-icons">
+
+                                <?php while(have_rows('social_links')): the_row(); ?>
+                                    <a href="<?php the_sub_field('social_url'); ?>" target="_blank"><i class="fa fa-<?php the_sub_field('social_network'); ?>"></i></a>
+                                <?php endwhile; ?>
+
+                                </div><?php endif; ?>
+
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="team-member">
-                <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
-                    <div class="flipper">
-                        <div class="front">
-                            <img class="team-member-avatar" src="/wp-content/themes/backfeed/assets/images/team/matan.png" alt="Avatar" />
-                            <div class="team-member-name">Matan Field</div>
-                            <div class="team-member-role">Chief Evangelist</div>
-                            <div class="ellipsis"></div>
-                        </div>
-                        <div class="back">
-                            PhD in physics and founder of La'zooz, a decentralized ride sharing app
-                            <div class="team-member-social-icons">
-                                <span class="glyphicon glyphicon-search"></span>
-                                <span class="glyphicon glyphicon-search"></span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+
+            <?php endforeach; ?>
+
         </div>
     </section>
 
-    <section id="partners" class="row">
-        <h2>Partners</h2>
-        <div class="partners">
-            <a href="#"><img src="/wp-content/themes/backfeed/assets/images/partners/partner1.png" alt=""></a>
-            <a href="#"><img src="/wp-content/themes/backfeed/assets/images/partners/partner2.png" alt=""></a>
-            <a href="#"><img src="/wp-content/themes/backfeed/assets/images/partners/partner3.png" alt=""></a>
-            <a href="#"><img src="/wp-content/themes/backfeed/assets/images/partners/partner4.png" alt=""></a>
-        </div>
-    </section>
+        <?php wp_reset_postdata();
+    endif; ?>
+
+    <?php
+    $posts = get_posts([
+        'posts_per_page'	=> -1,
+        'post_type'			=> 'partners'
+    ]);
+
+    if($posts): ?>
+
+        <section id="partners" class="row">
+            <h2>Partners</h2>
+            <div class="partners">
+                <?php foreach($posts as $post):
+                    setup_postdata($post) ?>
+
+                    <a href="<?php the_field('website'); ?>"><img src="<?php the_field('logo'); ?>" alt="<?php the_title(); ?>"></a>
+
+                <?php endforeach; ?>
+            </div>
+        </section>
+
+        <?php wp_reset_postdata();
+    endif; ?>
+
 
 </div>
