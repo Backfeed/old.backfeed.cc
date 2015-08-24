@@ -54,7 +54,7 @@
                     <img class="media-object" src="/wp-content/themes/backfeed/assets/images/sacred bullet a.png" alt="...">
                 </div>
                 <div class="media-body">
-                    <p class="media-heading use-cases-title">Grassroots organizations</p>
+                    <h3 class="media-heading use-cases-title">Grassroots organizations</h3>
                     <p>for those who value decentralization as an organisational principle, we provide the ability to organize through a grassroots bottom-up governance model.</p>
                 </div>
             </div>
@@ -63,7 +63,7 @@
                     <img class="media-object" src="/wp-content/themes/backfeed/assets/images/sacred bullet b.png" alt="...">
                 </div>
                 <div class="media-body">
-                    <p class="media-heading use-cases-title">Legacy organizations</p>
+                    <h3 class="media-heading use-cases-title">Legacy organizations</h3>
                     <p>for those who value innovation and creativity, we provide the ability to create open spaces for generative action through distributed governance models.</p>
                 </div>
             </div>
@@ -74,7 +74,7 @@
                     <img class="media-object" src="/wp-content/themes/backfeed/assets/images/sacred bullet c.png" alt="...">
                 </div>
                 <div class="media-body">
-                    <p class="media-heading use-cases-title">Transient organizations</p>
+                    <h3 class="media-heading use-cases-title">Transient organizations</h3>
                     <p>for those who need to orchestrate temporary and ad-hoc collaboration for a specific purpose, we provide an hybrid orchestration processes that can be fine-tuned to the emerging requirements. For example, orchestrating Collective Intelligence, hackathons, & other decentralized collaborations.</p>
                 </div>
             </div>
@@ -83,7 +83,7 @@
                     <img class="media-object" src="/wp-content/themes/backfeed/assets/images/sacred bullet d.png" alt="...">
                 </div>
                 <div class="media-body">
-                    <p class="media-heading use-cases-title">Crowdsourcing-based organizations</p>
+                    <h3 class="media-heading use-cases-title">Crowdsourcing-based organizations</h3>
                     <p>for those who rely on the power of the crowds, we provide the ability to evaluate contributions and to reward contributors in a fair and equitable way, by turning collaborators into actual shareholders.</p>
                 </div>
             </div>
@@ -173,25 +173,25 @@
         <?php wp_reset_postdata();
     endif; ?>
 
-    <?php
+    <?php /*
     $posts = get_posts([
         'posts_per_page'	=> -1,
         'post_type'			=> 'partners'
     ]);
 
-    if($posts): ?>
-<div class="container">
+    if($posts): */ ?>
+<!--<div class="container">
     <section id="partners" class="row">
         <h2>Partners</h2>
-        <div class="partners">
-            <?php foreach($posts as $post):
-                setup_postdata($post) ?>
+        <div class="partners">-->
+            <?php /* foreach($posts as $post):
+                setup_postdata($post) */ ?>
 
-                <a href="<?php the_field('website'); ?>"><img src="<?php the_field('logo'); ?>" alt="<?php the_title(); ?>"></a>
+<!--                <a href="--><?php ////the_field('website'); ?><!--"><img src="--><?php ////the_field('logo'); ?><!--" alt="--><?php ////the_title(); ?><!--"></a>-->
 
-            <?php endforeach; ?>
-        </div>
+            <?php //endforeach; ?>
+<!--        </div>
     </section>
-</div>
-        <?php wp_reset_postdata();
-    endif; ?>
+</div>-->
+        <?php /* wp_reset_postdata();
+    endif; */ ?>
