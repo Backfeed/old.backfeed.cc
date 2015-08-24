@@ -1,58 +1,91 @@
-aside.tagline {
-  font-size: 22px;
-  text-transform: uppercase;
-  color: #3e606f;
-  text-align: center;
+@import url(http://fonts.googleapis.com/css?family=Droid+Serif:700italic|Lato:400,300,700);
+
+section a {
+  text-decoration: underline;
+}
+
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+  font-style: italic;
+}
+
+h3 {
+  font-weight: 400;
+}
+
+p, ul, ol {
+  margin-bottom: 15px;
+}
+
+.lead {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+ul {
+  list-style-image: url('/wp-content/themes/backfeed/assets/images/list-style-image-sm.png');
+}
+
+.hr {
+  background-image: url('/wp-content/themes/backfeed/assets/images/hr.png');
+  height: 6px;
+  background-repeat-x: repeat;
+}
+
+.tagline.overlay {
+  background-image: url('/wp-content/themes/backfeed/assets/images/pattern.png');
+  background-size: contain;
+  position: relative;
+
+  span {
+    position: relative;
+  }
 
   &:before {
-    content: '< ';
-    color: $brand-primary;
+    position: absolute;
+    content: " ";
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
   }
-  &:after {
-    content: ' >';
-    color: $brand-primary;
+
+  &:first-of-type:before {
+    background-color: rgba(24,51,64,0.9);
   }
+
+  &:nth-of-type(2):before {
+    background-color: rgba(60,97,112,0.9);
+  }
+
+  &:nth-of-type(3):before {
+    background-color: rgba(121,146,156,0.9);
+  }
+
+  &:nth-of-type(4):before {
+    background-color: rgba(24,51,64,0.9);
+  }
+}
+
+aside.tagline {
+  font-size: 22px;
+  color: white;
+  text-align: center;
 
   margin-top: 30px;
   margin-bottom: 30px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+
+  font-family: $headings-font-family;
+  font-style: italic;
+  line-height: 1.8;
 
   @media (min-width: $screen-md-min) {
     margin-top: 0;
     margin-bottom: 0;
     position: relative;
-  }
-}
-
-h2,
-h3 {
-  font-variant: small-caps;
-}
-
-h3 {
-  font-weight: 400;
-}
-
-.lead {
-  font-size: 18px;
-  font-weight: 400;
-}
-
-ul {
-  list-style-image: url('/wp-content/themes/backfeed/assets/images/list-style-image-sm.png')
-}
-
-.btn-primary {
-  text-transform: uppercase;
-}
-
-.ellipsis {
-  color: #f60b6e;
-  font-size: 24px;
-  font-weight: 600;
-  line-height: 0.2;
-
-  &:after {
-    content: "\2026";
   }
 }
 
@@ -67,8 +100,8 @@ ul {
 }
 
 .flip-container, .front, .back {
-  width: 100px;
-  height: 170px;
+  width: 202px;
+  height: 261px;
 }
 
 /* flip speed goes here */
@@ -92,10 +125,17 @@ ul {
   z-index: 2;
   /* for firefox 31 */
   transform: rotateY(0deg);
+  border: 1px solid #e5e5e5;
+  text-align: center;
 }
 
 /* back, initially hidden pane */
 .back {
   transform: rotateY(180deg);
-  text-align: left;
+  font-size: 20px;
+  font-weight: 100;
+  text-align: center;
+  padding: 25px 20px;
+  color: white;
+  background-color: $brand-primary;
 }

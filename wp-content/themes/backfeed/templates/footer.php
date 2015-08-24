@@ -1,4 +1,4 @@
-<img class="img-responsive center-block" src="/wp-content/themes/backfeed/assets/images/footer-illustration.png" alt="People Using" />
+<div class="hr"></div>
 <footer>
   <div class="container">
     <?php //dynamic_sidebar('sidebar-footer'); ?>

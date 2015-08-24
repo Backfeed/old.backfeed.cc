@@ -31,7 +31,7 @@
       padding: 10px;
 
       &.fa-envelope {
-        background-color: $brand-primary;
+        color: $brand-primary;
       }
     }
   }
@@ -39,7 +39,6 @@
 
 #main-header {
   background-color: #0b2530;
-  margin-bottom: 20px;
 
   #top-logo-menu {
     display: flex;

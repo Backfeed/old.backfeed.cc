@@ -8,7 +8,7 @@
       <div class="input-group">
         <input type="text" class="form-control" placeholder="enter your email" />
       <span class="input-group-btn">
-        <button class="btn btn-primary" type="button">Update Me ></button>
+        <button class="btn btn-primary" type="button">Subscribe</button>
       </span>
       </div><!-- /input-group -->
     </div>

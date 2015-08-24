@@ -2,23 +2,26 @@
 $icon-font-path:        "../fonts/";
 
 //== Colors
-$brand-primary:         #08ed76;
+$brand-primary:         #f60b6e;
 $text-color:            #014c6d;
 
 //== Typography
-$font-family-sans-serif: 'Source Sans Pro', sans-serif;
+$font-family-sans-serif: 'Lato', sans-serif;
 
 $font-size-base: 16px;
 $font-size-h1: 36px;
 $font-size-h2: 48px;
 $font-size-h3: 24px;
-$headings-font-weight: 300;
+$headings-font-family: 'Droid Serif', serif;
+$headings-font-weight: 700;
+$headings-color: black;
 
 //== Buttons
 $btn-font-weight: 700;
 $btn-primary-color: #3e606f;
 $btn-primary-border: $brand-primary;
 $btn-border-radius-base: 0;
+$btn-primary-color: white;
 
 //== Grid system
 $main-sm-columns:       12;
