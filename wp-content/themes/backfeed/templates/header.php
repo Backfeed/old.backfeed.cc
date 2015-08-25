@@ -1,18 +1,5 @@
 <header id="top-header">
-
-  <form class="subscribe-box form-inline">
-    <div class="form-group">
-      <p class="form-control-static">Sign up to get the latest on Backfeed and the new developments in the blockchain space:</p>
-    </div>
-    <div class="form-group">
-      <div class="input-group">
-        <input type="text" class="form-control" placeholder="enter your email" />
-      <span class="input-group-btn">
-        <button class="btn btn-primary" type="button">Subscribe</button>
-      </span>
-      </div><!-- /input-group -->
-    </div>
-  </form>
+  <?php mc4wp_form(71); ?>
 
   <div class="social-icons">
     <span class="social-icons-label">Contact Us:</span>

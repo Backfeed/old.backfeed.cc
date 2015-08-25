@@ -131,6 +131,10 @@ aside.tagline {
 
 /* back, initially hidden pane */
 .back {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
   transform: rotateY(180deg);
   font-size: 20px;
   font-weight: 100;

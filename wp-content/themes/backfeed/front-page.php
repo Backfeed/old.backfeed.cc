@@ -92,7 +92,7 @@
 </div>
 
 <aside class="tagline overlay">
-    <span>Backfeed, Reinventing Organizations with Equitable Distribution of Co-Created Value</span>
+    <span>Backfeed, tapping into the economic potential of open source communities</span>
 </aside>
 
 <div class="container">
@@ -133,12 +133,12 @@
                 <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
                     <div class="flipper">
                         <div class="front">
-                            <img class="team-member-avatar" src="/wp-content/uploads/2015/08/Matan.png" alt="Avatar">
+                            <img class="team-member-avatar" src="/wp-content/themes/backfeed/assets/images/team/Matan.png" alt="Avatar">
                             <div class="team-member-name">Matan Field</div>
                             <div class="team-member-role">Chief Evangelist</div>
                         </div>
                         <div class="back">
-                            PhD in physics and founder of La’zooz, a real time ride sharing app developed collectively by its community
+                            PhD in physics and founder of La'zooz, a ride sharing app developed collectively by its community
                             <div class="team-member-social-icons">
                                 <a href="https://www.facebook.com/matan.field" target="_blank"><i class="fa fa-facebook-official"></i></a>
                                 <a href="https://twitter.com/MatanField" target="_blank"><i class="fa fa-twitter-square"></i></a>
@@ -154,7 +154,7 @@
                 <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
                     <div class="flipper">
                         <div class="front">
-                            <img class="team-member-avatar" src="/wp-content/uploads/2015/08/Jordan.png" alt="Avatar">
+                            <img class="team-member-avatar" src="/wp-content/themes/backfeed/assets/images/team/Jordan.png" alt="Avatar">
                             <div class="team-member-name">Jordan Greenhall</div>
                             <div class="team-member-role">Chief Ratiocinator</div>
                         </div>
@@ -176,16 +176,16 @@
                 <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
                     <div class="flipper">
                         <div class="front">
-                            <img class="team-member-avatar" src="/wp-content/uploads/2015/08/Primavera.png" alt="Avatar">
+                            <img class="team-member-avatar" src="/wp-content/themes/backfeed/assets/images/team/Primavera.png" alt="Avatar">
                             <div class="team-member-name">Primavera De Filippi</div>
                             <div class="team-member-role">Chief Alchemist</div>
                         </div>
                         <div class="back">
-                            Researcher at Harvard Law School and leading expert on the legal implications of DCOs.
+                            Researcher at Harvard Law School and leading expert on legal implications of DCOs.
                             <div class="team-member-social-icons">
                                 <a href="https://www.facebook.com/matan.field" target="_blank"><i class="fa fa-facebook-official"></i></a>
                                 <a href="https://twitter.com/yaoeo" target="_blank"><i class="fa fa-twitter-square"></i></a>
-                                <a href="https://fr.linkedin.com/pub/primavera-de-filippi/36/585/75"></i></a>
+                                <a href="https://fr.linkedin.com/pub/primavera-de-filippi/36/585/75"><i class="fa fa-linkedin-square"></i></a>
                                 <a href="https://cyber.law.harvard.edu/people/pdefilippi" target="_blank"><i class="fa fa-google-plus-square"></i></a>
                             </div>
                         </div>
@@ -197,7 +197,7 @@
                 <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
                     <div class="flipper">
                         <div class="front">
-                            <img class="team-member-avatar" src="/wp-content/uploads/2015/08/Tal.png" alt="Avatar">
+                            <img class="team-member-avatar" src="/wp-content/themes/backfeed/assets/images/team/Tal.png" alt="Avatar">
                             <div class="team-member-name">Tal Serphos</div>
                             <div class="team-member-role">Master Chief</div>
                         </div>
@@ -218,7 +218,7 @@
                 <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
                     <div class="flipper">
                         <div class="front">
-                            <img class="team-member-avatar" src="/wp-content/uploads/2015/08/Yaniv.png" alt="Avatar">
+                            <img class="team-member-avatar" src="/wp-content/themes/backfeed/assets/images/team/Yaniv.png" alt="Avatar">
                             <div class="team-member-name">Yaniv Keinan</div>
                             <div class="team-member-role">Chief Architect</div>
                         </div>
@@ -237,7 +237,7 @@
                 <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
                     <div class="flipper">
                         <div class="front">
-                            <img class="team-member-avatar" src="/wp-content/uploads/2015/08/Ore.png" alt="Avatar">
+                            <img class="team-member-avatar" src="/wp-content/themes/backfeed/assets/images/team/Ore.png" alt="Avatar">
                             <div class="team-member-name">Ore Landau</div>
                             <div class="team-member-role">Chief Unicorn</div>
                         </div>
@@ -258,7 +258,7 @@
                 <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
                     <div class="flipper">
                         <div class="front">
-                            <img class="team-member-avatar" src="/wp-content/uploads/2015/08/Adam.png" alt="Avatar">
+                            <img class="team-member-avatar" src="/wp-content/themes/backfeed/assets/images/team/Adam.png" alt="Avatar">
                             <div class="team-member-name">Adam Goldman</div>
                             <div class="team-member-role">Chief Juggler</div>
                         </div>
@@ -278,7 +278,7 @@
                 <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
                     <div class="flipper">
                         <div class="front">
-                            <img class="team-member-avatar" src="/wp-content/uploads/2015/08/Zeev.png" alt="Avatar">
+                            <img class="team-member-avatar" src="/wp-content/themes/backfeed/assets/images/team/Zeev.png" alt="Avatar">
                             <div class="team-member-name">Zeev Zohar</div>
                             <div class="team-member-role">Chief Human</div>
                         </div>
@@ -298,7 +298,7 @@
                 <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
                     <div class="flipper">
                         <div class="front">
-                            <img class="team-member-avatar" src="/wp-content/uploads/2015/08/Michael.png" alt="Avatar">
+                            <img class="team-member-avatar" src="/wp-content/themes/backfeed/assets/images/team/Michel.png" alt="Avatar">
                             <div class="team-member-name">Michel Avital</div>
                             <div class="team-member-role">Chief Professor</div>
                         </div>
@@ -319,7 +319,7 @@
                 <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
                     <div class="flipper">
                         <div class="front">
-                            <img class="team-member-avatar" src="/wp-content/uploads/2015/08/Philippe.png" alt="Avatar">
+                            <img class="team-member-avatar" src="/wp-content/themes/backfeed/assets/images/team/Philippe.png" alt="Avatar">
                             <div class="team-member-name">Philippe Honigman</div>
                             <div class="team-member-role">Chief Innovator</div>
                         </div>
