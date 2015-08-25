@@ -8,7 +8,7 @@
                 <h2>About Backfeed</h2>
                 <p><strong>Backfeed develops resilient technology and new economic models to support free, large-scale, systematic collaboration. Based on a distributed governance model, Backfeed protocols  make it possible for people to easily deploy and maintain decentralized applications and organisations that rely on the spontaneous and voluntary contribution of hundreds, thousands or millions of people.</strong></p>
 
-                <p>Backfeed provide the infrastructure and toolkits that build on the emerging blockchain ecosystem. The protocols reward individual contributors through the distribution of economic tokens and the reallocation of personal influence, based on the perceived value of their contributions to a particular community.</p>
+                <p>Backfeed provides the infrastructure and toolkits that build on the emerging blockchain ecosystem. The protocols reward individual contributors through the distribution of economic tokens and the reallocation of personal influence, based on the perceived value of their contributions to a particular community.</p>
 
                 <p>As an analogy, if the blockchain can be regarded as the TCP/IP (communication layer of the internet), Backfeed is building a canonical protocol and platform (akin to the HTTP protocol and the web browser) to enable blockchain-based decentralized collaboration, as easily as one would deploy a website today.</p>
 
@@ -75,7 +75,7 @@
                 </div>
                 <div class="media-body">
                     <h3 class="media-heading use-cases-title">Transient organizations</h3>
-                    <p>for those who need to orchestrate temporary and ad-hoc collaboration for a specific purpose, we provide an hybrid orchestration processes that can be fine-tuned to the emerging requirements. For example, orchestrating Collective Intelligence, hackathons, & other decentralized collaborations.</p>
+                    <p>for those who need to orchestrate temporary and ad-hoc collaboration for a specific purpose, we provide a hybrid orchestration processes that can be fine-tuned to the emerging requirements. For example, orchestrating Collective Intelligence, hackathons, & other decentralized collaborations.</p>
                 </div>
             </div>
             <div class="media use-cases-case">
@@ -124,74 +124,217 @@
     <!--    <img class="connector hidden-xs hidden-sm" id="connector-a" src="/wp-content/themes/backfeed/assets/images/connector-a.png" />-->
 </aside>
 
-    <?php
-    $posts = get_posts([
-        'posts_per_page'	=> -1,
-        'post_type'			=> 'team-members'
-    ]);
-
-    if($posts): ?>
 <div class="container">
     <section id="team" class="row">
         <h2>Our Team</h2>
         <div class="team-members">
 
-            <?php foreach($posts as $post):
-                setup_postdata($post) ?>
-
-                <div class="team-member col-xs-6 col-sm-3">
-                    <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
-                        <div class="flipper">
-                            <div class="front">
-
-                                <img class="team-member-avatar" src="<?php the_field('avatar'); ?>" alt="Avatar" />
-                                <div class="team-member-name"><?php the_field('name'); ?></div>
-                                <div class="team-member-role"><?php the_field('role'); ?></div>
-
-                            </div><div class="back">
-
-                                <?php the_field('description'); ?>
-
-                                <?php if(have_rows('social_links')): ?><div class="team-member-social-icons">
-
-                                <?php while(have_rows('social_links')): the_row(); ?>
-                                    <a href="<?php the_sub_field('social_url'); ?>" target="_blank"><i class="fa fa-<?php the_sub_field('social_network'); ?>"></i></a>
-                                <?php endwhile; ?>
-
-                                </div><?php endif; ?>
-
+            <div class="team-member col-xs-6 col-sm-3">
+                <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+                    <div class="flipper">
+                        <div class="front">
+                            <img class="team-member-avatar" src="/wp-content/uploads/2015/08/Matan.png" alt="Avatar">
+                            <div class="team-member-name">Matan Field</div>
+                            <div class="team-member-role">Chief Evangelist</div>
+                        </div>
+                        <div class="back">
+                            PhD in physics and founder of La’zooz, a real time ride sharing app developed collectively by its community
+                            <div class="team-member-social-icons">
+                                <a href="https://www.facebook.com/matan.field" target="_blank"><i class="fa fa-facebook-official"></i></a>
+                                <a href="https://twitter.com/MatanField" target="_blank"><i class="fa fa-twitter-square"></i></a>
+                                <a href="https://il.linkedin.com/pub/matan-field/96/2b3/92a" target="_blank"><i class="fa fa-linkedin-square"></i></a>
+                                <a href="https://plus.google.com/u/0/+MatanField/posts" target="_blank"><i class="fa fa-google-plus-square"></i></a>
                             </div>
                         </div>
                     </div>
                 </div>
+            </div>
 
-            <?php endforeach; ?>
+            <div class="team-member col-xs-6 col-sm-3">
+                <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+                    <div class="flipper">
+                        <div class="front">
+                            <img class="team-member-avatar" src="/wp-content/uploads/2015/08/Jordan.png" alt="Avatar">
+                            <div class="team-member-name">Jordan Greenhall</div>
+                            <div class="team-member-role">Chief Ratiocinator</div>
+                        </div>
+                        <div class="back">
+                            Former CEO of DivX. Quite often down to earth but generally high up with his heart.
+                            <div class="team-member-social-icons">
+                                <a href="https://www.facebook.com/phonomancer" target="_blank"><i class="fa fa-facebook-official"></i></a>
+                                <a href="http://twitter.com/jgreenhall" target="_blank"><i class="fa fa-twitter-square"></i></a>
+                                <a href="http://www.linkedin.com/in/jordangreenhall" target="_blank"><i class="fa fa-linkedin-square"></i></a>
+                                <a href="http://google.com/+JordanGreenhall" target="_blank"><i class="fa fa-google-plus-square"></i></a>
+                                <a href="https://medium.com/@jordangreenhall" target="_blank"><i class="fa fa-medium"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
+            <div class="team-member col-xs-6 col-sm-3">
+                <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+                    <div class="flipper">
+                        <div class="front">
+                            <img class="team-member-avatar" src="/wp-content/uploads/2015/08/Primavera.png" alt="Avatar">
+                            <div class="team-member-name">Primavera De Filippi</div>
+                            <div class="team-member-role">Chief Alchemist</div>
+                        </div>
+                        <div class="back">
+                            Researcher at Harvard Law School and leading expert on the legal implications of DCOs.
+                            <div class="team-member-social-icons">
+                                <a href="https://www.facebook.com/matan.field" target="_blank"><i class="fa fa-facebook-official"></i></a>
+                                <a href="https://twitter.com/yaoeo" target="_blank"><i class="fa fa-twitter-square"></i></a>
+                                <a href="https://fr.linkedin.com/pub/primavera-de-filippi/36/585/75"></i></a>
+                                <a href="https://cyber.law.harvard.edu/people/pdefilippi" target="_blank"><i class="fa fa-google-plus-square"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="team-member col-xs-6 col-sm-3">
+                <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+                    <div class="flipper">
+                        <div class="front">
+                            <img class="team-member-avatar" src="/wp-content/uploads/2015/08/Tal.png" alt="Avatar">
+                            <div class="team-member-name">Tal Serphos</div>
+                            <div class="team-member-role">Master Chief</div>
+                        </div>
+                        <div class="back">
+                            The man taking care of all that happens behind the scenes.
+                            <div class="team-member-social-icons">
+                                <a href="https://www.facebook.com/tal.serphos" target="_blank"><i class="fa fa-facebook-official"></i></a>
+                                <a href="https://twitter.com/TalSerphos" target="_blank"><i class="fa fa-twitter-square"></i></a>
+                                <a href="https://www.linkedin.com/in/tserphos" target="_blank"><i class="fa fa-linkedin-square"></i></a>
+                                <a href="https://plus.google.com/u/1/101921191115701737433/posts" target="_blank"><i class="fa fa-google-plus-square"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="team-member col-xs-6 col-sm-3">
+                <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+                    <div class="flipper">
+                        <div class="front">
+                            <img class="team-member-avatar" src="/wp-content/uploads/2015/08/Yaniv.png" alt="Avatar">
+                            <div class="team-member-name">Yaniv Keinan</div>
+                            <div class="team-member-role">Chief Architect</div>
+                        </div>
+                        <div class="back">
+                            Lorem ipsum dolor sit amet
+                            <div class="team-member-social-icons">
+                                <a href="https://twitter.com/YanivKeinan" target="_blank"><i class="fa fa-twitter-square"></i></a>
+                                <a href="https://il.linkedin.com/in/yanivkeinan" target="_blank"><i class="fa fa-linkedin-square"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="team-member col-xs-6 col-sm-3">
+                <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+                    <div class="flipper">
+                        <div class="front">
+                            <img class="team-member-avatar" src="/wp-content/uploads/2015/08/Ore.png" alt="Avatar">
+                            <div class="team-member-name">Ore Landau</div>
+                            <div class="team-member-role">Chief Unicorn</div>
+                        </div>
+                        <div class="back">
+                            Web developer with a special hunch for Front-End UI/UX development
+                            <div class="team-member-social-icons">
+                                <a href="http://facebook.com/Ore4444" target="_blank"><i class="fa fa-facebook-official"></i></a>
+                                <a href="http://twitter.com/Ore4444" target="_blank"><i class="fa fa-twitter-square"></i></a>
+                                <a href="http://linkedin.com/in/Ore4444" target="_blank"><i class="fa fa-linkedin-square"></i></a>
+                                <a href="https://plus.google.com/u/0/+OreLandau/posts" target="_blank"><i class="fa fa-google-plus-square"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="team-member col-xs-6 col-sm-3">
+                <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+                    <div class="flipper">
+                        <div class="front">
+                            <img class="team-member-avatar" src="/wp-content/uploads/2015/08/Adam.png" alt="Avatar">
+                            <div class="team-member-name">Adam Goldman</div>
+                            <div class="team-member-role">Chief Juggler</div>
+                        </div>
+                        <div class="back">
+                            Senior developer experienced in front-end and client-side applications
+                            <div class="team-member-social-icons">
+                                <a href="https://www.facebook.com/adamgoldman47" target="_blank"><i class="fa fa-facebook-official"></i></a>
+                                <a href="https://www.linkedin.com/pub/adam-goldman/66/631/7a4" target="_blank"><i class="fa fa-linkedin-square"></i></a>
+                                <a href="https://plus.google.com/117367856216801819248" target="_blank"><i class="fa fa-google-plus-square"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="team-member col-xs-6 col-sm-3">
+                <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+                    <div class="flipper">
+                        <div class="front">
+                            <img class="team-member-avatar" src="/wp-content/uploads/2015/08/Zeev.png" alt="Avatar">
+                            <div class="team-member-name">Zeev Zohar</div>
+                            <div class="team-member-role">Chief Human</div>
+                        </div>
+                        <div class="back">
+                            Comes with an original way to approach human-based interactions
+                            <div class="team-member-social-icons">
+                                <a href="https://www.facebook.com/ani.zeev" target="_blank"><i class="fa fa-facebook-official"></i></a>
+                                <a href="https://www.linkedin.com/pub/zeev-zohar/13/712/309" target="_blank"><i class="fa fa-linkedin-square"></i></a>
+                                <a href="https://plus.google.com/u/0/102924478806062110244/posts" target="_blank"><i class="fa fa-google-plus-square"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="team-member col-xs-6 col-sm-3">
+                <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+                    <div class="flipper">
+                        <div class="front">
+                            <img class="team-member-avatar" src="/wp-content/uploads/2015/08/Michael.png" alt="Avatar">
+                            <div class="team-member-name">Michel Avital</div>
+                            <div class="team-member-role">Chief Professor</div>
+                        </div>
+                        <div class="back">
+                            Professor at Copenhagen Business School
+                            <div class="team-member-social-icons">
+                                <a href="https://www.facebook.com/michel.avital" target="_blank"><i class="fa fa-facebook-official"></i></a>
+                                <a href="https://twitter.com/michelavital" target="_blank"><i class="fa fa-twitter-square"></i></a>
+                                <a href="https://www.linkedin.com/in/michelavital" target="_blank"><i class="fa fa-linkedin-square"></i></a>
+                                <a href="https://plus.google.com/u/0/114920129584146877893/posts" target="_blank"><i class="fa fa-google-plus-square"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="team-member col-xs-6 col-sm-3">
+                <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+                    <div class="flipper">
+                        <div class="front">
+                            <img class="team-member-avatar" src="/wp-content/uploads/2015/08/Philippe.png" alt="Avatar">
+                            <div class="team-member-name">Philippe Honigman</div>
+                            <div class="team-member-role">Chief Innovator</div>
+                        </div>
+                        <div class="back">
+                            Delivers products, closes deals, builds relationships.
+                            <div class="team-member-social-icons">
+                                <a href="https://www.facebook.com/philippe.honigman" target="_blank"><i class="fa fa-facebook-official"></i></a>
+                                <a href="https://twitter.com/phil_h" target="_blank"><i class="fa fa-twitter-square"></i></a>
+                                <a href="https://www.linkedin.com/in/honigman" target="_blank"><i class="fa fa-linkedin-square"></i></a>
+                                <a href="https://plus.google.com/u/0/111361723035525074229/posts" target="_blank"><i class="fa fa-google-plus-square"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 </div>
-        <?php wp_reset_postdata();
-    endif; ?>
-
-    <?php /*
-    $posts = get_posts([
-        'posts_per_page'	=> -1,
-        'post_type'			=> 'partners'
-    ]);
-
-    if($posts): */ ?>
-<!--<div class="container">
-    <section id="partners" class="row">
-        <h2>Partners</h2>
-        <div class="partners">-->
-            <?php /* foreach($posts as $post):
-                setup_postdata($post) */ ?>
-
-<!--                <a href="--><?php ////the_field('website'); ?><!--"><img src="--><?php ////the_field('logo'); ?><!--" alt="--><?php ////the_title(); ?><!--"></a>-->
-
-            <?php //endforeach; ?>
-<!--        </div>
-    </section>
-</div>-->
-        <?php /* wp_reset_postdata();
-    endif; */ ?>
