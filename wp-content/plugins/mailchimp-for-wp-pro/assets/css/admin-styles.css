@@ -91,6 +91,33 @@ label {
 	display:none; 
 }
 
+
+.mc4wp-lists-overview {
+	border-collapse: collapse;
+	background: white;
+	padding: 20px;
+	max-height: 500px;
+	overflow-y: scroll;
+}
+
+.mc4wp-lists-overview table {
+	border: 0;
+}
+
+.mc4wp-lists-overview th {
+	font-weight: bold;
+	vertical-align: top;
+}
+
+.mc4wp-lists-overview th,
+.mc4wp-lists-overview td {
+	border: 1px solid #efefef;
+}
+
+.mc4wp-lists-overview h3{
+	margin: 0 !important;
+}
+
 /* reports */
 #mc4wp-graph{ 
 	width:100%; 

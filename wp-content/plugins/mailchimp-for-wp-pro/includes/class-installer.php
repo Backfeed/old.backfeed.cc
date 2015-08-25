@@ -25,7 +25,16 @@ class MC4WP_Installer {
 	 * Constructor
 	 */
 	public function __construct() {
+		$this->load_translations();
 		$this->lite_options = $this->load_lite_options();
+	}
+
+	/**
+	 * Load plugin translations (since we need 'em during installation)
+	 */
+	protected function load_translations() {
+		// load the plugin text domain
+		load_plugin_textdomain( 'mailchimp-for-wp', false, 'mailchimp-for-wp-pro/languages/' );
 	}
 
 	/**
@@ -49,8 +58,16 @@ class MC4WP_Installer {
 	public function transfer_options() {
 
 		// check if PRO option exists and contains data entered by user
-		$pro_options = get_option( 'mc4wp', false );
-		if ( $pro_options !== false )  {
+		$pro_options =  array(
+			'general' => get_option( 'mc4wp', false ),
+			'checkbox' => get_option( 'mc4wp_checkbox', false ),
+			'form' => get_option( 'mc4wp_form', false )
+		);
+
+		// only bail if all three options have settings.
+		if ( $pro_options['general'] !== false
+		     && $pro_options['checkbox'] !== false
+		     && $pro_options['form'] !== false )  {
 			return false;
 		}
 
@@ -59,7 +76,7 @@ class MC4WP_Installer {
 
 		foreach ( $settings as $group_key => $options ) {
 			foreach ( $options as $option_key => $option_value ) {
-				if ( isset( $lite_settings[$group_key][$option_key] ) && ! empty( $lite_settings[$group_key][$option_key] ) ) {
+				if ( ! empty( $this->lite_options[$group_key][$option_key] ) ) {
 					$settings[$group_key][$option_key] = $this->lite_options[$group_key][$option_key];
 				}
 			}

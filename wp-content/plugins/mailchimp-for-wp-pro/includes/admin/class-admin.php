@@ -239,15 +239,21 @@ class MC4WP_Admin {
 	/**
 	 * Fix for MultiSite, where only superadmins can save unfiltered HTML in post_content.
 	 *
-	 * @param $data
+	 * @param array $data
 	 * @param array $post_array
 	 *
-	 * @return mixed
+	 * @return array
 	 */
 	public function filter_form_content( $data, $post_array ) {
 		// only act on our own post type
 		if( $post_array['post_type'] !== 'mc4wp-form' ) {
 			return $data;
+		}
+
+		// if `content` index is set, use that one.
+		// this fixes an issue with `post_content` already being kses stripped at this point
+		if( isset( $post_array['content'] ) ) {
+			$data['post_content'] = $post_array['content'];
 		}
 
 		// remove <form> tags from form content

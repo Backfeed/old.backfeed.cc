@@ -3,7 +3,7 @@
 Plugin Name: MailChimp for WordPress Pro
 Plugin URI: https://mc4wp.com/#utm_source=wp-plugin&utm_medium=mailchimp-for-wp-pro&utm_campaign=plugins-page
 Description: Pro version of MailChimp for WordPress. Adds various sign-up methods to your website.
-Version: 2.7.9
+Version: 2.7.11
 Author: ibericode
 Author URI: http://ibericode.com/
 License: GPL v3
@@ -34,7 +34,7 @@ if( ! defined( 'ABSPATH' ) ) {
 
 function mc4wp_pro_load_plugin() {
 
-	define( 'MC4WP_VERSION', '2.7.9' );
+	define( 'MC4WP_VERSION', '2.7.11' );
 	define( 'MC4WP_PLUGIN_FILE', __FILE__ );
 	define( 'MC4WP_PLUGIN_DIR', dirname( __FILE__ ) . '/' );
 	define( 'MC4WP_PLUGIN_URL', plugins_url( '/', __FILE__ ) );
@@ -46,24 +46,24 @@ function mc4wp_pro_load_plugin() {
 	require_once MC4WP_PLUGIN_DIR . 'includes/functions/general.php';
 	require_once MC4WP_PLUGIN_DIR . 'includes/functions/template.php';
 
-	// Initialize Plugin Class
-	require_once MC4WP_PLUGIN_DIR . 'includes/class-plugin.php';
-	MC4WP::init();
-	$GLOBALS['mc4wp'] = MC4WP::instance();
-
-	// Only load the Admin class on admin requests, excluding AJAX.
+	// Load admin class before rest of plugin (so translations are loaded early)
 	if( is_admin()
 	    && ( ! defined( 'DOING_AJAX' ) || ! DOING_AJAX ) ) {
 		new MC4WP_Admin();
 	}
 
+	// Initialize Plugin Class
+	require_once MC4WP_PLUGIN_DIR . 'includes/class-plugin.php';
+	MC4WP::init();
+	$GLOBALS['mc4wp'] = MC4WP::instance();
 }
 
 add_action( 'plugins_loaded', 'mc4wp_pro_load_plugin', 10 );
 
+
+
 // Only add these hooks on Admin requests
-if( is_admin()
-    && ( ! defined( 'DOING_AJAX' ) || ! DOING_AJAX ) ) {
+if( is_admin() ) {
 	// activation & deactivation hooks
 	require_once dirname( __FILE__ ) . '/includes/class-installer.php';
 	register_activation_hook( __FILE__, array( 'MC4WP_Installer', 'run' ) );

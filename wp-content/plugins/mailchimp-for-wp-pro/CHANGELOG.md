@@ -1,5 +1,33 @@
 == Changelog ==
 
+= 2.7.11 - August 18, 2015 =
+
+**Fixes**
+
+- Multisite stripping all form HTML for all users except superadmins.
+
+= 2.7.10 - August 18, 2015 =
+
+**Fixes**
+
+- Options from free plugin were not automatically transferred
+- Prevented JS error when outputting forms with no submit button.
+- Using `0` as a Redirect URL resulted in a blank page.
+- Sign-up checkbox was showing twice in the Easy Digital Downloads checkout when showing registration fields, thanks [Daniel Espinoza](https://github.com/growdev).
+- Default form was not automatically translated for languages other than English.
+
+**Improvements**
+
+- Better way to hide the honeypot field, which stops bots from subscribing to your lists.
+- role="form" is no longer needed, thanks [XhmikosR](https://github.com/XhmikosR)!
+- Filter `mc4wp_form_animate_scroll` now disables just the scroll animation, not the scroll itself.
+- Revamped UI for MailChimp lists overview
+- Updated German & Greek translations.
+
+**Additions**
+
+- Added `mc4wp_form_is_submitted()` and `mc4wp_form_get_response_html()` functions.
+
 = 2.7.9 - July 14, 2015 =
 
 **Bugfixes**
