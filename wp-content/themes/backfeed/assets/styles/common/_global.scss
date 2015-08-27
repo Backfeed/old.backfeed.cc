@@ -4,6 +4,11 @@ section a {
   text-decoration: underline;
 }
 
+section>h2,
+section>.text>h2{
+  text-align: center;
+}
+
 h1, h2, h3, h4, h5, h6,
 .h1, .h2, .h3, .h4, .h5, .h6 {
   font-style: italic;
@@ -30,6 +35,20 @@ ul {
   background-image: url('/wp-content/themes/backfeed/assets/images/hr.png');
   height: 6px;
   background-repeat-x: repeat;
+}
+
+.comment-form p,
+.form-group {
+  margin-bottom: 10px;
+}
+
+.container {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.flexbox-row-break {
+  width: 100%;
 }
 
 .tagline.overlay {
@@ -75,8 +94,7 @@ aside.tagline {
 
   margin-top: 30px;
   margin-bottom: 30px;
-  padding-top: 20px;
-  padding-bottom: 20px;
+  padding: 20px;
 
   font-family: $headings-font-family;
   font-style: italic;

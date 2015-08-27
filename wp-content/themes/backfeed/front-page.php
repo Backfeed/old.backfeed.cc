@@ -2,7 +2,10 @@
     <div class="container">
         <section id="about" class="row with-illustration">
             <div class="illustration">
-                <img style="margin-top: 115px;" class="img-responsive center-block" src="/wp-content/themes/backfeed/assets/images/triangle.png" alt="Illustration">
+                <picture>
+                    <source srcset="/wp-content/themes/backfeed/assets/images/triangle/Triangle-SideWay-300.png, /wp-content/themes/backfeed/assets/images/triangle/Triangle-SideWay-300-x2.png 2x" media="(min-width: 768px)">
+                    <img id="illustration-triangle" class="center-block img-responsive" srcset="/wp-content/themes/backfeed/assets/images/triangle/Triangle-200.png, /wp-content/themes/backfeed/assets/images/triangle/Triangle-200-x2.png 2x" alt="Illustration">
+                </picture>
             </div>
             <div class="text">
                 <h2>About Backfeed</h2>
@@ -35,7 +38,10 @@
             <p><strong>With Backfeed, this vision is beginning to unfold...</strong></p>
         </div>
         <div class="illustration">
-            <img style="margin-top: 70px;" class="img-responsive center-block" src="/wp-content/themes/backfeed/assets/images/butterfly.png" alt="Illustration">
+            <picture>
+                <source srcset="/wp-content/themes/backfeed/assets/images/butterfly/Butterfly-270.png, /wp-content/themes/backfeed/assets/images/butterfly/Butterfly-270-x2.png 2x" media="(min-width: 768px)">
+                <img id="illustration-butterfly" class="center-block img-responsive" srcset="/wp-content/themes/backfeed/assets/images/butterfly/Butterfly-190.png, /wp-content/themes/backfeed/assets/images/butterfly/Butterfly-190-x2.png 2x" alt="Illustration">
+            </picture>
         </div>
     </section>
 </div>
@@ -48,45 +54,42 @@
 <div class="container">
     <section id="use-cases" class="row only-text">
         <h2>Use Cases</h2>
-        <div class="row">
-            <div class="media use-cases-case">
-                <div class="media-left">
-                    <img class="media-object" src="/wp-content/themes/backfeed/assets/images/sacred bullet a.png" alt="...">
-                </div>
-                <div class="media-body">
+        <div class="use-cases-container">
+
+            <div class="use-cases-case">
+                <img class="media-object" src="/wp-content/themes/backfeed/assets/images/usecases/rock.jpg" alt="...">
+                <div class="use-case-body">
                     <h3 class="media-heading use-cases-title">Grassroots organizations</h3>
                     <p>for those who value decentralization as an organisational principle, we provide the ability to organize through a grassroots bottom-up governance model.</p>
                 </div>
             </div>
-            <div class="media use-cases-case">
-                <div class="media-left">
-                    <img class="media-object" src="/wp-content/themes/backfeed/assets/images/sacred bullet b.png" alt="...">
-                </div>
-                <div class="media-body">
+
+            <div class="use-cases-case">
+                <img class="media-object" src="/wp-content/themes/backfeed/assets/images/usecases/round.jpg" alt="...">
+                <div class="use-case-body">
                     <h3 class="media-heading use-cases-title">Legacy organizations</h3>
                     <p>for those who value innovation and creativity, we provide the ability to create open spaces for generative action through distributed governance models.</p>
                 </div>
             </div>
-        </div>
-        <div class="row">
-            <div class="media use-cases-case">
-                <div class="media-left">
-                    <img class="media-object" src="/wp-content/themes/backfeed/assets/images/sacred bullet c.png" alt="...">
-                </div>
-                <div class="media-body">
+
+            <div class="flexbox-row-break"></div>
+
+            <div class="use-cases-case">
+                <img class="media-object" src="/wp-content/themes/backfeed/assets/images/usecases/square.jpg" alt="...">
+                <div class="use-case-body">
                     <h3 class="media-heading use-cases-title">Transient organizations</h3>
                     <p>for those who need to orchestrate temporary and ad-hoc collaboration for a specific purpose, we provide a hybrid orchestration processes that can be fine-tuned to the emerging requirements. For example, orchestrating Collective Intelligence, hackathons, & other decentralized collaborations.</p>
                 </div>
             </div>
-            <div class="media use-cases-case">
-                <div class="media-left">
-                    <img class="media-object" src="/wp-content/themes/backfeed/assets/images/sacred bullet d.png" alt="...">
-                </div>
-                <div class="media-body">
+
+            <div class="use-cases-case">
+                <img class="media-object" src="/wp-content/themes/backfeed/assets/images/usecases/pointy.jpg" alt="...">
+                <div class="use-case-body">
                     <h3 class="media-heading use-cases-title">Crowdsourcing-based organizations</h3>
                     <p>for those who rely on the power of the crowds, we provide the ability to evaluate contributions and to reward contributors in a fair and equitable way, by turning collaborators into actual shareholders.</p>
                 </div>
             </div>
+
         </div>
     </section>
 </div>
@@ -98,7 +101,12 @@
 <div class="container">
     <section id="technology" class="row with-illustration">
         <div class="illustration">
-            <img class="img-responsive center-block" src="/wp-content/themes/backfeed/assets/images/technology.png" alt="Technology">
+            <picture>
+                <source srcset="/wp-content/themes/backfeed/assets/images/technology/Tech-300.png, /wp-content/themes/backfeed/assets/images/technology/Tech-300-x2.png 2x" media="(min-width: 992px)">
+                <source srcset="/wp-content/themes/backfeed/assets/images/technology/Tech-300-Horizontal.png, /wp-content/themes/backfeed/assets/images/technology/Tech-300-Horizontal-x2.png 2x" media="(min-width: 768px)">
+                <source srcset="/wp-content/themes/backfeed/assets/images/technology/Tech-250-Horizontal.png, /wp-content/themes/backfeed/assets/images/technology/Tech-250-Horizontal-x2.png 2x" media="(min-width: 624px)">
+                <img id="illustration-technology" class="center-block img-responsive" srcset="/wp-content/themes/backfeed/assets/images/technology/Tech-250.png, /wp-content/themes/backfeed/assets/images/technology/Tech-250-x2.png 2x" alt="Technology">
+            </picture>
         </div>
         <div class="text">
             <h2>Technology</h2>
@@ -129,7 +137,7 @@
         <h2>Our Team</h2>
         <div class="team-members">
 
-            <div class="team-member col-xs-6 col-sm-3">
+            <div class="team-member">
                 <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
                     <div class="flipper">
                         <div class="front">
@@ -150,7 +158,7 @@
                 </div>
             </div>
 
-            <div class="team-member col-xs-6 col-sm-3">
+            <div class="team-member">
                 <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
                     <div class="flipper">
                         <div class="front">
@@ -172,7 +180,7 @@
                 </div>
             </div>
 
-            <div class="team-member col-xs-6 col-sm-3">
+            <div class="team-member">
                 <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
                     <div class="flipper">
                         <div class="front">
@@ -193,7 +201,7 @@
                 </div>
             </div>
 
-            <div class="team-member col-xs-6 col-sm-3">
+            <div class="team-member">
                 <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
                     <div class="flipper">
                         <div class="front">
@@ -214,7 +222,7 @@
                 </div>
             </div>
 
-            <div class="team-member col-xs-6 col-sm-3">
+            <div class="team-member">
                 <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
                     <div class="flipper">
                         <div class="front">
@@ -233,7 +241,7 @@
                 </div>
             </div>
 
-            <div class="team-member col-xs-6 col-sm-3">
+            <div class="team-member">
                 <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
                     <div class="flipper">
                         <div class="front">
@@ -254,7 +262,7 @@
                 </div>
             </div>
 
-            <div class="team-member col-xs-6 col-sm-3">
+            <div class="team-member">
                 <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
                     <div class="flipper">
                         <div class="front">
@@ -274,7 +282,7 @@
                 </div>
             </div>
 
-            <div class="team-member col-xs-6 col-sm-3">
+            <div class="team-member">
                 <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
                     <div class="flipper">
                         <div class="front">
@@ -294,7 +302,7 @@
                 </div>
             </div>
 
-            <div class="team-member col-xs-6 col-sm-3">
+            <div class="team-member">
                 <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
                     <div class="flipper">
                         <div class="front">
@@ -315,7 +323,7 @@
                 </div>
             </div>
 
-            <div class="team-member col-xs-6 col-sm-3">
+            <div class="team-member">
                 <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
                     <div class="flipper">
                         <div class="front">

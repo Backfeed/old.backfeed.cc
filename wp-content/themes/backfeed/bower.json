@@ -9,11 +9,15 @@
   "dependencies": {
     "modernizr": "2.8.2",
     "bootstrap-sass-official": "3.3.5",
-    "fontawesome": "~4.4.0"
+    "fontawesome": "~4.4.0",
+    "picturefill": "~2.3.1"
   },
   "overrides": {
     "modernizr": {
       "main": "./modernizr.js"
+    },
+    "picturefill": {
+      "main": "./dist/picturefill.js"
     },
     "bootstrap-sass-official": {
       "main": [

@@ -22,6 +22,9 @@
     },
     "modernizr.js": {
       "bower": ["modernizr"]
+    },
+    "picturefill.js": {
+      "bower": ["picturefill"]
     }
   },
   "config": {

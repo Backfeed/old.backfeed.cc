@@ -28,6 +28,7 @@
     'home': {
       init: function() {
         // JavaScript to be fired on the home page
+        // SMOOTH SCROLLING
         $('a[href*=#]:not([href=#])').click(function() {
           if (location.pathname.replace(/^\//,'') === this.pathname.replace(/^\//,'') && location.hostname === this.hostname) {
             var target = $(this.hash);
@@ -40,6 +41,8 @@
             }
           }
         });
+
+        document.createElement( "picture" );
       },
       finalize: function() {
         // JavaScript to be fired on the home page, after the init JS
