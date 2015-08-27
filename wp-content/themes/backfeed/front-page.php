@@ -12,8 +12,8 @@
 
                 <p>As an analogy, if the blockchain can be regarded as the TCP/IP (communication layer of the internet), Backfeed is building a canonical protocol and platform (akin to the HTTP protocol and the web browser) to enable blockchain-based decentralized collaboration, as easily as one would deploy a website today.</p>
 
-                <p><strong>If you want to learn more about Backfeed protocols,<br />
-                check out the <a href="#">Technical Summary</a></strong></p>
+                <!--<p><strong>If you want to learn more about Backfeed protocols,<br />
+                check out the <a href="#">Technical Summary</a></strong></p>-->
             </div>
         </section>
     </div>
