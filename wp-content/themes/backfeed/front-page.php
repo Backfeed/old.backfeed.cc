@@ -30,7 +30,7 @@
 <div class="container">
     <section id="vision" class="row with-illustration">
         <div class="text">
-            <h2>Our Vision</h2>
+            <h2>Vision</h2>
             <p>Imagine Facebook owned by its users. Imagine people lending or borrowing money, buying and selling goods or services without relying on banks or PayPal, insuring each other directly without intermediate insurance companies.</p>
             <p>Imagine a decentralized transportation network independent of Uber, renting apartments without transaction fees, new P2P marketplaces emerging as alternatives to eBay and Amazon.</p>
             <p>Imagine open source communities where contributors are also shareholders, and in which the creation of value leads to its fair and transparent distribution.</p>
@@ -53,7 +53,8 @@
 
 <div class="container">
     <section id="use-cases" class="row only-text">
-        <h2>Use Cases</h2>
+        <h2 class="text-center">Use Cases</h2>
+        <div class="section-subtitle">The Backfeed protocols can power any flavor of decentralized collaborative environments to meet the organizational needs of grassroots based communities and legacy organizations alike.<br />For example:</div>
         <div class="use-cases-container">
 
             <div class="use-cases-case">
@@ -103,8 +104,7 @@
         <div class="illustration">
             <picture>
                 <source srcset="/wp-content/themes/backfeed/assets/images/technology/Tech-300.png, /wp-content/themes/backfeed/assets/images/technology/Tech-300-x2.png 2x" media="(min-width: 992px)">
-                <source srcset="/wp-content/themes/backfeed/assets/images/technology/Tech-300-Horizontal.png, /wp-content/themes/backfeed/assets/images/technology/Tech-300-Horizontal-x2.png 2x" media="(min-width: 768px)">
-                <source srcset="/wp-content/themes/backfeed/assets/images/technology/Tech-250-Horizontal.png, /wp-content/themes/backfeed/assets/images/technology/Tech-250-Horizontal-x2.png 2x" media="(min-width: 624px)">
+                <source srcset="/wp-content/themes/backfeed/assets/images/technology/Tech-300-Horizontal.png, /wp-content/themes/backfeed/assets/images/technology/Tech-300-Horizontal-x2.png 2x" media="(min-width: 624px)">
                 <img id="illustration-technology" class="center-block img-responsive" srcset="/wp-content/themes/backfeed/assets/images/technology/Tech-250.png, /wp-content/themes/backfeed/assets/images/technology/Tech-250-x2.png 2x" alt="Technology">
             </picture>
         </div>
@@ -134,7 +134,7 @@
 
 <div class="container">
     <section id="team" class="row">
-        <h2>Our Team</h2>
+        <h2 class="text-center">Our Team</h2>
         <div class="team-members">
 
             <div class="team-member">

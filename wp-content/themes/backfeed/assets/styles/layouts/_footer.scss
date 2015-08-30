@@ -16,7 +16,6 @@ footer {
     text-transform: uppercase;
 
     &>li>a {
-      //padding: initial;
       color: black;
       letter-spacing: 0.5px;
       padding-top: 0;
@@ -24,12 +23,12 @@ footer {
       &:focus,
       &:hover {
         background-color: initial;
+        color: $brand-primary;
       }
     }
   }
 
   .social-icons a {
-    color: #a7a7a7;
     margin-right: 1rem;
   }
 }

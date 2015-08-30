@@ -1,12 +1,11 @@
 @import url(http://fonts.googleapis.com/css?family=Droid+Serif:700italic|Lato:400,300,700);
 
-section a {
-  text-decoration: underline;
+.scalable a {
+
 }
 
-section>h2,
-section>.text>h2{
-  text-align: center;
+section a {
+  text-decoration: underline;
 }
 
 h1, h2, h3, h4, h5, h6,
@@ -42,9 +41,19 @@ ul {
   margin-bottom: 10px;
 }
 
+section>h2,
+section>.text>h2{
+  color: #0B2530;
+}
+
 .container {
   padding-left: 20px;
   padding-right: 20px;
+}
+
+.section-subtitle {
+  font-weight: 700;
+  text-align: center;
 }
 
 .flexbox-row-break {
@@ -159,5 +168,5 @@ aside.tagline {
   text-align: center;
   padding: 25px 20px;
   color: white;
-  background-color: $brand-primary;
+  background-color: #3C6170;
 }
