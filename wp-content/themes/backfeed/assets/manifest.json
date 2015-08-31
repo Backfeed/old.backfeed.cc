@@ -6,6 +6,11 @@
       ],
       "main": true
     },
+    "uiMorphingButton_fixed.js": {
+      "files": [
+        "scripts/uiMorphingButton_fixed.js"
+      ]
+    },
     "main.css": {
       "files": [
         "styles/main.scss"

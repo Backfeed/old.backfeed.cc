@@ -43,6 +43,8 @@
         });
 
         document.createElement( "picture" );
+
+        var subscribeWidget = new UIMorphingButton(document.getElementById('header-subscribe'), {closeEl:'.icon-close'});
       },
       finalize: function() {
         // JavaScript to be fired on the home page, after the init JS
