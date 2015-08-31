@@ -9,7 +9,7 @@
             </div>
             <div class="text">
                 <h2>About Backfeed</h2>
-                <p><strong>Backfeed develops resilient technology and new economic models to support free, large-scale, systematic collaboration. Based on a distributed governance model, Backfeed protocols  make it possible for people to easily deploy and maintain decentralized applications and organisations that rely on the spontaneous and voluntary contribution of hundreds, thousands or millions of people.</strong></p>
+                <p><strong>Backfeed develops resilient technology and new economic models to support free, large-scale, systematic collaboration. Based on a distributed governance model, Backfeed protocols  make it possible for people to easily deploy and maintain decentralized applications and organizations that rely on the spontaneous and voluntary contribution of hundreds, thousands or millions of people.</strong></p>
 
                 <p>Backfeed provides the infrastructure and toolkits that build on the emerging blockchain ecosystem. The protocols reward individual contributors through the distribution of economic tokens and the reallocation of personal influence, based on the perceived value of their contributions to a particular community.</p>
 
@@ -23,7 +23,7 @@
 </div>
 
 <aside class="tagline overlay">
-    <span>Backfeed, helping the transition into more agile and decentralized organisations</span>
+    <span>Backfeed, helping the transition into more agile and decentralized organizations</span>
 <!--    <img class="connector hidden-xs hidden-sm" id="connector-a" src="/wp-content/themes/backfeed/assets/images/connector-a.png" />-->
 </aside>
 
@@ -61,7 +61,7 @@
                 <img class="media-object" src="/wp-content/themes/backfeed/assets/images/usecases/rock.jpg" alt="...">
                 <div class="use-case-body">
                     <h3 class="media-heading use-cases-title">Grassroots organizations</h3>
-                    <p>for those who value decentralization as an organisational principle, we provide the ability to organize through a grassroots bottom-up governance model.</p>
+                    <p>for those who value decentralization as an organizational principle, we provide the ability to organize through a grassroots bottom-up governance model.</p>
                 </div>
             </div>
 
@@ -120,9 +120,9 @@
             <hr />
             <p>In particular, Backfeed is currently working on developing two foundational tools for decentralized collaboration:</p>
             <h3>The Backfeed protocols</h3>
-            <p>a set of rules for the distribution of value among contributors to a decentralized organisation, including economic tokens and reputational rewards.</p>
+            <p>a set of rules for the distribution of value among contributors to a decentralized organization, including economic tokens and reputational rewards.</p>
             <h3>The visual browser</h3>
-            <p>a navigation system for people to immediately understand the structure of decentralized organisations, so they see how they can contribute the most at any given time.</p>
+            <p>a navigation system for people to immediately understand the structure of decentralized organizations, so they see how they can contribute the most at any given time.</p>
         </div>
     </section>
 </div>
