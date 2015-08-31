@@ -19,6 +19,7 @@
     'common': {
       init: function() {
         // JavaScript to be fired on all pages
+        document.createElement("picture");
       },
       finalize: function() {
         // JavaScript to be fired on all pages, after page specific JS is fired
@@ -42,7 +43,18 @@
           }
         });
 
-        document.createElement( "picture" );
+        var partnerImages = $('.partner img');
+        partnerImages.on('mouseenter', function(e) {
+          var i = $(e.target).closest('.partner').index() + 1;
+          var partnerLabel = $('.partner-label').filter(':nth-of-type('+i+')');
+          partnerLabel.animate({'opacity': 1});
+        });
+
+        partnerImages.on('mouseleave', function(e) {
+          var i = $(e.target).closest('.partner').index() + 1;
+          var partnerLabel = $('.partner-label').filter(':nth-of-type('+i+')');
+          partnerLabel.animate({'opacity': 0});
+        });
 
         var subscribeWidget = new UIMorphingButton(document.getElementById('header-subscribe'), {closeEl:'.icon-close'});
       },

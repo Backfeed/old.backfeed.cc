@@ -20,3 +20,13 @@ section {
     }
   }
 }
+
+#vision.with-illustration {
+  .illustration {
+    @include make-md-column-push(7);
+  }
+
+  .text {
+    @include make-md-column-pull(5);
+  }
+}

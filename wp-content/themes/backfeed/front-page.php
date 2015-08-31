@@ -29,6 +29,12 @@
 
 <div class="container">
     <section id="vision" class="row with-illustration">
+        <div class="illustration">
+            <picture>
+                <source srcset="/wp-content/themes/backfeed/assets/images/butterfly/Butterfly-270.png, /wp-content/themes/backfeed/assets/images/butterfly/Butterfly-270-x2.png 2x" media="(min-width: 768px)">
+                <img id="illustration-butterfly" class="center-block img-responsive" srcset="/wp-content/themes/backfeed/assets/images/butterfly/Butterfly-190.png, /wp-content/themes/backfeed/assets/images/butterfly/Butterfly-190-x2.png 2x" alt="Illustration">
+            </picture>
+        </div>
         <div class="text">
             <h2>Vision</h2>
             <p>Imagine Facebook owned by its users. Imagine people lending or borrowing money, buying and selling goods or services without relying on banks or PayPal, insuring each other directly without intermediate insurance companies.</p>
@@ -36,12 +42,6 @@
             <p>Imagine open source communities where contributors are also shareholders, and in which the creation of value leads to its fair and transparent distribution.</p>
             <p>Imagine corporations that spark off extraordinary contributions of individuals and unleash innovation hindered by the rigidities of hierarchical structures.</p>
             <p><strong>With Backfeed, this vision is beginning to unfold...</strong></p>
-        </div>
-        <div class="illustration">
-            <picture>
-                <source srcset="/wp-content/themes/backfeed/assets/images/butterfly/Butterfly-270.png, /wp-content/themes/backfeed/assets/images/butterfly/Butterfly-270-x2.png 2x" media="(min-width: 768px)">
-                <img id="illustration-butterfly" class="center-block img-responsive" srcset="/wp-content/themes/backfeed/assets/images/butterfly/Butterfly-190.png, /wp-content/themes/backfeed/assets/images/butterfly/Butterfly-190-x2.png 2x" alt="Illustration">
-            </picture>
         </div>
     </section>
 </div>
@@ -138,7 +138,7 @@
         <div class="team-members">
 
             <div class="team-member">
-                <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+                <div class="flip-container" ontouchstart="$(this).trigger('hover');">
                     <div class="flipper">
                         <div class="front">
                             <img class="team-member-avatar" src="/wp-content/themes/backfeed/assets/images/team/Matan.png" alt="Avatar">
@@ -148,10 +148,8 @@
                         <div class="back">
                             PhD in physics and founder of La'zooz, a ride sharing app developed collectively by its community
                             <div class="team-member-social-icons">
-                                <a href="https://www.facebook.com/matan.field" target="_blank"><i class="fa fa-facebook-official"></i></a>
                                 <a href="https://twitter.com/MatanField" target="_blank"><i class="fa fa-twitter-square"></i></a>
                                 <a href="https://il.linkedin.com/pub/matan-field/96/2b3/92a" target="_blank"><i class="fa fa-linkedin-square"></i></a>
-                                <a href="https://plus.google.com/u/0/+MatanField/posts" target="_blank"><i class="fa fa-google-plus-square"></i></a>
                             </div>
                         </div>
                     </div>
@@ -159,7 +157,7 @@
             </div>
 
             <div class="team-member">
-                <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+                <div class="flip-container" ontouchstart="$(this).trigger('hover');">
                     <div class="flipper">
                         <div class="front">
                             <img class="team-member-avatar" src="/wp-content/themes/backfeed/assets/images/team/Jordan.png" alt="Avatar">
@@ -169,10 +167,8 @@
                         <div class="back">
                             Former CEO of DivX. Quite often down to earth but generally high up with his heart.
                             <div class="team-member-social-icons">
-                                <a href="https://www.facebook.com/phonomancer" target="_blank"><i class="fa fa-facebook-official"></i></a>
                                 <a href="http://twitter.com/jgreenhall" target="_blank"><i class="fa fa-twitter-square"></i></a>
                                 <a href="http://www.linkedin.com/in/jordangreenhall" target="_blank"><i class="fa fa-linkedin-square"></i></a>
-                                <a href="http://google.com/+JordanGreenhall" target="_blank"><i class="fa fa-google-plus-square"></i></a>
                                 <a href="https://medium.com/@jordangreenhall" target="_blank"><i class="fa fa-medium"></i></a>
                             </div>
                         </div>
@@ -181,7 +177,7 @@
             </div>
 
             <div class="team-member">
-                <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+                <div class="flip-container" ontouchstart="$(this).trigger('hover');">
                     <div class="flipper">
                         <div class="front">
                             <img class="team-member-avatar" src="/wp-content/themes/backfeed/assets/images/team/Primavera.png" alt="Avatar">
@@ -191,7 +187,6 @@
                         <div class="back">
                             Researcher at Harvard Law School and leading expert on legal implications of DCOs.
                             <div class="team-member-social-icons">
-                                <a href="https://www.facebook.com/matan.field" target="_blank"><i class="fa fa-facebook-official"></i></a>
                                 <a href="https://twitter.com/yaoeo" target="_blank"><i class="fa fa-twitter-square"></i></a>
                                 <a href="https://fr.linkedin.com/pub/primavera-de-filippi/36/585/75"><i class="fa fa-linkedin-square"></i></a>
                                 <a href="https://cyber.law.harvard.edu/people/pdefilippi" target="_blank"><i class="fa fa-google-plus-square"></i></a>
@@ -202,7 +197,7 @@
             </div>
 
             <div class="team-member">
-                <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+                <div class="flip-container" ontouchstart="$(this).trigger('hover');">
                     <div class="flipper">
                         <div class="front">
                             <img class="team-member-avatar" src="/wp-content/themes/backfeed/assets/images/team/Tal.png" alt="Avatar">
@@ -212,10 +207,8 @@
                         <div class="back">
                             The man taking care of all that happens behind the scenes.
                             <div class="team-member-social-icons">
-                                <a href="https://www.facebook.com/tal.serphos" target="_blank"><i class="fa fa-facebook-official"></i></a>
                                 <a href="https://twitter.com/TalSerphos" target="_blank"><i class="fa fa-twitter-square"></i></a>
                                 <a href="https://www.linkedin.com/in/tserphos" target="_blank"><i class="fa fa-linkedin-square"></i></a>
-                                <a href="https://plus.google.com/u/1/101921191115701737433/posts" target="_blank"><i class="fa fa-google-plus-square"></i></a>
                             </div>
                         </div>
                     </div>
@@ -223,7 +216,7 @@
             </div>
 
             <div class="team-member">
-                <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+                <div class="flip-container" ontouchstart="$(this).trigger('hover');">
                     <div class="flipper">
                         <div class="front">
                             <img class="team-member-avatar" src="/wp-content/themes/backfeed/assets/images/team/Yaniv.png" alt="Avatar">
@@ -242,7 +235,7 @@
             </div>
 
             <div class="team-member">
-                <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+                <div class="flip-container" ontouchstart="$(this).trigger('hover');">
                     <div class="flipper">
                         <div class="front">
                             <img class="team-member-avatar" src="/wp-content/themes/backfeed/assets/images/team/Ore.png" alt="Avatar">
@@ -252,10 +245,8 @@
                         <div class="back">
                             Web developer with a special hunch for Front-End UI/UX development
                             <div class="team-member-social-icons">
-                                <a href="http://facebook.com/Ore4444" target="_blank"><i class="fa fa-facebook-official"></i></a>
                                 <a href="http://twitter.com/Ore4444" target="_blank"><i class="fa fa-twitter-square"></i></a>
                                 <a href="http://linkedin.com/in/Ore4444" target="_blank"><i class="fa fa-linkedin-square"></i></a>
-                                <a href="https://plus.google.com/u/0/+OreLandau/posts" target="_blank"><i class="fa fa-google-plus-square"></i></a>
                             </div>
                         </div>
                     </div>
@@ -263,7 +254,7 @@
             </div>
 
             <div class="team-member">
-                <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+                <div class="flip-container" ontouchstart="$(this).trigger('hover');">
                     <div class="flipper">
                         <div class="front">
                             <img class="team-member-avatar" src="/wp-content/themes/backfeed/assets/images/team/Adam.png" alt="Avatar">
@@ -273,9 +264,7 @@
                         <div class="back">
                             Senior developer experienced in front-end and client-side applications
                             <div class="team-member-social-icons">
-                                <a href="https://www.facebook.com/adamgoldman47" target="_blank"><i class="fa fa-facebook-official"></i></a>
                                 <a href="https://www.linkedin.com/pub/adam-goldman/66/631/7a4" target="_blank"><i class="fa fa-linkedin-square"></i></a>
-                                <a href="https://plus.google.com/117367856216801819248" target="_blank"><i class="fa fa-google-plus-square"></i></a>
                             </div>
                         </div>
                     </div>
@@ -283,27 +272,7 @@
             </div>
 
             <div class="team-member">
-                <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
-                    <div class="flipper">
-                        <div class="front">
-                            <img class="team-member-avatar" src="/wp-content/themes/backfeed/assets/images/team/Zeev.png" alt="Avatar">
-                            <div class="team-member-name">Zeev Zohar</div>
-                            <div class="team-member-role">Chief Human</div>
-                        </div>
-                        <div class="back">
-                            Comes with an original way to approach human-based interactions
-                            <div class="team-member-social-icons">
-                                <a href="https://www.facebook.com/ani.zeev" target="_blank"><i class="fa fa-facebook-official"></i></a>
-                                <a href="https://www.linkedin.com/pub/zeev-zohar/13/712/309" target="_blank"><i class="fa fa-linkedin-square"></i></a>
-                                <a href="https://plus.google.com/u/0/102924478806062110244/posts" target="_blank"><i class="fa fa-google-plus-square"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="team-member">
-                <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+                <div class="flip-container" ontouchstart="$(this).trigger('hover');">
                     <div class="flipper">
                         <div class="front">
                             <img class="team-member-avatar" src="/wp-content/themes/backfeed/assets/images/team/Michel.png" alt="Avatar">
@@ -313,10 +282,8 @@
                         <div class="back">
                             Professor at Copenhagen Business School
                             <div class="team-member-social-icons">
-                                <a href="https://www.facebook.com/michel.avital" target="_blank"><i class="fa fa-facebook-official"></i></a>
                                 <a href="https://twitter.com/michelavital" target="_blank"><i class="fa fa-twitter-square"></i></a>
                                 <a href="https://www.linkedin.com/in/michelavital" target="_blank"><i class="fa fa-linkedin-square"></i></a>
-                                <a href="https://plus.google.com/u/0/114920129584146877893/posts" target="_blank"><i class="fa fa-google-plus-square"></i></a>
                             </div>
                         </div>
                     </div>
@@ -324,7 +291,7 @@
             </div>
 
             <div class="team-member">
-                <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+                <div class="flip-container" ontouchstart="$(this).trigger('hover');">
                     <div class="flipper">
                         <div class="front">
                             <img class="team-member-avatar" src="/wp-content/themes/backfeed/assets/images/team/Philippe.png" alt="Avatar">
@@ -334,10 +301,82 @@
                         <div class="back">
                             Delivers products, closes deals, builds relationships.
                             <div class="team-member-social-icons">
-                                <a href="https://www.facebook.com/philippe.honigman" target="_blank"><i class="fa fa-facebook-official"></i></a>
                                 <a href="https://twitter.com/phil_h" target="_blank"><i class="fa fa-twitter-square"></i></a>
                                 <a href="https://www.linkedin.com/in/honigman" target="_blank"><i class="fa fa-linkedin-square"></i></a>
-                                <a href="https://plus.google.com/u/0/111361723035525074229/posts" target="_blank"><i class="fa fa-google-plus-square"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="team-member">
+                <div class="flip-container" ontouchstart="$(this).trigger('hover');">
+                    <div class="flipper">
+                        <div class="front">
+                            <img class="team-member-avatar" src="/wp-content/themes/backfeed/assets/images/team/Eden.png" alt="Avatar">
+                            <div class="team-member-name">Eden Landau</div>
+                            <div class="team-member-role">Chief Happiness</div>
+                        </div>
+                        <div class="back">
+                            Spreading knowledge, one synapse at a time.
+                            <div class="team-member-social-icons">
+                                <a href="https://twitter.com/edenworky" target="_blank"><i class="fa fa-twitter-square"></i></a>
+                                <a href="https://il.linkedin.com/in/edenlandau" target="_blank"><i class="fa fa-linkedin-square"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="team-member">
+                <div class="flip-container" ontouchstart="$(this).trigger('hover');">
+                    <div class="flipper">
+                        <div class="front">
+                            <img class="team-member-avatar" src="/wp-content/themes/backfeed/assets/images/team/Naomi.png" alt="Avatar">
+                            <div class="team-member-name">Naomi Steinitz</div>
+                            <div class="team-member-role">Chief Listener</div>
+                        </div>
+                        <div class="back">
+                            Productivity hacker, human-2-human communication
+                            <div class="team-member-social-icons">
+                                <a href="https://www.linkedin.com/pub/naomi-steinitz/18/100/5a3" target="_blank"><i class="fa fa-linkedin-square"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="team-member">
+                <div class="flip-container" ontouchstart="$(this).trigger('hover');">
+                    <div class="flipper">
+                        <div class="front">
+                            <img class="team-member-avatar" src="/wp-content/themes/backfeed/assets/images/team/Neeraj.png" alt="Avatar">
+                            <div class="team-member-name">Neeraj Jain</div>
+                            <div class="team-member-role">Programmer</div>
+                        </div>
+                        <div class="back">
+                            A Person who is very passionate about coding
+                            <div class="team-member-social-icons">
+                                <a href="https://www.linkedin.com/pub/neeraj-jain/3/665/a61" target="_blank"><i class="fa fa-linkedin-square"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="team-member">
+                <div class="flip-container" ontouchstart="$(this).trigger('hover');">
+                    <div class="flipper">
+                        <div class="front">
+                            <img class="team-member-avatar" src="/wp-content/themes/backfeed/assets/images/team/Amnon.png" alt="Avatar">
+                            <div class="team-member-name">Amnon Barnea</div>
+                            <div class="team-member-role">Chief Designer</div>
+                        </div>
+                        <div class="back">
+                            Creating experiences with three open eyes
+                            <div class="team-member-social-icons">
+                                <a href="https://www.linkedin.com/in/amnonbarnea" target="_blank"><i class="fa fa-linkedin-square"></i></a>
+                                <a href="https://www.facebook.com/AmnonBarneaDesign" target="_blank"><i class="fa fa-facebook-official"></i></a>
                             </div>
                         </div>
                     </div>
@@ -346,3 +385,57 @@
         </div>
     </section>
 </div>
+
+<section id="partners">
+    <h2 class="text-center">Partners</h2>
+
+    <div class="partners-wrapper">
+        <div class="partners container">
+            <div class="partner">
+                <a href="" target="_blank">
+                    <img src="/wp-content/themes/backfeed/assets/images/partners/d-reddit.png" alt="" />
+                </a>
+            </div>
+
+            <div class="partner">
+                <a href="" target="_blank">
+                    <img src="/wp-content/themes/backfeed/assets/images/partners/citizen-code.png" alt="" />
+                </a>
+            </div>
+
+            <div class="partner">
+                <a href="" target="_blank">
+                    <img src="/wp-content/themes/backfeed/assets/images/partners/hylo.png" alt="" />
+                </a>
+            </div>
+
+            <div class="partner">
+                <a href="" target="_blank">
+                    <img src="/wp-content/themes/backfeed/assets/images/partners/lazuz.png" alt="" />
+                </a>
+            </div>
+
+            <div class="partner">
+                <a href="http://ouishare.net/" target="_blank">
+                    <img src="/wp-content/themes/backfeed/assets/images/partners/ouishare.png" alt="" />
+                </a>
+            </div>
+
+            <div class="partner">
+                <a href="" target="_blank">
+                    <img src="/wp-content/themes/backfeed/assets/images/partners/slant.png" alt="" />
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="partner-labels container">
+        <div class="partner-label">D-Reddit</div>
+        <div class="partner-label">Citizen Code</div>
+        <div class="partner-label">Hylo</div>
+        <div class="partner-label">La'zooz</div>
+        <div class="partner-label">OuiShare</div>
+        <div class="partner-label">Slant News</div>
+    </div>
+
+</section>
