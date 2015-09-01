@@ -391,11 +391,17 @@
 
     <div class="partners-wrapper">
         <div class="partners container">
-            <div class="partner">
+            <!--div class="partner">
+                <a href="" target="_blank">
+                    <img src="/wp-content/themes/backfeed/assets/images/partners/d-reddit.png" alt="" />
+                </a>
+            </div-->
+
+            <!--div class="partner">
                 <a href="" target="_blank">
                     <img src="/wp-content/themes/backfeed/assets/images/partners/citizen-code.png" alt="" />
                 </a>
-            </div>
+            </div-->
 
             <div class="partner">
                 <a href="" target="_blank">
@@ -414,14 +420,22 @@
                     <img src="/wp-content/themes/backfeed/assets/images/partners/ouishare.png" alt="" />
                 </a>
             </div>
+
+            <!--div class="partner">
+                <a href="" target="_blank">
+                    <img src="/wp-content/themes/backfeed/assets/images/partners/slant.png" alt="" />
+                </a>
+            </div-->
         </div>
     </div>
 
     <div class="partner-labels container">
+        <div class="partner-label">D-Reddit</div>
         <div class="partner-label">Citizen Code</div>
         <div class="partner-label">Hylo</div>
         <div class="partner-label">La'zooz</div>
         <div class="partner-label">OuiShare</div>
+        <div class="partner-label">Slant News</div>
     </div>
 
 </section>
