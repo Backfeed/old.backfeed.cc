@@ -11,3 +11,8 @@ function get_search_form() {
   return $form;
 }
 add_filter('get_search_form', __NAMESPACE__ . '\\get_search_form');
+
+function get_current_page_url() {
+  global $wp;
+  return add_query_arg( $_SERVER['QUERY_STRING'], '', home_url( $wp->request ) );
+}

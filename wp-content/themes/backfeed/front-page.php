@@ -3,8 +3,15 @@
         <section id="about" class="row with-illustration">
             <div class="illustration">
                 <picture>
-                    <source srcset="/wp-content/themes/backfeed/assets/images/triangle/Triangle-SideWay-300.png, /wp-content/themes/backfeed/assets/images/triangle/Triangle-SideWay-300-x2.png 2x" media="(min-width: 768px)">
-                    <img id="illustration-triangle" class="center-block img-responsive" srcset="/wp-content/themes/backfeed/assets/images/triangle/Triangle-200.png, /wp-content/themes/backfeed/assets/images/triangle/Triangle-200-x2.png 2x" alt="Illustration">
+                    <source media="(min-width: 768px)" srcset="/wp-content/themes/backfeed/assets/images/triangle/Triangle-SideWay-300.png, /wp-content/themes/backfeed/assets/images/triangle/Triangle-SideWay-300-x2.png 2x">
+                    <source srcset="/wp-content/themes/backfeed/assets/images/triangle/Triangle-200.png, /wp-content/themes/backfeed/assets/images/triangle/Triangle-200-x2.png 2x">
+                    <img id="illustration-triangle" class="center-block img-responsive" alt="Illustration" src="/wp-content/themes/backfeed/assets/images/triangle/Triangle-SideWay-300.png">
+                </picture>
+
+                <picture>
+                    <source srcset="/wp-content/themes/backfeed/assets/images/connectors/connector1.png" media="(min-width: 1200px)">
+                    <source srcset="/wp-content/themes/backfeed/assets/images/connectors/connector1md.png" media="(min-width: 992px)">
+                    <img id="connector-a" class="connector hidden-xs hidden-sm" src="/wp-content/themes/backfeed/assets/images/connectors/connector1.png" alt="Connector">
                 </picture>
             </div>
             <div class="text">
@@ -24,7 +31,6 @@
 
 <aside class="tagline overlay">
     <span>Backfeed, helping the transition into more agile and decentralized organizations</span>
-<!--    <img class="connector hidden-xs hidden-sm" id="connector-a" src="/wp-content/themes/backfeed/assets/images/connector-a.png" />-->
 </aside>
 
 <div class="container">
@@ -32,8 +38,10 @@
         <div class="illustration">
             <picture>
                 <source srcset="/wp-content/themes/backfeed/assets/images/butterfly/Butterfly-270.png, /wp-content/themes/backfeed/assets/images/butterfly/Butterfly-270-x2.png 2x" media="(min-width: 768px)">
-                <img id="illustration-butterfly" class="center-block img-responsive" srcset="/wp-content/themes/backfeed/assets/images/butterfly/Butterfly-190.png, /wp-content/themes/backfeed/assets/images/butterfly/Butterfly-190-x2.png 2x" alt="Illustration">
+                <source srcset="/wp-content/themes/backfeed/assets/images/butterfly/Butterfly-190.png, /wp-content/themes/backfeed/assets/images/butterfly/Butterfly-190-x2.png 2x">
+                <img id="illustration-butterfly" class="center-block img-responsive" src="/wp-content/themes/backfeed/assets/images/butterfly/Butterfly-190.png" alt="Illustration">
             </picture>
+            <img class="connector hidden-xs hidden-sm" id="connector-b" src="/wp-content/themes/backfeed/assets/images/connectors/connector2.png" />
         </div>
         <div class="text">
             <h2>Vision</h2>
@@ -48,13 +56,12 @@
 
 <aside class="tagline overlay">
     <span>Backfeed, unlocking the potential of the collaborative sharing economy</span>
-<!--    <img class="connector hidden-xs hidden-sm" id="connector-b" src="/wp-content/themes/backfeed/assets/images/connector-b.png" />-->
 </aside>
 
 <div class="container">
     <section id="use-cases" class="row only-text">
         <h2 class="text-center">Use Cases</h2>
-        <div class="section-subtitle">The Backfeed protocols can power any flavor of decentralized collaborative environments to meet the organizational needs of grassroots based communities and legacy organizations alike.<br />For example:</div>
+        <div class="section-subtitle">From grassroots movements to crowdsourced innovation, the Backfeed protocols power any type of decentralized collaborative organizations.</div>
         <div class="use-cases-container">
 
             <div class="use-cases-case">
@@ -79,7 +86,7 @@
                 <img class="media-object" src="/wp-content/themes/backfeed/assets/images/usecases/square.jpg" alt="...">
                 <div class="use-case-body">
                     <h3 class="media-heading use-cases-title">Transient organizations</h3>
-                    <p>for those who need to orchestrate temporary and ad-hoc collaboration for a specific purpose, we provide a hybrid orchestration processes that can be fine-tuned to the emerging requirements. For example, orchestrating Collective Intelligence, hackathons, & other decentralized collaborations.</p>
+                    <p>for those who need to orchestrate temporary and ad-hoc collaboration for a specific purpose, we provide a hybrid orchestration processes that can be fine-tuned to the emerging requirements. For example, orchestrating Collective Intelligence and hackathons.</p>
                 </div>
             </div>
 
@@ -102,7 +109,9 @@
 <div class="container">
     <section id="technology" class="row with-illustration">
         <div class="illustration">
+            <img class="connector hidden-xs hidden-sm" id="connector-c" src="/wp-content/themes/backfeed/assets/images/connectors/connector3.png" />
             <picture>
+                <source srcset="/wp-content/themes/backfeed/assets/images/technology/Tech-345.png" media="(min-width: 1200px)">
                 <source srcset="/wp-content/themes/backfeed/assets/images/technology/Tech-300.png, /wp-content/themes/backfeed/assets/images/technology/Tech-300-x2.png 2x" media="(min-width: 992px)">
                 <source srcset="/wp-content/themes/backfeed/assets/images/technology/Tech-300-Horizontal.png, /wp-content/themes/backfeed/assets/images/technology/Tech-300-Horizontal-x2.png 2x" media="(min-width: 624px)">
                 <img id="illustration-technology" class="center-block img-responsive" srcset="/wp-content/themes/backfeed/assets/images/technology/Tech-250.png, /wp-content/themes/backfeed/assets/images/technology/Tech-250-x2.png 2x" alt="Technology">
@@ -382,6 +391,24 @@
                     </div>
                 </div>
             </div>
+
+            <div class="team-member">
+                <div class="flip-container" ontouchstart="$(this).trigger('hover');">
+                    <div class="flipper">
+                        <div class="front">
+                            <img class="team-member-avatar" src="/wp-content/themes/backfeed/assets/images/team/Sarah.jpg" alt="Avatar">
+                            <div class="team-member-name">Sarah Masare</div>
+                            <div class="team-member-role">Chief Storyteller</div>
+                        </div>
+                        <div class="back">
+                            Narrative weaver and story artisan
+                            <div class="team-member-social-icons">
+                                <a href="https://twitter.com/SarahMasare" target="_blank"><i class="fa fa-twitter-square"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 </div>
@@ -391,18 +418,6 @@
 
     <div class="partners-wrapper">
         <div class="partners container">
-            <!--div class="partner">
-                <a href="" target="_blank">
-                    <img src="/wp-content/themes/backfeed/assets/images/partners/d-reddit.png" alt="" />
-                </a>
-            </div-->
-
-            <!--div class="partner">
-                <a href="" target="_blank">
-                    <img src="/wp-content/themes/backfeed/assets/images/partners/citizen-code.png" alt="" />
-                </a>
-            </div-->
-
             <div class="partner">
                 <a href="" target="_blank">
                     <img src="/wp-content/themes/backfeed/assets/images/partners/hylo.png" alt="" />
@@ -420,22 +435,13 @@
                     <img src="/wp-content/themes/backfeed/assets/images/partners/ouishare.png" alt="" />
                 </a>
             </div>
-
-            <!--div class="partner">
-                <a href="" target="_blank">
-                    <img src="/wp-content/themes/backfeed/assets/images/partners/slant.png" alt="" />
-                </a>
-            </div-->
         </div>
     </div>
 
     <div class="partner-labels container">
-        <div class="partner-label">D-Reddit</div>
-        <div class="partner-label">Citizen Code</div>
         <div class="partner-label">Hylo</div>
         <div class="partner-label">La'zooz</div>
         <div class="partner-label">OuiShare</div>
-        <div class="partner-label">Slant News</div>
     </div>
 
 </section>

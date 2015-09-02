@@ -111,6 +111,7 @@
 .connector {
   position: absolute;
   display: block;
+  z-index: 1;
 }
 
 #illustration-triangle {
@@ -146,24 +147,57 @@
   margin-bottom: 30px;
 }
 
+#connector-a {
+  opacity: 0.5;
+
+  @media (min-width: $screen-md-min) {
+    left: 322px;
+    top: 394px;
+  }
+
+  @media (min-width: $screen-lg-min) {
+    left: 411px;
+    top: 390px;
+  }
+}
+
+#connector-b {
+  @media (min-width: $screen-md-min) {
+    left: -2.2%;
+    top: 305px;
+  }
+
+  @media (min-width: $screen-lg-min) {
+    left: 6.8%;
+    top: 245px;
+  }
+}
+
+#connector-c {
+  @media (min-width: $screen-md-min) {
+    bottom: 310px;
+    left: 199px;
+    transform: rotate(188deg);
+  }
+
+  @media (min-width: $screen-lg-min) {
+    bottom: 290px;
+    left: 347px;
+    transform: initial;
+  }
+}
+
+
+
 @media (min-width: $screen-md-min) {
   #about {
     padding-top: 60px;
     margin-bottom: 45px;
   }
 
-  #connector-a {
-    left: 14%;
-    top: -200px;
-  }
-
   #vision {
     margin-top: 50px;
     margin-bottom: 60px;
-  }
-
-  #connector-b {
-    bottom: -20px;
   }
 
   #use-cases {
@@ -195,19 +229,9 @@
     margin-bottom: 95px;
   }
 
-  #connector-a {
-    left: 15%;
-    top: -204px;
-  }
-
   #vision {
     margin-top: 50px;
     margin-bottom: 60px;
-  }
-
-  #connector-b {
-    left: 9.2%;
-    bottom: -79px;
   }
 }
 
