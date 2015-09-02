@@ -12,6 +12,6 @@ use Roots\Sage\Titles;
   <meta property="og:title" content="<?=wp_title()?>" />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="<?=Utils\get_current_page_url()?>" />
-  <meta property="og:image" content="/wp-content/themes/backfeed/assets/images/open-graph-image.png" />
+  <meta property="og:image" content="<?=site_url()?>/wp-content/themes/backfeed/assets/images/open-graph-image.png" />
   <?php wp_head(); ?>
 </head>
