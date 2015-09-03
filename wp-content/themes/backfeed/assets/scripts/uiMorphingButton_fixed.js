@@ -71,7 +71,9 @@
 	};
 
 	UIMorphingButton.prototype.toggle = function() {
-		if( this.isAnimating ) return false;
+		if( this.isAnimating ) {
+			return false;
+		}
 
 		// callback
 		if( this.expanded ) {
@@ -87,7 +89,9 @@
 
 		var self = this,
 			onEndTransitionFn = function( ev ) {
-				if( ev.target !== this ) return false;
+				if( ev.target !== this ) {
+					return false;
+				}
 
 				if( support.transitions ) {
 					// open: first opacity then width/height/left/top

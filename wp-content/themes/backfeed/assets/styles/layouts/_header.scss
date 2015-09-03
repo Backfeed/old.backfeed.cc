@@ -1,5 +1,33 @@
 #main-header-container {
   background-color: #0b2530;
+  transition: all 0.4s ease;
+
+  &.sticky {
+    position: fixed;
+    width: 100%;
+    z-index: 1;
+
+    @media (max-width: $screen-sm-min) {
+      .brand img {
+        width: 165px;
+      }
+
+      #main-header {
+        flex-direction: row;
+        align-items: baseline;
+        padding-top: initial;
+        padding-bottom: initial;
+      }
+
+      #menu-header-menu {
+        display: none;
+      }
+
+      #header-subscribe {
+        display: none;
+      }
+    }
+  }
 }
 
 #main-header {

@@ -20,6 +20,14 @@
       init: function() {
         // JavaScript to be fired on all pages
         document.createElement("picture");
+
+        $(window).scroll(function() {
+          if ($(this).scrollTop() > 1) {
+            $('#main-header-container').addClass("sticky");
+          } else {
+            $('#main-header-container').removeClass("sticky");
+          }
+        });
       },
       finalize: function() {
         // JavaScript to be fired on all pages, after page specific JS is fired

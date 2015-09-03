@@ -86,4 +86,4 @@ function init() {
       'supports' => ['title']
   ]);
 }
-add_action('init', __NAMESPACE__ . '\\init');
+//add_action('init', __NAMESPACE__ . '\\init');

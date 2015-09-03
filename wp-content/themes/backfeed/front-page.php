@@ -361,10 +361,10 @@
                         <div class="front">
                             <img class="team-member-avatar" src="/wp-content/themes/backfeed/assets/images/team/Neeraj.png" alt="Avatar">
                             <div class="team-member-name">Neeraj Jain</div>
-                            <div class="team-member-role">Programmer</div>
+                            <div class="team-member-role">Chief Expert</div>
                         </div>
                         <div class="back">
-                            A Person who is very passionate about coding
+                            A programmer by heart who is very passionate about all things coding
                             <div class="team-member-social-icons">
                                 <a href="https://www.linkedin.com/pub/neeraj-jain/3/665/a61" target="_blank"><i class="fa fa-linkedin-square"></i></a>
                             </div>
@@ -419,20 +419,20 @@
     <div class="partners-wrapper">
         <div class="partners container">
             <div class="partner">
-                <a href="" target="_blank">
-                    <img src="/wp-content/themes/backfeed/assets/images/partners/hylo.png" alt="" />
+                <a href="https://www.hylo.com/" target="_blank">
+                    <img src="/wp-content/themes/backfeed/assets/images/partners/hylo.png" alt="Hylo" />
                 </a>
             </div>
 
             <div class="partner">
-                <a href="" target="_blank">
-                    <img src="/wp-content/themes/backfeed/assets/images/partners/lazuz.png" alt="" />
+                <a href="http://lazooz.org/" target="_blank">
+                    <img src="/wp-content/themes/backfeed/assets/images/partners/lazuz.png" alt="Lazooz" />
                 </a>
             </div>
 
             <div class="partner">
                 <a href="http://ouishare.net/" target="_blank">
-                    <img src="/wp-content/themes/backfeed/assets/images/partners/ouishare.png" alt="" />
+                    <img src="/wp-content/themes/backfeed/assets/images/partners/ouishare.png" alt="OuiShare" />
                 </a>
             </div>
         </div>
