@@ -119,6 +119,11 @@
   margin-left: 1rem;
   margin-top: 1rem;
   transition: margin 0.5s ease;
+  
+  small {
+    color: grey;
+    font-style: italic;
+  }
 }
 
 .press-item:hover .press-body {
