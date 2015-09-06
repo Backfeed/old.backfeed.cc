@@ -108,6 +108,32 @@
   opacity: 0;
 }
 
+.press-item {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.press-body {
+  flex: 0 0 240px;
+  margin-left: 1rem;
+  margin-top: 1rem;
+  transition: margin 0.5s ease;
+}
+
+.press-item:hover .press-body {
+  margin-left: 2rem;
+}
+
+#press a,
+#press a:hover {
+  text-decoration: none;
+}
+
+.press-title {
+  flex: 0 1 100px;
+}
+
 .connector {
   position: absolute;
   display: block;
@@ -142,8 +168,6 @@
     margin-top: 69px;
   }
 }
-
-
 
 #connector-a {
   opacity: 0.5;
@@ -220,7 +244,11 @@
   }
 
   #partners {
-    margin-bottom: 100px;
+    margin-bottom: 30px;
+  }
+
+  #press {
+    margin-bottom: 70px;
   }
 }
 
