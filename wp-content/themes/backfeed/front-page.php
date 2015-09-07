@@ -451,12 +451,12 @@
 
         <div class="press-item">
             <div class="press-title">
-                <a href="http://www.geektime.com/2015/08/19/backfeed-wants-to-decentralize-the-internet-and-help-you-earn-what-you-deserve/">
+                <a target="_blank" href="http://www.geektime.com/2015/08/19/backfeed-wants-to-decentralize-the-internet-and-help-you-earn-what-you-deserve/">
                     <img class="media-object" src="/wp-content/themes/backfeed/assets/images/press/geektime.png" alt="...">
                 </a>
             </div>
             <div class="press-body">
-                <a href="http://www.geektime.com/2015/08/19/backfeed-wants-to-decentralize-the-internet-and-help-you-earn-what-you-deserve/">
+                <a target="_blank" href="http://www.geektime.com/2015/08/19/backfeed-wants-to-decentralize-the-internet-and-help-you-earn-what-you-deserve/">
                     <h4 class="media-heading">Backfeed wants to decentralize the Internet and help you earn what you deserve</h4>
                 </a>
                 Founded by a small group of graduate students with a vision for a fairer society, this startup aims to start a revolution as big as the Internet itself<br /><small>from GeekTime</small>
