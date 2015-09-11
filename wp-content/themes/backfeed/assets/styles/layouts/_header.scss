@@ -84,12 +84,13 @@
       justify-content: space-between;
     }
 
-    a {
-      transition: transform 0.2s ease-out;
+    .social-icon {
+      cursor: pointer;
+      //transition: transform 0.2s ease-out;
 
-      &:hover {
+      /*&:hover {
         transform: scale(1.3);
-      }
+      }*/
     }
 
     i {
@@ -114,5 +115,18 @@
   .btn-primary {
     margin-top: 10px;
     margin-bottom: 10px;
+  }
+}
+
+#header-contact-us {
+  .morph-content {
+    width: 470px;
+    height: 520px;
+    top: 44%!important;
+    left: 44%!important;
+  }
+
+  input[type="submit"] {
+    width: 80%;
   }
 }

@@ -64,7 +64,17 @@
           partnerLabel.animate({'opacity': 0});
         });
 
-        var subscribeWidget = new UIMorphingButton(document.getElementById('header-subscribe'), {closeEl:'.icon-close'});
+        var subscribeModal = new UIMorphingButton(document.getElementById('header-subscribe'), {
+          closeEl:'.icon-close',
+          onBeforeOpen : function() { $('body').addClass('modal-open'); },
+          onBeforeClose : function() { $('body').removeClass('modal-open'); },
+        });
+
+        var emailModal = new UIMorphingButton(document.getElementById('header-contact-us'), {
+          closeEl:'.icon-close',
+          onBeforeOpen : function() { $('body').addClass('modal-open'); },
+          onBeforeClose : function() { $('body').removeClass('modal-open'); },
+        });
       },
       finalize: function() {
         // JavaScript to be fired on the home page, after the init JS
