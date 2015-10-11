@@ -1,11 +1,5 @@
 <?php
 
-if( ! defined( 'MC4WP_VERSION' ) ) {
-	header( 'Status: 403 Forbidden' );
-	header( 'HTTP/1.1 403 Forbidden' );
-	exit;
-}
-
 class MC4WP_Styles_Builder {
 
 	/**
@@ -57,6 +51,10 @@ class MC4WP_Styles_Builder {
 			'default' => '',
 			'type' => 'text'
 		),
+		'form_background_repeat' => array(
+			'default' => 'repeat',
+			'type' => 'text'
+		),
 		'form_font_color' => array(
 			'default' => '',
 			'type' => 'color'
@@ -75,7 +73,7 @@ class MC4WP_Styles_Builder {
 		),
 		'form_text_align' => array(
 			'default' => '',
-			'type' => ''
+			'type' => 'text'
 		),
 		'form_font_size' => array(
 			'default' => '',
@@ -87,7 +85,7 @@ class MC4WP_Styles_Builder {
 		),
 		'labels_font_style' => array(
 			'default' => '',
-			'type' => ''
+			'type' => 'text'
 		),
 		'labels_font_size' => array(
 			'default' => '',
@@ -95,7 +93,7 @@ class MC4WP_Styles_Builder {
 		),
 		'labels_display' => array(
 			'default' => '',
-			'type' => ''
+			'type' => 'text'
 		),
 		'labels_vertical_margin' => array(
 			'default' => '',
@@ -135,7 +133,7 @@ class MC4WP_Styles_Builder {
 		),
 		'fields_display' => array(
 			'default' => '',
-			'type' => ''
+			'type' => 'text'
 		),
 		'buttons_background_color' => array(
 			'default' => '',
@@ -199,12 +197,12 @@ class MC4WP_Styles_Builder {
 	/**
 	 * @var array
 	 */
-	protected $default_form_styles = array();
+	public $default_form_styles = array();
 
 	/**
 	 * @var array
 	 */
-	protected $styles = array();
+	public $styles = array();
 
 	/**
 	 * Constructor
@@ -241,7 +239,7 @@ class MC4WP_Styles_Builder {
 	 *
 	 * @return bool
 	 */
-	protected function delete_form_styles( $form_id ) {
+	public function delete_form_styles( $form_id ) {
 		if( isset( $this->styles['form-' . $form_id ] ) ) {
 			unset( $this->styles['form-' . $form_id ] );
 			return true;
@@ -251,11 +249,11 @@ class MC4WP_Styles_Builder {
 	}
 
 	/**
-	 * @param $from_id
-	 * @param $to_id
+	 * @param int $from_id
+	 * @param int $to_id
 	 * @return bool
 	 */
-	protected function copy_form_styles( $from_id, $to_id ) {
+	public function copy_form_styles( $from_id, $to_id ) {
 		if( isset( $this->styles['form-' . $from_id ] ) ) {
 			$this->styles['form-' . $to_id ] = $this->styles['form-' . $from_id ];
 			return true;
@@ -362,34 +360,8 @@ class MC4WP_Styles_Builder {
 				}
 
 				// sanitize field since it's not default
-				switch( $this->fields[ $key ]['type'] ) {
-					case 'color':
-						// make sure colors start with #
-						$value = '#' . ltrim( trim( $value ), '#' );
-						break;
-
-					case 'px':
-						// make sure px and % end with 'px' or '%'
-						$value = str_replace( ' ', '', strtolower( $value ) );
-
-						if( substr( $value, -1 ) !== '%' && substr( $value, -2 ) !== 'px') {
-							$value = floatval( $value ) . 'px';
-						}
-
-						break;
-
-					case 'int':
-						$value = absint( $value );
-						break;
-
-					case 'selector':
-						$value = trim( $value ) . ' ';
-						break;
-
-					case 'text':
-						$value = trim( $value );
-						break;
-				}
+				$type = $this->fields[ $key ]['type'];
+				$value = call_user_func( array( $this, 'sanitize_' . $type ), $value );
 
 				// save css value
 				$sanitized_form_styles[ $key ] = $value;
@@ -400,6 +372,69 @@ class MC4WP_Styles_Builder {
 		}
 
 		return $this->styles;
+	}
+
+	/**
+	 * Sanitize color values
+	 *
+	 * @param $value
+	 *
+	 * @return string
+	 */
+	public function sanitize_color( $value ) {
+		// make sure colors start with #
+		return '#' . ltrim( trim( $value ), '#' );
+	}
+
+	/**
+	 * Sanitize pixel value
+	 *
+	 * @param $value
+	 *
+	 * @return mixed|string
+	 */
+	public function sanitize_px( $value ) {
+		// make sure px and % end with 'px' or '%'
+		$value = str_replace( ' ', '', strtolower( $value ) );
+
+		if( substr( $value, -1 ) !== '%' && substr( $value, -2 ) !== 'px') {
+			$value = floatval( $value ) . 'px';
+		}
+
+		return $value;
+	}
+
+	/**
+	 * Sanitize integer value
+	 *
+	 * @param $value
+	 *
+	 * @return int
+	 */
+	public function sanitize_int( $value ) {
+		return intval( $value );
+	}
+
+	/**
+	 * Sanitize CSS selector value
+	 *
+	 * @param $value
+	 *
+	 * @return string
+	 */
+	public function sanitize_selector( $value ) {
+		return trim( $value ) . ' ';
+	}
+
+	/**
+	 * Sanitize text value
+	 *
+	 * @param $value
+	 *
+	 * @return string
+	 */
+	public function sanitize_text( $value ) {
+		return trim( $value );
 	}
 
 	/**
@@ -433,9 +468,11 @@ class MC4WP_Styles_Builder {
 
 		// Check if file was successfully created
 		if( ! is_array( $file ) || $file['error'] !== false ) {
-			$message = sprintf( __( 'Couldn\'t create the stylesheet. Manually add the generated CSS to your theme stylesheet or use a plugin like <em>%s</em>.', 'mailchimp-for-wp' ), '<a href="https://wordpress.org/plugins/simple-custom-css/">Simple Custom CSS</a>' );
-			$button = ' ' . sprintf( __( '%sShow generated CSS%s', 'mailchimp-for-wp' ), '<a class="mc4wp-show-css button" href="javascript:void(0);">', '</a>' );
-			add_settings_error( 'mc4wp', 'mc4wp-css', $message . ' ' . $button .'</strong><textarea id="mc4wp_generated_css" readonly style="display:none; width: 100%; min-height: 300px; margin-top: 20px;">'. esc_html( $css_string ) .'</textarea><strong>' );
+			$message = sprintf( __( 'Error creating stylesheet: %s', 'mailchimp-for-wp' ), '</strong>' . $file['error'] ) . '<br />';
+			$message .= sprintf( __( 'Please add the generated CSS to your theme stylesheet manually or use a plugin like <em>%s</em>.', 'mailchimp-for-wp' ), '<a href="https://wordpress.org/plugins/simple-custom-css/">Simple Custom CSS</a>' ) . '<br />';
+			$message .= '<a class="mc4wp-show-css button" href="javascript:void(0);">' . __( 'Show generated CSS', 'mailchimp-for-wp' ) . '</a>';
+			$message .= '<textarea id="mc4wp_generated_css" readonly style="display:none; width: 100%; min-height: 300px; margin-top: 20px;">'. esc_html( $css_string ) .'</textarea><strong>';
+			add_settings_error( 'mc4wp', 'mc4wp-css', $message );
 			return false;
 		}
 
@@ -447,14 +484,12 @@ class MC4WP_Styles_Builder {
 		update_option( 'mc4wp_custom_css_file', $custom_stylesheet );
 
 		// show notice
-		add_settings_error( 'mc4wp', 'mc4wp-css', sprintf( __( 'The %sCSS Stylesheet%s has been created.', 'mailchimp-for-wp' ), '<a href="'. $file['url'] .'">', '</a>' ), 'updated' );
+		add_settings_error( 'mc4wp', 'mc4wp-css', sprintf( __( 'The <a href="%s">CSS Stylesheet</a> has been created.', 'mailchimp-for-wp' ), $file['url'] ), 'updated' );
 		return true;
 	}
 
 	/**
 	 * Turns array of CSS values into CSS stylesheet string
-	 *
-	 * @todo only generate rules which have a custom value set (to decrease size of generated stylesheet)
 	 *
 	 * @return string
 	 */
@@ -474,9 +509,7 @@ class MC4WP_Styles_Builder {
 
 			// Build CSS styles for this form
 			extract( $form_styles );
-			require MC4WP_PLUGIN_DIR . 'includes/views/parts/css-styles.php';
-
-
+			include MC4WP_PLUGIN_DIR . 'includes/views/parts/css-styles.php';
 		}
 
 		// get output buffer

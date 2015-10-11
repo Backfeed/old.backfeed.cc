@@ -48,17 +48,22 @@ if( ! class_exists( 'DVK_Plugin_Update_Manager', false ) ) {
 			$remote_data = $this->get_remote_data();
 
 			// did we get a response?
-			if( $remote_data === false ) {
+			if( ! isset( $remote_data->new_version ) ) {
 				return $data;
 			}
 
-			// compare local version with remote version
-			if ( version_compare( $this->product->get_version(), $remote_data->new_version, '<' ) ) {
-
-				// remote version is newer, add to data
-				$data->response[ $this->product->get_slug() ] = $remote_data;
-
+			// if local version is higher or equal to remote version, do nothing
+			if ( version_compare( $this->product->version, $remote_data->new_version, '>=' ) ) {
+				return $data;
 			}
+
+			// if PHP < 5.3 and remote version > 3.0, don't show
+			if( version_compare( PHP_VERSION, '5.3', '<' ) && version_compare( $remote_data->new_version, '3', '>=' ) ) {
+				return $data;
+			}
+
+			// add remote version to data
+			$data->response[ $this->product->plugin_basename ] = $remote_data;
 
 			return $data;
 		}
@@ -77,14 +82,14 @@ if( ! class_exists( 'DVK_Plugin_Update_Manager', false ) ) {
 		public function plugins_api_filter( $data, $action, $args ) {
 
 			// only do something if we're checking for our plugin
-			if ( $action !== 'plugin_information' || $args->slug !== $this->product->get_slug() ) {
+			if ( $action !== 'plugin_information' || $args->slug !== $this->product->slug ) {
 				return $data;
 			}
 
 			$api_response = $this->get_remote_data();
 
 			// did we get a response?
-			if ( $api_response === false ) {
+			if( ! is_object( $api_response ) ) {
 				return $data;
 			}
 

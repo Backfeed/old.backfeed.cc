@@ -7,7 +7,7 @@ if( ! defined( 'MC4WP_VERSION' ) ) {
 ?>
 <div id="mc4wp-admin" class="wrap">
 
-	<h2><img src="<?php echo MC4WP_PLUGIN_URL . 'assets/img/menu-icon.png'; ?>" /> <?php _e( 'MailChimp for WordPress', 'mailchimp-for-wp' ); ?>: <?php _e( 'License & API Settings', 'mailchimp-for-wp' ); ?></h2>
+	<h1 class="page-title"><?php _e( 'MailChimp for WordPress', 'mailchimp-for-wp' ); ?>: <?php _e( 'License & API Settings', 'mailchimp-for-wp' ); ?></h1>
 
 		<?php settings_errors(); ?>
 

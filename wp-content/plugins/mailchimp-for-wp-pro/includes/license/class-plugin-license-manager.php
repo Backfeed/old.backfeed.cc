@@ -19,7 +19,7 @@ if ( ! class_exists( 'DVK_Plugin_License_Manager', false ) ) {
 					require_once( ABSPATH . '/wp-admin/includes/plugin.php' );
 				}
 
-				$this->is_network_activated = is_plugin_active_for_network( $product->get_slug() );
+				$this->is_network_activated = is_plugin_active_for_network( $product->plugin_basename );
 			}
 		}
 
@@ -41,7 +41,7 @@ if ( ! class_exists( 'DVK_Plugin_License_Manager', false ) ) {
 		public function specific_hooks() {
 
 			// deactivate the license remotely on plugin deactivation
-			register_deactivation_hook( $this->product->get_slug(), array( $this, 'deactivate_license' ) );
+			register_deactivation_hook( $this->product->slug, array( $this, 'deactivate_license' ) );
 		}
 
 		/**
@@ -64,7 +64,7 @@ if ( ! class_exists( 'DVK_Plugin_License_Manager', false ) ) {
 
 		        // We're on the network admin
 		        parent::show_license_form_heading();
-		        echo '<p>' . sprintf( __( '%s is network activated. Please contact your site administrator to manage the license.', $this->product->get_text_domain() ), $this->product->get_item_name() ) . '</p>';
+		        echo '<p>' . sprintf( __( '%s is network activated. Please contact your site administrator to manage the license.', $this->product->text_domain ), $this->product->item_name ) . '</p>';
 
 		    }  else {
 				parent::show_license_form( $embedded );

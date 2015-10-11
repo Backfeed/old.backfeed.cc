@@ -1,37 +1,44 @@
 <?php
-if( ! defined( 'MC4WP_VERSION' ) ) {
-	header( 'Status: 403 Forbidden' );
-	header( 'HTTP/1.1 403 Forbidden' );
-	exit;
-}
 
 class MC4WP_MailChimp {
+
+	/**
+	 * @var string
+	 */
+	protected $transient_name = 'mc4wp_mailchimp_lists';
+
+	/**
+	 * Empty the Lists cache
+	 */
+	public function empty_cache() {
+		delete_transient( $this->transient_name );
+		delete_transient( $this->transient_name . '_fallback' );
+	}
 
 	/**
 	 * Get MailChimp lists
 	 * Try cache first, then try API, then try fallback cache.
 	 *
-	 * @param bool $force_renewal
+	 * @param bool $force_refresh
 	 * @param bool $force_fallback
 	 *
 	 * @return array
 	 */
-	public function get_lists( $force_renewal = false, $force_fallback = false ) {
+	public function get_lists( $force_refresh = false, $force_fallback = false ) {
 
-		if( $force_renewal ) {
-			delete_transient( 'mc4wp_mailchimp_lists' );
-			delete_transient( 'mc4wp_mailchimp_lists_fallback' );
+		if( $force_refresh ) {
+			$this->empty_cache();
 		}
 
-		$cached_lists = get_transient( 'mc4wp_mailchimp_lists' );
+		$cached_lists = get_transient( $this->transient_name  );
 
 		// if force_fallback is true, get lists from older transient
 		if( $force_fallback ) {
-			$cached_lists = get_transient( 'mc4wp_mailchimp_lists_fallback' );
+			$cached_lists = get_transient( $this->transient_name . '_fallback' );
 		}
 
 		// got lists? if not, proceed with API call.
-		if( empty( $cached_lists ) ) {
+		if( ! is_array( $cached_lists ) ) {
 
 			// make api request for lists
 			$api = mc4wp_get_api();
@@ -51,14 +58,16 @@ class MC4WP_MailChimp {
 						'interest_groupings' => array()
 					);
 
-					// get interest groupings
-					$groupings_data = $api->get_list_groupings( $list->id );
-					if ( $groupings_data ) {
-						$lists["{$list->id}"]->interest_groupings = array_map( array( $this, 'strip_unnecessary_grouping_properties' ), $groupings_data );
+					// only get interest groupings if list has some
+					if( $list->stats->grouping_count > 0 ) {
+						// get interest groupings
+						$groupings_data = $api->get_list_groupings( $list->id );
+						if ( $groupings_data ) {
+							$lists["{$list->id}"]->interest_groupings = array_map( array( $this, 'strip_unnecessary_grouping_properties' ), $groupings_data );
+						}
 					}
 
 				}
-
 
 				// get merge vars for all lists at once
 				$merge_vars_data = $api->get_lists_with_merge_vars( array_keys( $lists ) );
@@ -70,15 +79,16 @@ class MC4WP_MailChimp {
 				}
 
 				// store lists in transients
-				set_transient( 'mc4wp_mailchimp_lists', $lists, ( 24 * 3600 ) ); // 1 day
-				set_transient( 'mc4wp_mailchimp_lists_fallback', $lists, 1209600 ); // 2 weeks
+				set_transient(  $this->transient_name, $lists, ( 24 * 3600 ) ); // 1 day
+				set_transient(  $this->transient_name . '_fallback', $lists, 1209600 ); // 2 weeks
+
 				return $lists;
 			} else {
 				// api request failed, get fallback data (with longer lifetime)
-				$cached_lists = get_transient( 'mc4wp_mailchimp_lists_fallback' );
+				$cached_lists = get_transient( $this->transient_name . '_fallback' );
 
-				if ( ! $cached_lists ) {
-					return array();
+				if ( ! is_array( $cached_lists ) ) {
+					return false;
 				}
 			}
 
@@ -97,7 +107,6 @@ class MC4WP_MailChimp {
 	 * @return bool
 	 */
 	public function get_list( $list_id, $force_renewal = false, $force_fallback = false ) {
-
 		$lists = $this->get_lists( $force_renewal, $force_fallback );
 
 		if( isset( $lists[$list_id] ) ) {
@@ -114,54 +123,10 @@ class MC4WP_MailChimp {
 	 * @return string
 	 */
 	public function get_list_name( $id ) {
-
-		$list = $this->get_list( $id, false, true );
+		$list = $this->get_list( $id );
 
 		if( is_object( $list ) && isset( $list->name ) ) {
 			return $list->name;
-		}
-
-		return '';
-	}
-
-	/**
-	 * Get the name of a list field by its merge tag
-	 *
-	 * @param $list_id
-	 * @param $tag
-	 *
-	 * @return string
-	 */
-	public function get_list_field_name_by_tag( $list_id, $tag ) {
-
-		// try default fields
-		switch( $tag ) {
-
-			case 'EMAIL':
-				return __( 'Email address', 'mailchimp-for-wp' );
-				break;
-
-
-			case 'OPTIN_IP':
-				return __( 'IP Address', 'mailchimp-for-wp' );
-				break;
-		}
-
-		// try to find field in list
-		$list = $this->get_list( $list_id, false, true );
-
-		if( is_object( $list ) && isset( $list->merge_vars ) ) {
-
-			// try list merge vars first
-			foreach( $list->merge_vars as $field ) {
-
-				if( $field->tag !== $tag ) {
-					continue;
-				}
-
-				return $field->name;
-			}
-
 		}
 
 		return '';
@@ -203,7 +168,7 @@ class MC4WP_MailChimp {
 	public function get_list_grouping_name( $list_id, $grouping_id ) {
 
 		$grouping = $this->get_list_grouping( $list_id, $grouping_id );
-		if( $grouping ) {
+		if( isset( $grouping->name ) ) {
 			return $grouping->name;
 		}
 
@@ -236,7 +201,7 @@ class MC4WP_MailChimp {
 	/**
 	 * Returns number of subscribers on given lists.
 	 *
-	 * @param array $list_ids of list id's.
+	 * @param array $list_ids Array of list id's.
 	 * @return int Sum of subscribers for given lists.
 	 */
 	public function get_subscriber_count( $list_ids ) {
@@ -248,8 +213,7 @@ class MC4WP_MailChimp {
 
 		$list_counts = get_transient( 'mc4wp_list_counts' );
 
-		if ( false === $list_counts ) {
-
+		if( false === $list_counts ) {
 			// make api call
 			$api = mc4wp_get_api();
 			$lists = $api->get_lists();
@@ -261,12 +225,6 @@ class MC4WP_MailChimp {
 					$list_counts["{$list->id}"] = $list->stats->member_count;
 				}
 
-				/**
-				 * @filter `mc4wp_lists_count_cache_time`
-				 * @expects int
-				 *
-				 * Sets the amount of time the subscriber count for lists should be stored
-				 */
 				$transient_lifetime = apply_filters( 'mc4wp_lists_count_cache_time', 1200 ); // 20 mins by default
 
 				set_transient( 'mc4wp_list_counts', $list_counts, $transient_lifetime );
@@ -278,7 +236,6 @@ class MC4WP_MailChimp {
 					return 0;
 				}
 			}
-
 		}
 
 		// start calculating subscribers count for all list combined
@@ -292,16 +249,20 @@ class MC4WP_MailChimp {
 
 	/**
 	 * Build the group array object which will be stored in cache
+	 *
+	 * @param object $group
 	 * @return object
 	 */
 	public function strip_unnecessary_group_properties( $group ) {
 		return (object) array(
-			'name' => $group->name
+			'name' => $group->name,
 		);
 	}
 
 	/**
 	 * Build the groupings array object which will be stored in cache
+	 *
+	 * @param object $grouping
 	 * @return object
 	 */
 	public function strip_unnecessary_grouping_properties( $grouping ) {
@@ -309,12 +270,14 @@ class MC4WP_MailChimp {
 			'id' => $grouping->id,
 			'name' => $grouping->name,
 			'groups' => array_map( array( $this, 'strip_unnecessary_group_properties' ), $grouping->groups ),
-			'form_field' => $grouping->form_field
+			'form_field' => $grouping->form_field,
 		);
 	}
 
 	/**
 	 * Build the merge_var array object which will be stored in cache
+	 *
+	 * @param object $merge_var
 	 * @return object
 	 */
 	public function strip_unnecessary_merge_vars_properties( $merge_var ) {
@@ -322,7 +285,7 @@ class MC4WP_MailChimp {
 			'name' => $merge_var->name,
 			'field_type' => $merge_var->field_type,
 			'req' => $merge_var->req,
-			'tag' => $merge_var->tag
+			'tag' => $merge_var->tag,
 		);
 
 		if ( isset( $merge_var->choices ) ) {
@@ -331,6 +294,38 @@ class MC4WP_MailChimp {
 
 		return (object) $array;
 
+	}
+
+	/**
+	 * Get the name of a list field by its merge tag
+	 *
+	 * @param $list_id
+	 * @param $tag
+	 *
+	 * @return string
+	 */
+	public function get_list_field_name_by_tag( $list_id, $tag ) {
+		// try default fields
+		switch( $tag ) {
+			case 'EMAIL':
+				return __( 'Email address', 'mailchimp-for-wp' );
+				break;
+			case 'OPTIN_IP':
+				return __( 'IP Address', 'mailchimp-for-wp' );
+				break;
+		}
+		// try to find field in list
+		$list = $this->get_list( $list_id, false, true );
+		if( is_object( $list ) && isset( $list->merge_vars ) ) {
+			// try list merge vars first
+			foreach( $list->merge_vars as $field ) {
+				if( $field->tag !== $tag ) {
+					continue;
+				}
+				return $field->name;
+			}
+		}
+		return '';
 	}
 
 }

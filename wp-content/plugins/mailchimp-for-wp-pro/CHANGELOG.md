@@ -1,5 +1,109 @@
 == Changelog ==
 
+= 2.7.20 - October 2, 2015 =
+
+Fixes license issue with network-activated plugins.
+
+= 2.7.19 - October 1, 2015 =
+
+**Fixes**
+
+- Changelog not showing for available updates.
+- JavaScript error when page has no submit button.
+
+**Improvements**
+
+- Various improvements to the license management & plugin update functionality.
+- Styles Builder: improved error message when stylesheet can't be created.
+- Reports now uses local WordPress' timezone.
+
+**Additions**
+
+- You can now control whether a background image should repeat itself in the Styles Builder.
+
+= 2.7.18 - September 25, 2015 =
+
+**Fixes**
+
+- Honeypot causing horizontal scrollbar on RTL sites.
+
+**Improvements**
+
+- Minor styling improvements for RTL sites.
+- MailChimp list fields of type "website" will now become HTML5 `url` type fields.
+- Auto-prefix fields of type `url` with `http://`
+
+= 2.7.17 - September 23, 2015 =
+
+**Fixes**
+
+- Licenses were showing as expired, when they were not.
+- Certain fields were incorrectly being hidden when using one of the default form themes.
+
+= 2.7.16 - September 21, 2015 =
+
+**Fixes**
+
+- Issue with interest groupings not being fetched after updating to v2.7.15
+
+= 2.7.15 - September 21, 2015 =
+
+**Fixes**
+
+- Honeypot field being filled by browser's autocomplete.
+- Empty response from MailChimp API
+- Your license expiration date is now updated with each update check.
+
+**Improvements**
+
+- Do not query MailChimp API for interest groupings if list has none.
+- Integration errors are now logged to PHP's error log for easier debugging.
+- Email notification now uses local date & time format.
+
+**Additions**
+
+- You can now use shortcodes in the form content.
+
+= 2.7.14 - September 9, 2015 =
+
+**Fixes**
+
+- CSS issue with rounded corners for buttons on Mobile Safari.
+
+= 2.7.13 - September 7, 2015 =
+
+**Fixes**
+
+- Showing "not connected" when the plugin was actually connected to MailChimp.
+- Issue with `address` fields when `addr1` was not given.
+- Comment form checkbox not outputted for some older themes.
+
+**Improvements**
+
+- Do not flush MailChimp cache on every settings save.
+- Add default CSS styles for `number` fields.
+
+= 2.7.12 - September 1, 2015 =
+
+**Fixes**
+
+- Line height inconsistency between Styles Builder preview and actual result
+
+**Improvements**
+
+- MailChimp lists cache is now automatically flushed after changing your API key setting.
+- Better field population after submitting a form with errors.
+- More helpful error message when no list is selected.
+- Translate options when installing plugin from a language other than English.
+- Add form mark-up to WPML configuration file.
+- Sign-up checkbox in comment form is now shown before the "submit comment" button.
+- URL-encode variables in "Redirect URL" setting.
+- Better error message when connected to MailChimp but account has no lists.
+
+**Additions**
+
+- Add `mc4wp_form_action` filter to set a custom `action` attribute on the form element.
+
 = 2.7.11 - August 18, 2015 =
 
 **Fixes**

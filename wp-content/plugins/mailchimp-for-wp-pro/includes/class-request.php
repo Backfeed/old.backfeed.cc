@@ -13,7 +13,7 @@ abstract class MC4WP_Request implements iMC4WP_Request {
 	/**
 	 * @var MC4WP_Form
 	 */
-	protected $form;
+	public $form;
 
 	/**
 	 * @var string
@@ -40,6 +40,11 @@ abstract class MC4WP_Request implements iMC4WP_Request {
 	 */
 	public $user_data = array();
 
+	/**
+	 * @var
+	 */
+	public $http_referer = '';
+
 
 	/**
 	 * Constructor
@@ -59,6 +64,11 @@ abstract class MC4WP_Request implements iMC4WP_Request {
 
 		// get form this request belongs to and bind request to that form
 		$this->form = MC4WP_Form::get( (int) $this->internal_data['form_id'], $this );
+
+		// get referer
+		if( ! empty( $_SERVER['HTTP_REFERER'] ) ) {
+			$this->http_referer = strip_tags( $_SERVER['HTTP_REFERER'] );
+		}
 	}
 
 	/**
@@ -75,7 +85,13 @@ abstract class MC4WP_Request implements iMC4WP_Request {
 				// remove data from array
 				unset( $data[$key] );
 
-				$key = substr( $key,7 );
+				$key = substr( $key, 7 );
+
+				// if key starts with h_, change it to say "honeypot" (because field has dynamic name attribute)
+				if( strpos( $key, 'ho_' ) === 0 ){
+					$key = 'honeypot';
+				}
+
 				$config[ $key ] = $value;
 			}
 		}
@@ -201,9 +217,9 @@ abstract class MC4WP_Request implements iMC4WP_Request {
 		$additional_replacements = array(
 			'{form_id}' => $this->form->ID,
 			'{form_element}' => $this->form_element_id,
-			'{email}' => urlencode( $this->user_data['EMAIL'] )
+			'{email}' => $this->user_data['EMAIL']
 		);
-		$url = MC4WP_Tools::replace_variables( $this->form->settings['redirect'], $additional_replacements );
+		$url = MC4WP_Tools::replace_variables( $this->form->settings['redirect'], $additional_replacements, null, 'url' );
 		return $url;
 	}
 
@@ -258,7 +274,6 @@ abstract class MC4WP_Request implements iMC4WP_Request {
 
 	}
 
-
 	/**
 	 * Get MailChimp List(s) to subscribe to
 	 *
@@ -268,23 +283,23 @@ abstract class MC4WP_Request implements iMC4WP_Request {
 
 		$lists = $this->form->settings['lists'];
 
-		// get lists from form, if set.
-		if( isset( $this->internal_data['lists'] ) && ! empty( $this->internal_data['lists'] ) ) {
+		// get lists from request, if set.
+		if( ! empty( $this->internal_data['lists'] ) ) {
 
 			$lists = $this->internal_data['lists'];
 
 			// make sure lists is an array
 			if( ! is_array( $lists ) ) {
 				$lists = sanitize_text_field( $lists );
-				$lists = array( $lists );
+				$lists = array_map( 'trim', explode( ',', $lists ) );
 			}
 
 		}
 
 		// allow plugins to alter the lists to subscribe to
-		$lists = apply_filters( 'mc4wp_lists', $lists );
+		$lists = (array) apply_filters( 'mc4wp_lists', $lists );
 
-		return (array) $lists;
+		return $lists;
 	}
 
 	/**

@@ -34,7 +34,7 @@ if( ! $lists || empty( $lists ) ) {
 		<select class="widefat" id="mc4wp-fw-mailchimp-fields">
 			<option class="default" value="" disabled selected><?php _e( 'Select MailChimp field..' , 'mailchimp-for-wp' ); ?></option>
 			<optgroup label="MailChimp Fields" class="merge-fields"></optgroup>
-			<optgroup label="Interest Groupings" class="groupings"></optgroup>
+			<optgroup label="Groupings" class="groupings"></optgroup>
 			<optgroup label="Other" class="other">
 				<option class="default" value="submit"><?php _e( 'Submit button' ,'mailchimp-for-wp' ); ?></option>
 				<option class="default" value="_lists"><?php _e( 'List choice' ,'mailchimp-for-wp' ); ?></option>

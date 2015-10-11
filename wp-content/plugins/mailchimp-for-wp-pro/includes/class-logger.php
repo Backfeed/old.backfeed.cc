@@ -87,7 +87,10 @@ class MC4WP_Logger {
 				'method'    => $method,
 				'type'      => $type,
 				'related_object_ID' => absint( $related_object_id ),
-				'url'       => $url
+				'url'       => $url,
+
+				// store GMT date
+				'datetime'  => current_time( 'mysql', true )
 			)
 		);
 	}

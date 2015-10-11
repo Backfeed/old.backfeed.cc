@@ -2,6 +2,11 @@
 
 class MC4WP_Tools {
 
+	/*
+	 * Replacement output when performing string replacements
+	 */
+	public static $replacement_output = 'string';
+
 	/**
 	 * @param array $merge_vars
 	 *
@@ -14,8 +19,8 @@ class MC4WP_Tools {
 			if( ! isset( $merge_vars['FNAME'] ) && ! isset( $merge_vars['LNAME'] ) ) {
 				$strpos = strpos( $merge_vars['NAME'], ' ' );
 				if ( $strpos !== false ) {
-					$merge_vars['FNAME'] = substr( $merge_vars['NAME'], 0, $strpos );
-					$merge_vars['LNAME'] = substr( $merge_vars['NAME'], $strpos );
+					$merge_vars['FNAME'] = trim( substr( $merge_vars['NAME'], 0, $strpos ) );
+					$merge_vars['LNAME'] = trim( substr( $merge_vars['NAME'], $strpos ) );
 				} else {
 					$merge_vars['FNAME'] = $merge_vars['NAME'];
 				}
@@ -28,14 +33,17 @@ class MC4WP_Tools {
 	/**
 	 * Returns text with {variables} replaced.
 	 *
-	 * @param    string $string
-	 * @param array     $additional_replacements
-	 * @param array Array of list ID's (needed if {subscriber_count} is set
+	 * @param string $string
+	 * @param array $additional_replacements
+	 * @param array $list_ids Array of list ID's (needed if {subscriber_count} is set
+	 * @param string $output
 	 *
 	 * @return string $text       The text with {variables} replaced.
 	 * replaced.
 	 */
-	public static function replace_variables( $string, $additional_replacements = array(), $list_ids = array() ) {
+	public static function replace_variables( $string, $additional_replacements = array(), $list_ids = array(), $output = 'string' ) {
+
+		self::$replacement_output = $output;
 
 		// replace general vars
 		$replacements = array(
@@ -70,10 +78,15 @@ class MC4WP_Tools {
 		$replacements = array_merge( $replacements, $additional_replacements );
 
 		// subscriber count? only fetch these if the tag is actually used
-		if ( stristr( $string, '{subscriber_count}' ) !== false ) {
+		if ( stripos( $string, '{subscriber_count}' ) !== false ) {
 			$mailchimp = new MC4WP_MailChimp();
 			$subscriber_count = $mailchimp->get_subscriber_count( $list_ids );
 			$replacements['{subscriber_count}'] = $subscriber_count;
+		}
+
+		// encode replacements when output type is set to 'url'
+		if( self::$replacement_output === 'url' ) {
+			$replacements = urlencode_deep( $replacements );
 		}
 
 		// perform the replacement
@@ -99,6 +112,12 @@ class MC4WP_Tools {
 		$request_data = array_change_key_case( $_REQUEST, CASE_UPPER );
 
 		if( isset( $request_data[ $variable ] ) && is_scalar( $request_data[ $variable ] ) ) {
+
+			// return urlencoded variable if replacement output is set to 'url'
+			if( self::$replacement_output === 'url' ) {
+				return urlencode( $request_data[ $variable ] );
+			}
+
 			return esc_html( $request_data[ $variable ] );
 		}
 
@@ -163,6 +182,24 @@ class MC4WP_Tools {
 		$expiration_time = apply_filters( 'mc4wp_cookie_expiration_time', strtotime( '+90 days' ) );
 
 		setcookie( 'mc4wp_email', $email, $expiration_time, '/' );
+	}
+
+	/**
+	 * @param $datetime
+	 * @param string $format
+	 *
+	 * @return bool|string
+	 */
+	public static function mysql_datetime_to_local_datetime( $datetime, $format = '' ) {
+
+		if( $format === '' ) {
+			$format = get_option( 'date_format' ) . ' ' . get_option( 'time_format' );
+		}
+
+		// add or subtract GMT offset to given mysql time
+		$local_datetime = strtotime( $datetime ) + ( get_option( 'gmt_offset') * HOUR_IN_SECONDS );
+
+		return date( $format, $local_datetime );
 	}
 	
 }

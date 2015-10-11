@@ -45,8 +45,8 @@ if( ! class_exists( 'DVK_Update_Manager', false ) ) {
 			global $pagenow;
 
 			if( $pagenow === 'update-core.php' && isset( $_GET['force-check'] ) ) {
-				delete_site_transient( $this->product->get_prefix() . 'update-response' );
-				delete_site_transient( $this->product->get_prefix() . 'update-request-failed' );
+				delete_site_transient( $this->product->prefix . 'update-response' );
+				delete_site_transient( $this->product->prefix . 'update-request-failed' );
 			}
 		}
 
@@ -61,7 +61,7 @@ if( ! class_exists( 'DVK_Update_Manager', false ) ) {
 
 			?>
 			<div class="error">
-				<p><?php printf( __( '%s failed to check for updates because of the following error: <em>%s</em>', $this->product->get_text_domain() ), $this->product->get_item_name(), $this->error_message ); ?></p>
+				<p><?php printf( __( '%s failed to check for updates because of the following error: <em>%s</em>', $this->product->text_domain ), $this->product->item_name, $this->error_message ); ?></p>
 			</div>
 			<?php
 		}
@@ -86,23 +86,23 @@ if( ! class_exists( 'DVK_Update_Manager', false ) ) {
 		private function call_remote_api() {
 
 			// only check if the failed transient is not set (or if it's expired)
-			if( get_site_transient( $this->product->get_prefix() . 'update-request-failed' ) !== false ) {
+			if( get_site_transient( $this->product->prefix . 'update-request-failed' ) !== false ) {
 				return false;
 			}
 
 			// set a transient to prevent failed update checks on every page load
 			// this transient will be removed if a request succeeds
-			set_site_transient( $this->product->get_prefix() . 'update-request-failed', 'failed', 10800 );
+			set_site_transient( $this->product->prefix . 'update-request-failed', 'failed', 10800 );
 
 			// setup api parameters
 			$api_params = array(
 				'edd_action' => 'get_version',
 				'license'    => $this->license_manager->get_license_key(),
-				'item_version'     => $this->product->get_version(),
+				'item_version'     => $this->product->version,
 				'url' =>  ( $this->license_manager->is_network_activated ) ? network_site_url() : get_option( 'home' ),
 			);
 
-			$url = add_query_arg( $api_params, $this->product->get_api_url() );
+			$url = add_query_arg( $api_params, $this->product->api_url );
 
 			require_once dirname( __FILE__ ) . '/class-api-request.php';
 			$request = new DVK_API_Request( $url );
@@ -113,7 +113,7 @@ if( ! class_exists( 'DVK_Update_Manager', false ) ) {
 			}
 
 			// request succeeded, delete transient indicating a request failed
-			delete_site_transient( $this->product->get_prefix() . 'update-request-failed' );
+			delete_site_transient( $this->product->prefix . 'update-request-failed' );
 
 			// decode response
 			$response = $request->get_response();
@@ -125,18 +125,25 @@ if( ! class_exists( 'DVK_Update_Manager', false ) ) {
 				$this->license_manager->set_license_status( 'invalid' );
 
 				// show notice to let the user know we deactivated his/her license
-				$message = __( 'This site has not been activated properly on mc4wp.com and so cannot check for updates. Please activate your site with a valid license key.', $this->product->get_text_domain() );
+				$message = __( 'This site has not been activated properly on mc4wp.com and so cannot check for updates. Please activate your site with a valid license key.', $this->product->text_domain );
 				$this->schedule_error( $message );
 				return false;
 			}
 
+			// update license expiration for renewed license
+			// todo: take lifetime licenses into account (we're not using that yet, but for future ref)
+			if( ! empty( $response->license_expiration ) ) {
+				$this->license_manager->set_license_expiry_date( $response->license_expiration );
+			}
+
 			// add slug so we can omit it in the request
-			$response->slug = dirname( $this->product->get_slug() );
+			$response->slug = $this->product->slug;
 			$response->sections = maybe_unserialize( $response->sections );
-			$response->plugin = $this->product->get_slug();
+			$response->banners = (array) $response->banners;
+			$response->plugin = $this->product->plugin_basename;
 
 			// store response
-			set_site_transient( $this->product->get_prefix() . 'update-response', $response, 10800 );
+			set_site_transient( $this->product->prefix . 'update-response', $response, 10800 );
 
 			return $response;
 		}
@@ -176,7 +183,7 @@ if( ! class_exists( 'DVK_Update_Manager', false ) ) {
 		 */
 		private function get_cached_remote_data() {
 
-			$data = get_site_transient( $this->product->get_prefix() . 'update-response' );
+			$data = get_site_transient( $this->product->prefix . 'update-response' );
 
 			if( $data ) {
 				return $data;

@@ -405,13 +405,22 @@
 				'select': [ 'label', 'required', 'wrap-p', 'values'],
 				'radio': [ 'label', 'required', 'wrap-p', 'values'],
 				'date':  [ 'label', 'required', 'wrap-p', 'value']
-			}
+			};
 
 			// map MailChimp field types to HTML5 field type
 			var fieldTypesMap = {
-				'text': 'text', 'email': 'email', 'phone': 'tel', 'address': 'text', 'number': 'number',
-				'dropdown': 'select', 'date': 'date', 'birthday': 'date', 'radio': 'radio',  'checkbox': 'checkbox'
-			}
+				'text': 'text',
+				'email': 'email',
+				'phone': 'tel',
+				'address': 'text',
+				'number': 'number',
+				'dropdown': 'select',
+				'date': 'date',
+				'birthday': 'date',
+				'radio': 'radio',
+				'checkbox': 'checkbox',
+				'url': 'url'
+			};
 
 			if(fieldTypesMap[data.field_type] != undefined) {
 				fieldType = fieldTypesMap[data.field_type];

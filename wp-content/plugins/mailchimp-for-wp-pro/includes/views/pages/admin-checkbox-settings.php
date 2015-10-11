@@ -8,7 +8,7 @@ if( ! defined( 'MC4WP_VERSION' ) ) {
 
 <div id="mc4wp-admin" class="wrap checkbox-settings">
 
-	<h2><img src="<?php echo MC4WP_PLUGIN_URL . 'assets/img/menu-icon.png'; ?>" /> <?php _e( 'MailChimp for WordPress', 'mailchimp-for-wp' ); ?>: <?php _e( 'Checkbox Settings', 'mailchimp-for-wp' ); ?></h2>
+	<h1 class="page-title"><?php _e( 'MailChimp for WordPress', 'mailchimp-for-wp' ); ?>: <?php _e( 'Checkbox Settings', 'mailchimp-for-wp' ); ?></h1>
 	<?php settings_errors(); ?>
 
 	<p><?php _e( 'To use sign-up checkboxes, select at least one list and one form to add the checkbox to.', 'mailchimp-for-wp' ); ?></p>

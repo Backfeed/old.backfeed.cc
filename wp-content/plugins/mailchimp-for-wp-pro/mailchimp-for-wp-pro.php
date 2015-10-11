@@ -3,9 +3,9 @@
 Plugin Name: MailChimp for WordPress Pro
 Plugin URI: https://mc4wp.com/#utm_source=wp-plugin&utm_medium=mailchimp-for-wp-pro&utm_campaign=plugins-page
 Description: Pro version of MailChimp for WordPress. Adds various sign-up methods to your website.
-Version: 2.7.11
+Version: 2.7.20
 Author: ibericode
-Author URI: http://ibericode.com/
+Author URI: https://ibericode.com/
 License: GPL v3
 Text Domain: mailchimp-for-wp
 
@@ -34,7 +34,7 @@ if( ! defined( 'ABSPATH' ) ) {
 
 function mc4wp_pro_load_plugin() {
 
-	define( 'MC4WP_VERSION', '2.7.11' );
+	define( 'MC4WP_VERSION', '2.7.20' );
 	define( 'MC4WP_PLUGIN_FILE', __FILE__ );
 	define( 'MC4WP_PLUGIN_DIR', dirname( __FILE__ ) . '/' );
 	define( 'MC4WP_PLUGIN_URL', plugins_url( '/', __FILE__ ) );

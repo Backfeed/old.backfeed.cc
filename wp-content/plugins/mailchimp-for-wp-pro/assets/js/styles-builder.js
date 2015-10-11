@@ -164,7 +164,7 @@ var FormPreview = function(context) {
 		applyStyles();
 	}
 
-	// create option elements
+	// create option elements from HTML elements
 	function createOptions() {
 		var optionElements = document.querySelectorAll('.mc4wp-option');
 		var options = {};
@@ -222,8 +222,10 @@ var FormPreview = function(context) {
 		// set background image (if set, otherwise reset)
 		if( options["form-background-image"].getValue().length > 0 ) {
 			$elements.form.css('background-image', 'url("' + options["form-background-image"].getValue() + '")');
+			$elements.form.css('background-repeat', options["form-background-repeat"].getValue() );
 		} else {
 			$elements.form.css('background-image', 'initial');
+			$elements.form.css('background-repeat','');
 		}
 
 		if( options["form-border-width"].getValue() > 0 ) {

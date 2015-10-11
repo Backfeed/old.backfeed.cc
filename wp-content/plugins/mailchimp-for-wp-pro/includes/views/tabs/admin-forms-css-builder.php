@@ -99,12 +99,16 @@ if( ! defined( 'MC4WP_VERSION' ) ) {
 	                </tr>
 		            <tr>
 			            <th width="1"><?php _e( 'Background image', 'mailchimp-for-wp' ); ?></th>
-			            <td>
+			            <td colspan="3">
 				            <input type="text" name="mc4wp_form_styles[form-<?php echo $form_id; ?>][form_background_image]" id="form-background-image" class="mc4wp-option" value="<?php echo esc_attr( $styles['form_background_image'] ); ?>" />
 				            <input type="button" class="button upload-image" value="Upload Image" />
+				            <select class="mc4wp-option" id="form-background-repeat" name="mc4wp_form_styles[form-<?php echo $form_id; ?>][form_background_repeat]">
+					            <option value="repeat" <?php selected( $styles['form_background_repeat'], 'repeat' ); ?>><?php _e( 'Repeat image', 'mailchimp-for-wp' ); ?></option>
+					            <option value="repeat-x" <?php selected( $styles['form_background_repeat'], 'repeat-x' ); ?>><?php _e( 'Repeat horizontally', 'mailchimp-for-wp' ); ?>'</option>
+					            <option value="repeat-y" <?php selected( $styles['form_background_repeat'], 'repeat-y' ); ?>><?php _e( 'Repeat vertically', 'mailchimp-for-wp' ); ?>'</option>
+					            <option value="no-repeat" <?php selected( $styles['form_background_repeat'], 'no-repeat' ); ?>><?php _e( 'Do not repeat', 'mailchimp-for-wp' ); ?></option>
+				            </select>
 			            </td>
-			            <th width="1"></th>
-			            <td></td>
 		            </tr>
 	            </table>
 	        </div>

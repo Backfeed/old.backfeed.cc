@@ -23,7 +23,7 @@ class MC4WP_Forms_Table extends WP_List_Table {
 	/**
 	 * Constructor
 	 */
-	public function __construct() {
+	public function __construct( MC4WP_MailChimp $mailchimp ) {
 		parent::__construct(
 			array(
 				'singular' => 'form',
@@ -35,7 +35,7 @@ class MC4WP_Forms_Table extends WP_List_Table {
 		$columns  = $this->get_columns();
 		$sortable = $this->get_sortable_columns();
 		$hidden   = array();
-		$this->mailchimp = new MC4WP_MailChimp();
+		$this->mailchimp = $mailchimp;
 
 		$this->_column_headers = array( $columns, $hidden, $sortable );
 		$this->items           = $this->get_items();

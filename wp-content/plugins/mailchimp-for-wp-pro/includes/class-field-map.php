@@ -1,6 +1,6 @@
 <?php
 
-class MC4WP_Field_Mapper {
+class MC4WP_Field_Map {
 
 	/**
 	 * @var array
@@ -18,34 +18,35 @@ class MC4WP_Field_Mapper {
 	protected $mailchimp;
 
 	/**
-	 * @var array|bool
-	 */
-	protected $list_fields_map;
-
-	/**
-	 * @var array
-	 */
-	protected $global_fields = array();
-
-	/**
 	 * @var array
 	 */
 	protected $mapped_fields = array( 'EMAIL' );
 
 	/**
+	 * @var string
+	 */
+	public $error_code = '';
+
+	/**
+	 * @var array|bool
+	 */
+	public $list_fields;
+
+	/**
 	 * @var array
 	 */
-	protected $unmapped_fields = array();
+	public $custom_fields = array();
+
+	/**
+	 * @var array
+	 */
+	public $global_fields = array();
 
 	/**
 	 * @var bool
 	 */
 	public $success = false;
 
-	/**
-	 * @var string
-	 */
-	protected $error_code = '';
 
 	/**
 	 * @param array $form_data
@@ -54,44 +55,23 @@ class MC4WP_Field_Mapper {
 	public function __construct( array $form_data, array $lists ) {
 		$this->form_data = $form_data;
 		$this->lists = $lists;
-
 		$this->mailchimp = new MC4WP_MailChimp();
 
-		$this->list_fields_map = $this->map_lists_fields();
+		$this->list_fields = $this->map_list_fields();
 
 		// only proceed if successful
-		if( $this->list_fields_map ) {
+		if( $this->list_fields ) {
 			$this->success = true;
 			$this->global_fields = $this->map_global_fields();
-			$this->unmapped_fields = $this->find_unmapped_fields();
+			$this->custom_fields = $this->find_custom_fields();
 		}
 
-	}
-
-	public function get_list_fields_map() {
-		return $this->list_fields_map;
-	}
-
-	public function get_global_fields() {
-		return $this->global_fields;
-	}
-
-	public function get_mapped_fields() {
-		return $this->mapped_fields;
-	}
-
-	public function get_unmapped_fields() {
-		return $this->unmapped_fields;
-	}
-
-	public function get_error_code() {
-		return $this->error_code;
 	}
 
 	/**
 	 * @return array|bool
 	 */
-	public function map_lists_fields() {
+	public function map_list_fields() {
 
 		$map = array();
 
@@ -120,7 +100,7 @@ class MC4WP_Field_Mapper {
 	/**
 	 * @return array
 	 */
-	public function find_unmapped_fields() {
+	public function find_custom_fields() {
 
 		$unmapped_fields = array();
 
@@ -230,7 +210,7 @@ class MC4WP_Field_Mapper {
 				// make sure groups is an array
 				if( ! is_array( $grouping['groups'] ) ) {
 					$grouping['groups'] = sanitize_text_field( $grouping['groups'] );
-					$grouping['groups'] = explode( ',', $grouping['groups'] );
+					$grouping['groups'] = array_map( 'trim', explode( ',', $grouping['groups'] ) );
 				}
 
 				$this->mapped_fields[] = 'GROUPINGS';
@@ -268,8 +248,8 @@ class MC4WP_Field_Mapper {
 
 			case 'address':
 
-				// auto-format if addr1 is not set
-				if( ! isset( $field_value['addr1'] ) ) {
+				// auto-format if this is a string
+				if( is_string( $field_value ) ) {
 
 					// addr1, addr2, city, state, zip, country
 					$address_pieces = explode( ',', $field_value );
@@ -281,7 +261,17 @@ class MC4WP_Field_Mapper {
 						'state' => ( isset( $address_pieces[2] ) ) ?   $address_pieces[2] : '',
 						'zip'   => ( isset( $address_pieces[3] ) ) ?   $address_pieces[3] : ''
 					);
+				} elseif( is_array( $field_value ) ) {
 
+					// merge with array of empty defaults to allow skipping certain fields
+					$default_address = array(
+						'addr1' => '',
+						'city' => '',
+						'state' => '',
+						'zip' => ''
+					);
+
+					$field_value = array_merge( $default_address, $field_value );
 				}
 
 				break;

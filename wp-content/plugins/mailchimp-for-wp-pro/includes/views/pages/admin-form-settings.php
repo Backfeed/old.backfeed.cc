@@ -7,7 +7,7 @@ if( ! defined( 'MC4WP_VERSION' ) ) {
 ?>
 <div id="mc4wp-admin" class="wrap form-settings">
 
-	<h2><img src="<?php echo MC4WP_PLUGIN_URL . 'assets/img/menu-icon.png'; ?>" /> <?php _e( 'MailChimp for WordPress', 'mailchimp-for-wp' ); ?>: <?php _e( 'Forms', 'mailchimp-for-wp' ); ?></h2>
+	<h1 class="page-title"><?php _e( 'MailChimp for WordPress', 'mailchimp-for-wp' ); ?>: <?php _e( 'Forms', 'mailchimp-for-wp' ); ?></h1>
 
     <h2 class="nav-tab-wrapper">  
 		<a href="?page=mailchimp-for-wp-form-settings&tab=general-settings" class="nav-tab <?php echo ($tab === 'general-settings') ? 'nav-tab-active' : ''; ?>"><?php _e( 'Forms & Settings', 'mailchimp-for-wp' ); ?></a>

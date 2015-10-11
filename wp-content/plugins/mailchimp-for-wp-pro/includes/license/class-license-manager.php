@@ -62,7 +62,7 @@ if( ! class_exists( 'DVK_License_Manager', false ) ) {
 			$this->product = $product;
 
 			// run upgrade script
-			$this->db_version = (int) get_option( $product->get_prefix() . 'license_manager_version', 0 );
+			$this->db_version = (int) get_option( $product->prefix . 'license_manager_version', 0 );
 			if( $this->db_version < self::VERSION ) {
 				$this->upgrade();
 			}
@@ -78,23 +78,23 @@ if( ! class_exists( 'DVK_License_Manager', false ) ) {
 			if( $this->db_version <  2 && $this->get_license_key() === '' ) {
 
 				// retrieve old option
-				$old_license_option_name = sanitize_title_with_dashes( $this->product->get_item_name() . '_', null, 'save' ) . 'license';
+				$old_license_option_name = sanitize_title_with_dashes( $this->product->item_name . '_', null, 'save' ) . 'license';
 
 				// store in new option key, remove old option
 				if( $this->is_network_activated ) {
 					$old_license_option = get_site_option( $old_license_option_name, array() );
-					update_site_option( $this->product->get_prefix() . 'license', $old_license_option );
+					update_site_option( $this->product->prefix . 'license', $old_license_option );
 					delete_site_option( $old_license_option_name );
 				} else {
 					$old_license_option = get_option( $old_license_option_name, array() );
-					update_option( $this->product->get_prefix() . 'license', $old_license_option );
+					update_option( $this->product->prefix . 'license', $old_license_option );
 					delete_option( $old_license_option_name );
 				}
 
 			}
 
 			// make sure the upgrade code only runs once
-			update_option( $this->product->get_prefix() . 'license_manager_version', self::VERSION );
+			update_option( $this->product->prefix . 'license_manager_version', self::VERSION );
 		}
 
 		/**
@@ -140,11 +140,11 @@ if( ! class_exists( 'DVK_License_Manager', false ) ) {
 
 				if( $this->get_option( 'show_notice' ) !== false || $on_settings_page ) {
 
-					$message = sprintf( __( $message, $this->product->get_text_domain() ), $this->product->get_item_name(), $this->product->get_license_page_url(), $this->product->get_tracking_url( 'activate-license-notice' ) );
+					$message = sprintf( __( $message, $this->product->text_domain ), $this->product->item_name, $this->product->license_page_url, $this->product->get_tracking_url( '/', 'activate-license-notice' ) );
 
 					// add dismiss button if in any admin section
 					if( ! $on_settings_page ) {
-						$message .= ' <a class="button" href="'. wp_nonce_url( add_query_arg( array( $this->product->get_prefix() . 'action' => 'dismiss_license_notice' ) ), $this->product->get_prefix() . 'dismiss_license_notice' ) .'">'. __( 'I know. Don\'t bug me.', 'mailchimp-for-wp' ) . '</a>';
+						$message .= ' <a class="button" href="'. wp_nonce_url( add_query_arg( array( $this->product->prefix . 'action' => 'dismiss_license_notice' ) ), $this->product->prefix . 'dismiss_license_notice' ) .'">'. __( 'I know. Don\'t bug me.', 'mailchimp-for-wp' ) . '</a>';
 					}
 					?>
 					<div class="error">
@@ -158,12 +158,12 @@ if( ! class_exists( 'DVK_License_Manager', false ) ) {
 			if( defined( 'WP_HTTP_BLOCK_EXTERNAL' ) && WP_HTTP_BLOCK_EXTERNAL === true ) {
 
 				// check if our API endpoint is in the allowed hosts
-				$host = parse_url( $this->product->get_api_url(), PHP_URL_HOST );
+				$host = parse_url( $this->product->api_url, PHP_URL_HOST );
 
 				if( ! defined( 'WP_ACCESSIBLE_HOSTS' ) || stristr( WP_ACCESSIBLE_HOSTS, $host ) === false ) {
 					?>
 					<div class="error">
-						<p><?php printf( __( '<b>Warning!</b> You\'re blocking external requests which means you won\'t be able to get %s updates. Please add %s to %s.', $this->product->get_text_domain() ), $this->product->get_item_name(), '<strong>' . $host . '</strong>', '<code>WP_ACCESSIBLE_HOSTS</code>' ); ?></p>
+						<p><?php printf( __( '<b>Warning!</b> You\'re blocking external requests which means you won\'t be able to get %s updates. Please add %s to %s.', $this->product->text_domain ), $this->product->item_name, '<strong>' . $host . '</strong>', '<code>WP_ACCESSIBLE_HOSTS</code>' ); ?></p>
 					</div>
 					<?php
 				}
@@ -174,12 +174,12 @@ if( ! class_exists( 'DVK_License_Manager', false ) ) {
 		/**
 		* Set a notice to display in the admin area
 		*
-		* @param string $type error|updated
 		* @param string $message The message to display
+		 * @param bool $success
 		*/
 		protected function set_notice( $message, $success = true ) {
 			$css_class = ( $success ) ? 'updated' : 'error';
-			add_settings_error( $this->product->get_prefix() . 'license', 'license-notice', $message, $css_class );
+			add_settings_error( $this->product->prefix . 'license', 'license-notice', $message, $css_class );
 		}
 
 		/**
@@ -195,7 +195,7 @@ if( ! class_exists( 'DVK_License_Manager', false ) ) {
 				// story expiry date
 				if( isset( $result->expires ) ) {
 					$this->set_license_expiry_date( $result->expires );
-					$expiry_date = strtotime( $result->expires );
+					$expiry_date = $this->get_license_expiry_date();
 				} else {
 					$expiry_date = false;
 				}
@@ -205,18 +205,18 @@ if( ! class_exists( 'DVK_License_Manager', false ) ) {
 
 					// show a custom notice if users have an unlimited license
 					if( $result->license_limit == 0 ) {
-						$message = sprintf( __( 'Your %s license has been activated. You have an unlimited license. ', $this->product->get_text_domain() ), $this->product->get_item_name() );
+						$message = sprintf( __( 'Your %s license has been activated. You have an unlimited license. ', $this->product->text_domain ), $this->product->item_name );
 					} else {
-						$message = sprintf( __( 'Your %s license has been activated. You have used %d/%d activations. ', $this->product->get_text_domain() ), $this->product->get_item_name(), $result->site_count, $result->license_limit );
+						$message = sprintf( __( 'Your %s license has been activated. You have used %d/%d activations. ', $this->product->text_domain ), $this->product->item_name, $result->site_count, $result->license_limit );
 					}
 
 					// add upgrade notice if user has less than 3 activations left
 					if( $result->license_limit > 0 && ( $result->license_limit - $result->site_count ) <= 3 ) {
-						$message .= sprintf( __( '<a href="%s">Did you know you can upgrade your license?</a>', $this->product->get_text_domain() ), $this->product->get_tracking_url( 'license-nearing-limit-notice' ) );
+						$message .= sprintf( __( '<a href="%s">Did you know you can upgrade your license?</a>', $this->product->text_domain ), $this->product->get_tracking_url( '/licenses/', 'license-nearing-limit-notice' ) );
 						// add extend notice if license is expiring in less than 1 month
 					} elseif( $expiry_date !== false && $expiry_date < strtotime( '+1 month' ) ) {
 						$days_left = round( ( $expiry_date - strtotime( 'now' ) ) / 86400 );
-						$message .= sprintf( __( '<a href="%s">Your license is expiring in %d days. Would you like to extend it?</a>', $this->product->get_text_domain() ), 'https://mc4wp.com/checkout/?edd_license_key=' . esc_attr( $this->get_license_key() ) . '&download_id=899', $days_left );
+						$message .= sprintf( __( '<a href="%s">Your license is expiring in %d days. Would you like to renew it for another year?</a>', $this->product->text_domain ), 'https://mc4wp.com/checkout/?edd_license_key=' . esc_attr( $this->get_license_key() ) . '&download_id=899', $days_left );
 					}
 
 					$this->set_notice( $message, true );
@@ -225,14 +225,14 @@ if( ! class_exists( 'DVK_License_Manager', false ) ) {
 
 					if( isset( $result->error ) && $result->error === 'no_activations_left' ) {
 						// show notice if user is at their activation limit
-						$this->set_notice( sprintf( __( 'You\'ve reached your activation limit. You must <a href="%s">reset</a> or <a href="%s">upgrade your license</a> to use it on this site.', $this->product->get_text_domain() ), 'https://mc4wp.com/kb/resetting-license-activations/', $this->product->get_tracking_url( 'license-at-limit-notice' ) ), false );
+						$this->set_notice( sprintf( __( 'You\'ve reached your activation limit. You must <a href="%s">reset</a> or <a href="%s">upgrade your license</a> to use it on this site.', $this->product->text_domain ), 'https://mc4wp.com/kb/resetting-license-activations/', $this->product->get_tracking_url( '/licenses/', 'license-at-limit-notice' ) ), false );
 					} elseif( isset($result->error) && $result->error === 'expired' ) {
 						// show notice if the license is expired
 						$result->license = 'expired';
-						$this->set_notice( sprintf( __( 'Your license has expired. You must <a href="%s">renew your license</a> if you want to use it again.', $this->product->get_text_domain() ), 'https://mc4wp.com/checkout/?edd_license_key=' . esc_attr( $this->get_license_key() ) . '&download_id=899', false ) );
+						$this->set_notice( sprintf( __( 'Your license has expired. You must <a href="%s">renew your license</a> if you want to use it again.', $this->product->text_domain ), 'https://mc4wp.com/checkout/?edd_license_key=' . esc_attr( $this->get_license_key() ) . '&download_id=899', false ) );
 					} else {
 						// show a general notice if it's any other error
-						$this->set_notice( __( 'Failed to activate your license as your license key seems to be invalid.', $this->product->get_text_domain() ), false );
+						$this->set_notice( __( 'Failed to activate your license as your license key seems to be invalid.', $this->product->text_domain ), false );
 					}
 
 					$this->remote_license_activation_failed = true;
@@ -257,14 +257,13 @@ if( ! class_exists( 'DVK_License_Manager', false ) ) {
 				// show notice if license is deactivated
 				if( $result->license === 'deactivated' ) {
 					$this->set_license_status( $result->license );
-					$this->set_notice( sprintf( __( 'Your %s license has been deactivated.', $this->product->get_text_domain() ), $this->product->get_item_name() ) );
-
+					$this->set_notice( sprintf( __( 'Your %s license has been deactivated.', $this->product->text_domain ), $this->product->item_name ) );
 					// deactivation failed, check if license has expired
-				} elseif( isset( $result->expires ) && strtotime( 'now' ) > strtotime( $result->expires ) ) {
+				} elseif( ! empty( $result->expires ) && strtotime( 'now' ) > strtotime( $result->expires ) ) {
 					$this->set_license_status( 'expired' );
 					$this->set_notice( sprintf( __( 'Your plugin license has expired. You will no longer have access to plugin updates unless you <a href="%s">renew your license</a>.', 'mailchimp-for-wp' ), 'https://mc4wp.com/checkout/?edd_license_key=' . esc_attr( $this->get_license_key() ) . '&download_id=899' ) );
 				} else {
-					$this->set_notice( sprintf( __( 'Failed to deactivate your %s license.', $this->product->get_text_domain() ), $this->product->get_item_name() ), false );
+					$this->set_notice( sprintf( __( 'Failed to deactivate your %s license.', $this->product->text_domain ), $this->product->item_name ), false );
 				}
 
 			}
@@ -298,11 +297,11 @@ if( ! class_exists( 'DVK_License_Manager', false ) ) {
 
 
 			require_once dirname( __FILE__ ) . '/class-api-request.php';
-			$request = new DVK_API_Request( $this->product->get_api_url(), $request_params );
+			$request = new DVK_API_Request( $this->product->api_url, $request_params );
 
 			if( $request->is_valid() !== true ) {
 
-				$notice = __( 'Request error', $this->product->get_text_domain() ) . sprintf( ': "%s"', $request->get_error_message() );
+				$notice = __( 'Request error', $this->product->text_domain ) . sprintf( ': "%s"', $request->get_error_message() );
 
 				$this->set_notice( $notice, false );
 			}
@@ -359,16 +358,23 @@ if( ! class_exists( 'DVK_License_Manager', false ) ) {
 		/**
 		* Gets the license expiry date
 		*
-		* @return string
+		* @return int
 		*/
 		public function get_license_expiry_date() {
-			return $this->get_option( 'expiry_date' );
+			$expiry_date = $this->get_option( 'expiry_date' );
+			return $expiry_date;
 		}
 
 		/**
-		* Stores the license expiry date
-		*/
+		 * Stores the license expiry date
+		 * @param int $expiry_date
+		 */
 		public function set_license_expiry_date( $expiry_date ) {
+
+			if( ! is_numeric( $expiry_date ) ) {
+				$expiry_date =  strtotime( $expiry_date );
+			}
+
 			$this->set_option( 'expiry_date', $expiry_date );
 		}
 
@@ -389,7 +395,7 @@ if( ! class_exists( 'DVK_License_Manager', false ) ) {
 		protected function get_options() {
 
 			// create option name
-			$option_name = $this->product->get_prefix() . 'license';
+			$option_name = $this->product->prefix . 'license';
 
 			// get array of options from db
 			if( $this->is_network_activated ) {
@@ -407,7 +413,7 @@ if( ! class_exists( 'DVK_License_Manager', false ) ) {
 			);
 
 			// merge options with defaults
-			$this->options = wp_parse_args( $options, $defaults );
+			$this->options = array_merge( $defaults, $options );
 
 			return $this->options;
 		}
@@ -419,7 +425,7 @@ if( ! class_exists( 'DVK_License_Manager', false ) ) {
 		*/
 		protected function set_options( array $options ) {
 			// create option name
-			$option_name = $this->product->get_prefix() . 'license';
+			$option_name = $this->product->prefix . 'license';
 
 			// update db
 			if( $this->is_network_activated ) {
@@ -461,7 +467,7 @@ if( ! class_exists( 'DVK_License_Manager', false ) ) {
 		public function show_license_form_heading() {
 			?>
 			<h3>
-				<?php printf( __( '%s: License Settings', $this->product->get_text_domain() ), $this->product->get_item_name() ); ?>&nbsp; &nbsp;
+				<?php printf( __( '%s: License Settings', $this->product->text_domain ), $this->product->item_name ); ?>&nbsp; &nbsp;
 			</h3>
 			<?php
 		}
@@ -473,9 +479,9 @@ if( ! class_exists( 'DVK_License_Manager', false ) ) {
 		*/
 		public function show_license_form( $embedded = true ) {
 
-			$key_name = $this->product->get_prefix() . 'license_key';
-			$nonce_name = $this->product->get_prefix() . 'license_nonce';
-			$action_name = $this->product->get_prefix() . 'license_action';
+			$key_name = $this->product->prefix . 'license_key';
+			$nonce_name = $this->product->prefix . 'license_nonce';
+			$action_name = $this->product->prefix . 'license_action';
 			$visible_license_key = $this->get_license_key();
 
 			// obfuscate license key
@@ -500,15 +506,15 @@ if( ! class_exists( 'DVK_License_Manager', false ) ) {
 		public function catch_get_request() {
 
 			// only act on $prefix_action
-			if( ! isset( $_GET[ $this->product->get_prefix() . 'action' ] ) ) {
+			if( ! isset( $_GET[ $this->product->prefix . 'action' ] ) ) {
 				return;
 			}
 
 			// Get action
-			$action = $_GET[ $this->product->get_prefix() . 'action' ];
+			$action = $_GET[ $this->product->prefix . 'action' ];
 
 			// make sure we're coming from an admin page
-			if( ! check_admin_referer( $this->product->get_prefix() . $action ) ) {
+			if( ! check_admin_referer( $this->product->prefix . $action ) ) {
 				return;
 			}
 
@@ -526,7 +532,7 @@ if( ! class_exists( 'DVK_License_Manager', false ) ) {
 		*/
 		public function catch_post_request() {
 
-			$name = $this->product->get_prefix() . 'license_key';
+			$name = $this->product->prefix . 'license_key';
 
 			// check if license key was posted and not empty
 			if( ! isset( $_POST[$name] ) ) {
@@ -534,7 +540,7 @@ if( ! class_exists( 'DVK_License_Manager', false ) ) {
 			}
 
 			// run a quick security check
-			$nonce_name = $this->product->get_prefix() . 'license_nonce';
+			$nonce_name = $this->product->prefix . 'license_nonce';
 
 			if ( ! check_admin_referer( $nonce_name, $nonce_name ) ) {
 				return;
@@ -565,7 +571,7 @@ if( ! class_exists( 'DVK_License_Manager', false ) ) {
 
 			}
 
-			$action_name = $this->product->get_prefix() . 'license_action';
+			$action_name = $this->product->prefix . 'license_action';
 
 			// was one of the action buttons clicked?
 			if( isset( $_POST[ $action_name ] ) ) {

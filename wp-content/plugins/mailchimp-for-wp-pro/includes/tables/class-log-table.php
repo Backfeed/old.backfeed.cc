@@ -39,7 +39,7 @@ class MC4WP_Log_Table extends WP_List_Table {
 	/**
 	 * Constructor
 	 */
-	public function __construct() {
+	public function __construct( MC4WP_MailChimp $mailchimp ) {
 		//Set parent defaults
 		parent::__construct(
 			array(
@@ -50,7 +50,7 @@ class MC4WP_Log_Table extends WP_List_Table {
 		);
 
 		$this->log = MC4WP::instance()->get_log();
-		$this->mailchimp = new MC4WP_MailChimp();
+		$this->mailchimp = $mailchimp;
 		$this->process_bulk_action();
 		$this->prepare_items();
 	}
@@ -169,7 +169,8 @@ class MC4WP_Log_Table extends WP_List_Table {
 				return sprintf( '<span style="color: %s;">%s</span>', $color, $icon );
 				break;
 			case 'datetime':
-				return esc_html( $item->$column_name );
+				$date = MC4WP_Tools::mysql_datetime_to_local_datetime( $item->$column_name );
+				return esc_html( $date );
 				break;
 			default:
 				return '';

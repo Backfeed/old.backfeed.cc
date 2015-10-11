@@ -15,31 +15,23 @@ if( ! defined( 'MC4WP_VERSION' ) ) {
  */
 function mc4wp_get_options( $key = '' ) {
 
-	static $options = null;
+	static $defaults;
 
-	if( null === $options) {
+	if( is_null( $defaults ) ) {
 		$defaults = include MC4WP_PLUGIN_DIR . '/includes/config/default-options.php';
+	}
 
-		$keys_map = array(
-			'mc4wp' => 'general',
-			'mc4wp_checkbox' => 'checkbox',
-			'mc4wp_form' => 'form'
-		);
+	$keys_map = array(
+		'mc4wp' => 'general',
+		'mc4wp_checkbox' => 'checkbox',
+		'mc4wp_form' => 'form'
+	);
 
-		$options = array();
+	$options = array();
 
-		foreach ( $keys_map as $db_key => $opt_key ) {
-
-			$option = (array) get_option( $db_key, array() );
-
-			// add option to database to prevent query on every pageload
-			if ( count( $option ) === 0 ) {
-				add_option( $db_key, $defaults[$opt_key] );
-			}
-
-			$options[$opt_key] = array_merge( $defaults[$opt_key], $option );
-		}
-
+	foreach ( $keys_map as $db_key => $opt_key ) {
+		$option = (array) get_option( $db_key, array() );
+		$options[$opt_key] = array_merge( $defaults[$opt_key], $option );
 	}
 
 	if( '' !== $key ) {

@@ -1,14 +1,14 @@
 /* Form base theme */
 form.mc4wp-form,
 .mc4wp-form form {
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
   box-shadow: none !important;
-  -webkit-box-shadow: none;
-  -moz-box-shadow: none;
 	width: auto;
 }
 
 .mc4wp-form p {
-  margin: 0 0 15px !important;
+  margin: 10px 0;
   padding: 0;
 }
 
@@ -22,6 +22,7 @@ form.mc4wp-form,
 .mc4wp-form input[type="tel"],
 .mc4wp-form input[type="url"],
 .mc4wp-form input[type="date"],
+.mc4wp-form input[type="number"],
 .mc4wp-form textarea,
 .mc4wp-form select {
   width: 100%;
@@ -34,11 +35,11 @@ form.mc4wp-form,
   vertical-align: middle;
   background-color: #ffffff;
   border: 1px solid #cccccc;
+	-webkit-border-radius: 2px;
   -moz-border-radius: 2px;
-  -webkit-border-radius: 2px;
   border-radius: 2px;
+	-webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
   -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
-  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
   -moz-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
   -webkit-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
@@ -51,6 +52,8 @@ form.mc4wp-form,
 .mc4wp-form input[type="email"]:focus,
 .mc4wp-form input[type="tel"]:focus,
 .mc4wp-form input[type="url"]:focus,
+.mc4wp-form input[type="date"]:focus,
+.mc4wp-form input[type="number"]:focus,
 .mc4wp-form textarea:focus,
 .mc4wp-form select:focus {
   border-color: #66afe9;
@@ -121,7 +124,7 @@ form.mc4wp-form,
 .mc4wp-form button:active {
   background-image: none;
   outline: 0;
+	-webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
   -moz-box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
-  -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
   box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
 }

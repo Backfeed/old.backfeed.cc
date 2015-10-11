@@ -10,56 +10,31 @@ if( ! defined( 'ABSPATH' ) ) {
 class MC4WP_Subscribe_Request extends MC4WP_Request {
 
 	/**
-	 * @var array
+	 * @var MC4WP_Field_Map
 	 */
-	private $list_fields_map = array();
-
-	/**
-	 * @var array
-	 */
-	private $unmapped_fields = array();
-
-	/**
-	 * @var array
-	 */
-	private $global_fields = array();
+	public $map;
 
 	/**
 	 * Prepare data for MailChimp API request
+	 *
 	 * @return bool
 	 */
 	public function prepare() {
-		$this->guess_fields();
-		$mapped = $this->map_data();
-		return $mapped;
+		$this->user_data = $this->guess_fields( $this->user_data );
+		$this->map = new MC4WP_Field_Map( $this->user_data, $this->get_lists() );
+
+		if( ! $this->map->success ) {
+			$this->message_type = $this->map->error_code;
+		}
+
+		return $this->map->success;
 	}
 
 	/**
 	 * Try to guess the values of various fields, if not given.
 	 */
-	protected function guess_fields() {
-		// add some data to the posted data, like FNAME and LNAME
-		$this->user_data = MC4WP_Tools::guess_merge_vars( $this->user_data );
-	}
-
-	/**
-	 * Maps the received data to MailChimp lists
-	 *
-	 * @return array
-	 */
-	protected function map_data() {
-
-		$mapper = new MC4WP_Field_Mapper( $this->user_data, $this->get_lists() );
-
-		if( $mapper->success ) {
-			$this->list_fields_map = $mapper->get_list_fields_map();
-			$this->global_fields = $mapper->get_global_fields();
-			$this->unmapped_fields = $mapper->get_unmapped_fields();
-		} else {
-			$this->message_type = $mapper->get_error_code();
-		}
-
-		return $mapper->success;
+	protected function guess_fields( $data ) {
+		return MC4WP_Tools::guess_merge_vars( $data );
 	}
 
 	/**
@@ -74,7 +49,7 @@ class MC4WP_Subscribe_Request extends MC4WP_Request {
 		$email_type = $this->get_email_type();
 
 		// loop through selected lists
-		foreach ( $this->list_fields_map as $list_id => $list_field_data ) {
+		foreach ( $this->map->list_fields as $list_id => $list_field_data ) {
 
 			// allow plugins to alter merge vars for each individual list
 			$list_merge_vars = $this->get_list_merge_vars( $list_id, $list_field_data );
@@ -97,8 +72,14 @@ class MC4WP_Subscribe_Request extends MC4WP_Request {
 			$this->set_email_cookie( $this->user_data['EMAIL'] );
 
 			// send an email copy if that is desired
+			// todo: move this to hook callback
 			if( $this->form->settings['send_email_copy'] ) {
-				$this->send_email();
+				$email = new MC4WP_Email_Notification(
+					$this->form->settings['email_copy_receiver'],
+					$this->form,
+					$this
+				);
+				$email->send();
 			}
 		}
 
@@ -120,11 +101,11 @@ class MC4WP_Subscribe_Request extends MC4WP_Request {
 		$merge_vars = array();
 
 		// add OPTIN_IP, we do this here as the user shouldn't be allowed to set this
-		$merge_vars['OPTIN_IP'] = MC4WP_tools::get_client_ip();
+		$merge_vars['OPTIN_IP'] = MC4WP_Tools::get_client_ip();
 
 		// make sure MC_LANGUAGE matches the requested format. Useful when getting the language from WPML etc.
-		if( isset( $this->global_fields['MC_LANGUAGE'] ) ) {
-			$merge_vars['MC_LANGUAGE'] = strtolower( substr( $this->global_fields['MC_LANGUAGE'], 0, 2 ) );
+		if( isset( $this->map->global_fields['MC_LANGUAGE'] ) ) {
+			$merge_vars['MC_LANGUAGE'] = strtolower( substr( $this->map->global_fields['MC_LANGUAGE'], 0, 2 ) );
 		}
 
 		$merge_vars = array_merge( $merge_vars, $list_field_data );
@@ -137,9 +118,9 @@ class MC4WP_Subscribe_Request extends MC4WP_Request {
 		 *
 		 * Can be used to filter the merge variables sent to a given list
 		 */
-		$merge_vars = apply_filters( 'mc4wp_merge_vars', $merge_vars, 0, $list_id );
+		$merge_vars = (array) apply_filters( 'mc4wp_merge_vars', $merge_vars, 0, $list_id );
 
-		return (array) $merge_vars;
+		return $merge_vars;
 	}
 
 	/**
@@ -177,148 +158,9 @@ class MC4WP_Subscribe_Request extends MC4WP_Request {
 		}
 
 		// allow plugins to override this email type
-		$email_type = apply_filters( 'mc4wp_email_type', $email_type );
+		$email_type = (string) apply_filters( 'mc4wp_email_type', $email_type );
 
-		return (string) $email_type;
+		return $email_type;
 	}
-
-	/**
-	 * Send an email with a subscription summary to a given email address
-	 */
-	protected function send_email() {
-
-		// bail if receiver is empty
-		if( '' === $this->form->settings['email_copy_receiver'] ) {
-			return;
-		}
-
-		// email receiver
-		$to = explode( ',', str_replace( ' ', '', $this->form->settings['email_copy_receiver'] ) );
-
-		// email subject
-		$subject = __( 'New MailChimp Sign-Up', 'mailchimp-for-wp' ) . ' - ' . get_bloginfo( 'name' );
-
-		$mailchimp = new MC4WP_MailChimp();
-		$referer = ( ! empty( $_SERVER['HTTP_REFERER'] ) ) ? $_SERVER['HTTP_REFERER'] : $_SERVER['REQUEST_URI'];
-
-		// build email message
-		ob_start();
-
-		?>
-		<h3>MailChimp for WordPress: <?php _e( 'New Sign-Up', 'mailchimp-for-wp' ); ?></h3>
-		<p><?php printf( __( '<strong>%s</strong> signed-up at %s on %s using the form "%s".', 'mailchimp-for-wp' ), $this->user_data['EMAIL'], date( 'H:i' ), date( 'd/m/Y' ), $this->form->name ); ?></p>
-		<table cellspacing="0" cellpadding="10" border="0" style="border: 1px solid #EEEEEE;">
-			<tbody>
-			<?php foreach( $this->list_fields_map as $list_id => $field_data ) { ?>
-				<tr>
-					<td colspan="2"><h4 style="border-bottom: 1px solid #efefef; margin-bottom: 0; padding-bottom: 5px;"><?php echo __( 'List', 'mailchimp-for-wp' ) . ': ' . $mailchimp->get_list_name( $list_id ); ?></h4></td>
-				</tr>
-				<tr>
-					<td><strong><?php _e( 'Email address:', 'mailchimp-for-wp' ); ?></strong></td>
-					<td><?php echo $this->user_data['EMAIL']; ?></td>
-				</tr>
-				<?php
-				foreach( $field_data as $field_tag => $field_value ) {
-
-					if( $field_tag === 'GROUPINGS' && is_array( $field_value ) ) {
-
-						foreach( $field_value as $grouping ) {
-
-							$groups = implode( ', ', $grouping['groups'] ); ?>
-							<tr>
-								<td><strong><?php echo $mailchimp->get_list_grouping_name( $list_id, $grouping['id'] ); ?></strong></td>
-								<td><?php echo esc_html( $groups ); ?></td>
-							</tr>
-						<?php
-						}
-
-					} else {
-						$field_name = $mailchimp->get_list_field_name_by_tag( $list_id, $field_tag );
-
-						// convert array values to comma-separated string value
-						if( is_array( $field_value ) ) {
-							$field_value = implode( ', ', $field_value );
-						}
-						?>
-						<tr>
-							<td><strong><?php echo esc_html( $field_name ); ?></strong></td>
-							<td><?php echo esc_html( $field_value ); ?></td>
-						</tr>
-					<?php
-					}
-				} ?>
-			<?php } ?>
-
-			<?php if( count( $this->unmapped_fields ) > 0 ) { ?>
-				<tr>
-					<td colspan="2"><h4 style="border-bottom: 1px solid #efefef; margin-bottom: 0; padding-bottom: 5px;"><?php _e( 'Other fields', 'mailchimp-for-wp' ); ?></h4></td>
-				</tr>
-				<?php
-				foreach( $this->unmapped_fields as $field_tag => $field_value ) {
-
-					// convert array values to comma-separated string value
-					if( is_array( $field_value ) ) {
-						$field_value = implode( ', ', $field_value );
-					}
-					?>
-					<tr>
-						<td><strong><?php echo esc_html( $field_tag ); ?></strong></td>
-						<td><?php echo esc_html( $field_value ); ?></td>
-					</tr>
-					<?php
-				} ?>
-			<?php } ?>
-
-			</tbody>
-		</table>
-
-		<p><?php printf( __( 'User subscribed from %s from IP %s.', 'mailchimp-for-wp' ), esc_html( $referer ), MC4WP_Tools::get_client_ip() ); ?></p>
-
-		<?php  if( $this->form->settings['double_optin'] ) { ?>
-			<p style="color:#666;"><?php printf( __( 'Note that you\'ve enabled double opt-in for the "%s" form. The user won\'t be added to the selected MailChimp lists until they confirm their email address.', 'mailchimp-for-wp' ), $this->form->name ); ?></p>
-		<?php } ?>
-		<p style="color:#666;"><?php _e( 'This email was auto-sent by the MailChimp for WordPress plugin.', 'mailchimp-for-wp' ); ?></p>
-		<?php
-		$message = ob_get_contents();
-		ob_end_clean();
-
-		/**
-		 * @filter mc4wp_email_summary_receiver
-		 * @expects string|array String or array of emails
-		 * @param   int     $form_id        The ID of the submitted form
-		 * @param   string  $email          The email of the subscriber
-		 * @param   array   $lists_data     Additional list fields, like FNAME etc (if any)
-		 *
-		 * Use to set email addresses to send the email summary to
-		 */
-		$receivers = apply_filters( 'mc4wp_email_summary_receiver', $to, $this->form->ID, $this->user_data['EMAIL'], $this->list_fields_map );
-
-		/**
-		 * @filter mc4wp_email_summary_subject
-		 * @expects string|array String or array of emails
-		 * @param   int     $form_id        The ID of the submitted form
-		 * @param   string  $email          The email of the subscriber
-		 * @param   array   $lists_data     Additional list fields, like FNAME etc (if any)
-		 *
-		 * Use to set subject of email summaries
-		 */
-		$subject = apply_filters( 'mc4wp_email_summary_subject', $subject, $this->form->ID, $this->user_data['EMAIL'], $this->list_fields_map );
-
-		/**
-		 * @filter mc4wp_email_summary_message
-		 * @expects string|array String or array of emails
-		 * @param   int     $form_id        The ID of the submitted form
-		 * @param   string  $email          The email of the subscriber
-		 * @param   array   $lists_data     Additional list fields, like FNAME etc (if any)
-		 *
-		 * Use to set or customize message of email summaries
-		 */
-		$message = apply_filters( 'mc4wp_email_summary_message', $message, $this->form->ID, $this->user_data['EMAIL'], $this->list_fields_map );
-
-
-		// send email
-		wp_mail( $receivers, $subject, $message, 'Content-Type: text/html' );
-	}
-
 
 }

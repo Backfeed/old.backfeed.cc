@@ -36,6 +36,7 @@ if( $builder->form_has_rules_for_element( $form_id, 'form' ) ) {
 		$builder->maybe_echo( "\ttext-align: %s;\n", $form_text_align );
 		$builder->maybe_echo( "\twidth: 100%%; max-width: %s !important;\n", $form_width );
 		$builder->maybe_echo( "\tbackground-image: url('%s');\n", $form_background_image );
+		$builder->maybe_echo( "\tbackground-repeat: %s;\n", $form_background_repeat);
 	echo "}\n\n";
 
 }
@@ -107,7 +108,7 @@ if( $builder->form_has_rules_for_element( $form_id, 'fields' ) ) :
 			echo "\tborder-radius: {$fields_border_radius}px;\n";
 		}
 		if( ! empty($fields_height)) {
-			echo "\tline-height: ". ($fields_height - 12) . "px; height: {$fields_height}px;\n";
+			echo "\theight: {$fields_height}px;\n";
 		}
 
 	echo "}\n\n";
