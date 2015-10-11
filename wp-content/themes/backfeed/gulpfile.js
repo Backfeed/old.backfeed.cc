@@ -112,7 +112,7 @@ var cssTasks = function(filename) {
       rebase: false
     })
     .pipe(function() {
-      return gulpif(enabled.rev, rev());
+      return gulpif(!enabled.rev, rev());
     })
     .pipe(function() {
       return gulpif(enabled.maps, sourcemaps.write('.', {
@@ -140,7 +140,7 @@ var jsTasks = function(filename) {
       }
     })
     .pipe(function() {
-      return gulpif(enabled.rev, rev());
+      return gulpif(!enabled.rev, rev());
     })
     .pipe(function() {
       return gulpif(enabled.maps, sourcemaps.write('.', {
