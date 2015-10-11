@@ -13,7 +13,7 @@
                     <button class="btn btn-primary morph-button-button" type="button">Subscribe</button>
                     <div class="morph-content"><div>
                         <div class="content-style-form content-style-form-1">
-                            <span class="icon-close glyphicon glyphicon-remove"></span>
+                            <span id="icon-close-1" class="icon-close glyphicon glyphicon-remove"></span>
                             <?php mc4wp_form(71); ?>
                         </div>
                     </div></div>
@@ -26,7 +26,7 @@
                         <i class="fa fa-envelope morph-button-button"></i>
                         <div class="morph-content"><div>
                             <div class="content-style-form content-style-form-1">
-                                <span class="icon-close glyphicon glyphicon-remove"></span>
+                                <span id="icon-close-2" class="icon-close glyphicon glyphicon-remove morph-button-button"></span>
                                 <?=do_shortcode('[contact-form-7 id="73" title="Contact Us Header"]')?>
                                 <!--<form class="form subscribe-box form-inline">
                                     <h3>Contact Us</h3>
