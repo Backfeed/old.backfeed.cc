@@ -36,3 +36,9 @@ add_filter( 'mc4wp_form_css_classes', function( $classes ) {
   $classes[] = 'subscribe-box form-inline';
   return $classes;
 });
+
+
+add_filter('wp_mail_from', function() {
+$sender_email = 'info@backfeed.cc';
+return $sender_email;
+});
