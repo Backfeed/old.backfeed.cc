@@ -147,266 +147,140 @@
         <div class="team-members">
 
             <div class="team-member">
-                <div class="flip-container" ontouchstart="$(this).trigger('hover');">
-                    <div class="flipper">
-                        <div class="front">
-                            <img class="team-member-avatar" src="/wp-content/themes/backfeed/assets/images/team/Matan.png" alt="Avatar">
-                            <div class="team-member-name">Matan Field</div>
-                            <div class="team-member-role">Chief Evangelist</div>
-                        </div>
-                        <div class="back">
-                            PhD in physics and founder of La'zooz, a ride sharing app developed collectively by its community
-                            <div class="team-member-social-icons">
-                                <a href="https://twitter.com/MatanField" target="_blank"><i class="fa fa-twitter-square"></i></a>
-                                <a href="https://il.linkedin.com/pub/matan-field/96/2b3/92a" target="_blank"><i class="fa fa-linkedin-square"></i></a>
-                            </div>
-                        </div>
-                    </div>
+                <img class="team-member-avatar" src="/wp-content/themes/backfeed/assets/images/team/Matan.png" alt="Avatar">
+                <div class="team-member-name">Matan Field</div>
+                <div class="team-member-role">CEO & Chief Scientist</div>
+                <div class="team-member-social-icons">
+                    <a href="https://twitter.com/MatanField" target="_blank"><i class="fa fa-twitter-square"></i></a>
+                    <a href="https://il.linkedin.com/pub/matan-field/96/2b3/92a" target="_blank"><i class="fa fa-linkedin-square"></i></a>
                 </div>
             </div>
 
             <div class="team-member">
-                <div class="flip-container" ontouchstart="$(this).trigger('hover');">
-                    <div class="flipper">
-                        <div class="front">
-                            <img class="team-member-avatar" src="/wp-content/themes/backfeed/assets/images/team/Jordan.png" alt="Avatar">
-                            <div class="team-member-name">Jordan Greenhall</div>
-                            <div class="team-member-role">Chief Ratiocinator</div>
-                        </div>
-                        <div class="back">
-                            Former CEO of DivX. Quite often down to earth but generally high up with his heart.
-                            <div class="team-member-social-icons">
-                                <a href="http://twitter.com/jgreenhall" target="_blank"><i class="fa fa-twitter-square"></i></a>
-                                <a href="http://www.linkedin.com/in/jordangreenhall" target="_blank"><i class="fa fa-linkedin-square"></i></a>
-                                <a href="https://medium.com/@jordangreenhall" target="_blank"><i class="fa fa-medium"></i></a>
-                            </div>
-                        </div>
-                    </div>
+                <img class="team-member-avatar" src="/wp-content/themes/backfeed/assets/images/team/Jordan.png" alt="Avatar">
+                <div class="team-member-name">Jordan Greenhall</div>
+                <div class="team-member-role">Chief Ratiocinator</div>
+                <div class="team-member-social-icons">
+                    <a href="http://twitter.com/jgreenhall" target="_blank"><i class="fa fa-twitter-square"></i></a>
+                    <a href="http://www.linkedin.com/in/jordangreenhall" target="_blank"><i class="fa fa-linkedin-square"></i></a>
+                    <a href="https://medium.com/@jordangreenhall" target="_blank"><i class="fa fa-medium"></i></a>
                 </div>
             </div>
 
             <div class="team-member">
-                <div class="flip-container" ontouchstart="$(this).trigger('hover');">
-                    <div class="flipper">
-                        <div class="front">
-                            <img class="team-member-avatar" src="/wp-content/themes/backfeed/assets/images/team/Primavera.png" alt="Avatar">
-                            <div class="team-member-name">Primavera De Filippi</div>
-                            <div class="team-member-role">Chief Alchemist</div>
-                        </div>
-                        <div class="back">
-                            Researcher at Harvard Law School and leading expert on legal implications of DCOs.
-                            <div class="team-member-social-icons">
-                                <a href="https://twitter.com/yaoeo" target="_blank"><i class="fa fa-twitter-square"></i></a>
-                                <a href="https://fr.linkedin.com/pub/primavera-de-filippi/36/585/75"><i class="fa fa-linkedin-square"></i></a>
-                                <a href="https://cyber.law.harvard.edu/people/pdefilippi" target="_blank"><i class="fa fa-google-plus-square"></i></a>
-                            </div>
-                        </div>
-                    </div>
+                <img class="team-member-avatar" src="/wp-content/themes/backfeed/assets/images/team/Primavera.png" alt="Avatar">
+                <div class="team-member-name">Primavera De Filippi</div>
+                <div class="team-member-role">Chief Innovation Officer</div>
+                <div class="team-member-social-icons">
+                    <a href="https://twitter.com/yaoeo" target="_blank"><i class="fa fa-twitter-square"></i></a>
+                    <a href="https://fr.linkedin.com/pub/primavera-de-filippi/36/585/75"><i class="fa fa-linkedin-square"></i></a>
+                    <a href="https://cyber.law.harvard.edu/people/pdefilippi" target="_blank"><i class="fa fa-google-plus-square"></i></a>
                 </div>
             </div>
 
             <div class="team-member">
-                <div class="flip-container" ontouchstart="$(this).trigger('hover');">
-                    <div class="flipper">
-                        <div class="front">
-                            <img class="team-member-avatar" src="/wp-content/themes/backfeed/assets/images/team/Tal.png" alt="Avatar">
-                            <div class="team-member-name">Tal Serphos</div>
-                            <div class="team-member-role">Master Chief</div>
-                        </div>
-                        <div class="back">
-                            The man taking care of all that happens behind the scenes.
-                            <div class="team-member-social-icons">
-                                <a href="https://twitter.com/TalSerphos" target="_blank"><i class="fa fa-twitter-square"></i></a>
-                                <a href="https://www.linkedin.com/in/tserphos" target="_blank"><i class="fa fa-linkedin-square"></i></a>
-                            </div>
-                        </div>
-                    </div>
+                <img class="team-member-avatar" src="/wp-content/themes/backfeed/assets/images/team/Tal.png" alt="Avatar">
+                <div class="team-member-name">Tal Serphos</div>
+                <div class="team-member-role">COO</div>
+                <div class="team-member-social-icons">
+                    <a href="https://twitter.com/TalSerphos" target="_blank"><i class="fa fa-twitter-square"></i></a>
+                    <a href="https://www.linkedin.com/in/tserphos" target="_blank"><i class="fa fa-linkedin-square"></i></a>
                 </div>
             </div>
 
             <div class="team-member">
-                <div class="flip-container" ontouchstart="$(this).trigger('hover');">
-                    <div class="flipper">
-                        <div class="front">
-                            <img class="team-member-avatar" src="/wp-content/themes/backfeed/assets/images/team/Yaniv.png" alt="Avatar">
-                            <div class="team-member-name">Yaniv Keinan</div>
-                            <div class="team-member-role">Chief Architect</div>
-                        </div>
-                        <div class="back">
-                            Lorem ipsum dolor sit amet
-                            <div class="team-member-social-icons">
-                                <a href="https://twitter.com/YanivKeinan" target="_blank"><i class="fa fa-twitter-square"></i></a>
-                                <a href="https://il.linkedin.com/in/yanivkeinan" target="_blank"><i class="fa fa-linkedin-square"></i></a>
-                            </div>
-                        </div>
-                    </div>
+                <img class="team-member-avatar" src="/wp-content/themes/backfeed/assets/images/team/Yaniv.png" alt="Avatar">
+                <div class="team-member-name">Yaniv Keinan</div>
+                <div class="team-member-role">Developer</div>
+                <div class="team-member-social-icons">
+                    <a href="https://twitter.com/YanivKeinan" target="_blank"><i class="fa fa-twitter-square"></i></a>
+                    <a href="https://il.linkedin.com/in/yanivkeinan" target="_blank"><i class="fa fa-linkedin-square"></i></a>
                 </div>
             </div>
 
             <div class="team-member">
-                <div class="flip-container" ontouchstart="$(this).trigger('hover');">
-                    <div class="flipper">
-                        <div class="front">
-                            <img class="team-member-avatar" src="/wp-content/themes/backfeed/assets/images/team/Ore.png" alt="Avatar">
-                            <div class="team-member-name">Ore Landau</div>
-                            <div class="team-member-role">Chief Unicorn</div>
-                        </div>
-                        <div class="back">
-                            Web developer with a special hunch for Front-End UI/UX development
-                            <div class="team-member-social-icons">
-                                <a href="http://twitter.com/Ore4444" target="_blank"><i class="fa fa-twitter-square"></i></a>
-                                <a href="http://linkedin.com/in/Ore4444" target="_blank"><i class="fa fa-linkedin-square"></i></a>
-                            </div>
-                        </div>
-                    </div>
+                <img class="team-member-avatar" src="/wp-content/themes/backfeed/assets/images/team/Ore.png" alt="Avatar">
+                <div class="team-member-name">Ore Landau</div>
+                <div class="team-member-role">Developer</div>
+                <div class="team-member-social-icons">
+                    <a href="http://twitter.com/Ore4444" target="_blank"><i class="fa fa-twitter-square"></i></a>
+                    <a href="http://linkedin.com/in/Ore4444" target="_blank"><i class="fa fa-linkedin-square"></i></a>
                 </div>
             </div>
 
             <div class="team-member">
-                <div class="flip-container" ontouchstart="$(this).trigger('hover');">
-                    <div class="flipper">
-                        <div class="front">
-                            <img class="team-member-avatar" src="/wp-content/themes/backfeed/assets/images/team/Adam.png" alt="Avatar">
-                            <div class="team-member-name">Adam Goldman</div>
-                            <div class="team-member-role">Chief Juggler</div>
-                        </div>
-                        <div class="back">
-                            Senior developer experienced in front-end and client-side applications
-                            <div class="team-member-social-icons">
-                                <a href="https://www.linkedin.com/pub/adam-goldman/66/631/7a4" target="_blank"><i class="fa fa-linkedin-square"></i></a>
-                            </div>
-                        </div>
-                    </div>
+                <img class="team-member-avatar" src="/wp-content/themes/backfeed/assets/images/team/Adam.png" alt="Avatar">
+                <div class="team-member-name">Adam Goldman</div>
+                <div class="team-member-role">Developer</div>
+                <div class="team-member-social-icons">
+                    <a href="https://www.linkedin.com/pub/adam-goldman/66/631/7a4" target="_blank"><i class="fa fa-linkedin-square"></i></a>
                 </div>
             </div>
 
             <div class="team-member">
-                <div class="flip-container" ontouchstart="$(this).trigger('hover');">
-                    <div class="flipper">
-                        <div class="front">
-                            <img class="team-member-avatar" src="/wp-content/themes/backfeed/assets/images/team/Michel.png" alt="Avatar">
-                            <div class="team-member-name">Michel Avital</div>
-                            <div class="team-member-role">Chief Professor</div>
-                        </div>
-                        <div class="back">
-                            Professor at Copenhagen Business School
-                            <div class="team-member-social-icons">
-                                <a href="https://twitter.com/michelavital" target="_blank"><i class="fa fa-twitter-square"></i></a>
-                                <a href="https://www.linkedin.com/in/michelavital" target="_blank"><i class="fa fa-linkedin-square"></i></a>
-                            </div>
-                        </div>
-                    </div>
+                <img class="team-member-avatar" src="/wp-content/themes/backfeed/assets/images/team/Michel.png" alt="Avatar">
+                <div class="team-member-name">Michel Avital</div>
+                <div class="team-member-role">Chief Professor</div>
+                <div class="team-member-social-icons">
+                    <a href="https://twitter.com/michelavital" target="_blank"><i class="fa fa-twitter-square"></i></a>
+                    <a href="https://www.linkedin.com/in/michelavital" target="_blank"><i class="fa fa-linkedin-square"></i></a>
                 </div>
             </div>
 
             <div class="team-member">
-                <div class="flip-container" ontouchstart="$(this).trigger('hover');">
-                    <div class="flipper">
-                        <div class="front">
-                            <img class="team-member-avatar" src="/wp-content/themes/backfeed/assets/images/team/Philippe.png" alt="Avatar">
-                            <div class="team-member-name">Philippe Honigman</div>
-                            <div class="team-member-role">Chief Innovator</div>
-                        </div>
-                        <div class="back">
-                            Delivers products, closes deals, builds relationships.
-                            <div class="team-member-social-icons">
-                                <a href="https://twitter.com/phil_h" target="_blank"><i class="fa fa-twitter-square"></i></a>
-                                <a href="https://www.linkedin.com/in/honigman" target="_blank"><i class="fa fa-linkedin-square"></i></a>
-                            </div>
-                        </div>
-                    </div>
+                <img class="team-member-avatar" src="/wp-content/themes/backfeed/assets/images/team/Philippe.png" alt="Avatar">
+                <div class="team-member-name" style="font-size:75%;">Philippe Honigman</div>
+                <div class="team-member-role">Head of Decentralize Practice, EMEA</div>
+                <div class="team-member-social-icons">
+                    <a href="https://twitter.com/phil_h" target="_blank"><i class="fa fa-twitter-square"></i></a>
+                    <a href="https://www.linkedin.com/in/honigman" target="_blank"><i class="fa fa-linkedin-square"></i></a>
                 </div>
             </div>
 
             <div class="team-member">
-                <div class="flip-container" ontouchstart="$(this).trigger('hover');">
-                    <div class="flipper">
-                        <div class="front">
-                            <img class="team-member-avatar" src="/wp-content/themes/backfeed/assets/images/team/Eden.png" alt="Avatar">
-                            <div class="team-member-name">Eden Landau</div>
-                            <div class="team-member-role">Chief Happiness</div>
-                        </div>
-                        <div class="back">
-                            Spreading knowledge, one synapse at a time.
-                            <div class="team-member-social-icons">
-                                <a href="https://twitter.com/edenworky" target="_blank"><i class="fa fa-twitter-square"></i></a>
-                                <a href="https://il.linkedin.com/in/edenlandau" target="_blank"><i class="fa fa-linkedin-square"></i></a>
-                            </div>
-                        </div>
-                    </div>
+                <img class="team-member-avatar" src="/wp-content/themes/backfeed/assets/images/team/Eden.png" alt="Avatar">
+                <div class="team-member-name">Eden Landau</div>
+                <div class="team-member-role">QA</div>
+                <div class="team-member-social-icons">
+                    <a href="https://twitter.com/edenworky" target="_blank"><i class="fa fa-twitter-square"></i></a>
+                    <a href="https://il.linkedin.com/in/edenlandau" target="_blank"><i class="fa fa-linkedin-square"></i></a>
                 </div>
             </div>
 
             <div class="team-member">
-                <div class="flip-container" ontouchstart="$(this).trigger('hover');">
-                    <div class="flipper">
-                        <div class="front">
-                            <img class="team-member-avatar" src="/wp-content/themes/backfeed/assets/images/team/Naomi.png" alt="Avatar">
-                            <div class="team-member-name">Naomi Steinitz</div>
-                            <div class="team-member-role">Chief Listener</div>
-                        </div>
-                        <div class="back">
-                            Productivity hacker, human-2-human communication
-                            <div class="team-member-social-icons">
-                                <a href="https://www.linkedin.com/pub/naomi-steinitz/18/100/5a3" target="_blank"><i class="fa fa-linkedin-square"></i></a>
-                            </div>
-                        </div>
-                    </div>
+                <img class="team-member-avatar" src="/wp-content/themes/backfeed/assets/images/team/Naomi.png" alt="Avatar">
+                <div class="team-member-name">Naomi Steinitz</div>
+                <div class="team-member-role">VP HR</div>
+                <div class="team-member-social-icons">
+                    <a href="https://www.linkedin.com/pub/naomi-steinitz/18/100/5a3" target="_blank"><i class="fa fa-linkedin-square"></i></a>
                 </div>
             </div>
 
             <div class="team-member">
-                <div class="flip-container" ontouchstart="$(this).trigger('hover');">
-                    <div class="flipper">
-                        <div class="front">
-                            <img class="team-member-avatar" src="/wp-content/themes/backfeed/assets/images/team/Neeraj.png" alt="Avatar">
-                            <div class="team-member-name">Neeraj Jain</div>
-                            <div class="team-member-role">Chief Expert</div>
-                        </div>
-                        <div class="back">
-                            A programmer by heart who is very passionate about all things coding
-                            <div class="team-member-social-icons">
-                                <a href="https://www.linkedin.com/pub/neeraj-jain/3/665/a61" target="_blank"><i class="fa fa-linkedin-square"></i></a>
-                            </div>
-                        </div>
-                    </div>
+                <img class="team-member-avatar" src="/wp-content/themes/backfeed/assets/images/team/Neeraj.png" alt="Avatar">
+                <div class="team-member-name">Neeraj Jain</div>
+                <div class="team-member-role">Senior Back-End Developer</div>
+                <div class="team-member-social-icons">
+                    <a href="https://www.linkedin.com/pub/neeraj-jain/3/665/a61" target="_blank"><i class="fa fa-linkedin-square"></i></a>
                 </div>
             </div>
 
             <div class="team-member">
-                <div class="flip-container" ontouchstart="$(this).trigger('hover');">
-                    <div class="flipper">
-                        <div class="front">
-                            <img class="team-member-avatar" src="/wp-content/themes/backfeed/assets/images/team/Amnon.png" alt="Avatar">
-                            <div class="team-member-name">Amnon Barnea</div>
-                            <div class="team-member-role">Chief Designer</div>
-                        </div>
-                        <div class="back">
-                            Creating experiences with three eyes open
-                            <div class="team-member-social-icons">
-                                <a href="https://www.linkedin.com/in/amnonbarnea" target="_blank"><i class="fa fa-linkedin-square"></i></a>
-                                <a href="https://www.facebook.com/AmnonBarneaDesign" target="_blank"><i class="fa fa-facebook-official"></i></a>
-                            </div>
-                        </div>
-                    </div>
+                <img class="team-member-avatar" src="/wp-content/themes/backfeed/assets/images/team/Amnon.png" alt="Avatar">
+                <div class="team-member-name">Amnon Barnea</div>
+                <div class="team-member-role">Head of design</div>
+                <div class="team-member-social-icons">
+                    <a href="https://www.linkedin.com/in/amnonbarnea" target="_blank"><i class="fa fa-linkedin-square"></i></a>
+                    <a href="https://www.facebook.com/AmnonBarneaDesign" target="_blank"><i class="fa fa-facebook-official"></i></a>
                 </div>
             </div>
 
             <div class="team-member">
-                <div class="flip-container" ontouchstart="$(this).trigger('hover');">
-                    <div class="flipper">
-                        <div class="front">
-                            <img class="team-member-avatar" src="/wp-content/themes/backfeed/assets/images/team/Sarah.jpg" alt="Avatar">
-                            <div class="team-member-name">Sarah Masare</div>
-                            <div class="team-member-role">Chief Storyteller</div>
-                        </div>
-                        <div class="back">
-                            Narrative weaver and story artisan
-                            <div class="team-member-social-icons">
-                                <a href="https://twitter.com/SarahMasare" target="_blank"><i class="fa fa-twitter-square"></i></a>
-                            </div>
-                        </div>
-                    </div>
+                <img class="team-member-avatar" src="/wp-content/themes/backfeed/assets/images/team/Uri.jpg" alt="Avatar">
+                <div class="team-member-name">Uri Yurman</div>
+                <div class="team-member-role">CTO</div>
+                <div class="team-member-social-icons">
+                    <a href="https://il.linkedin.com/pub/uri-yurman/5a/b9b/846" target="_blank"><i class="fa fa-linkedin-square"></i></a>
                 </div>
             </div>
         </div>

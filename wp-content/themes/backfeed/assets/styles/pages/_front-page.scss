@@ -43,6 +43,10 @@
 
 .team-member {
   margin-bottom: 20px;
+  width: 202px;
+  height: 290px;
+  border: 1px solid #e5e5e5;
+  text-align: center;
 }
 
 .team-member-avatar {
@@ -65,9 +69,12 @@
 .team-member-social-icons {
   display: flex;
   justify-content: space-around;
+  border-top: 1px #e5e5e5 solid;
+  margin-top: 5px;
 
   &>a {
-    color: white;
+    font-size: 20px;
+    color: #898989;
     transition: transform 0.2s ease-out;
 
     &:hover {
