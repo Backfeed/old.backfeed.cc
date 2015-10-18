@@ -178,12 +178,50 @@
             </div>
 
             <div class="team-member">
+                <img class="team-member-avatar" src="/wp-content/themes/backfeed/assets/images/team/Uri.jpg" alt="Avatar">
+                <div class="team-member-name">Uri Yurman</div>
+                <div class="team-member-role">CTO</div>
+                <div class="team-member-social-icons">
+                    <a href="https://il.linkedin.com/pub/uri-yurman/5a/b9b/846" target="_blank"><i class="fa fa-linkedin-square"></i></a>
+                </div>
+            </div>
+
+            <div class="team-member">
+                <img class="team-member-avatar" src="/wp-content/themes/backfeed/assets/images/team/Philippe.png" alt="Avatar">
+                <div class="team-member-name">Philippe Honigman</div>
+                <div class="team-member-role">Serial Entrepreneur</div>
+                <div class="team-member-social-icons">
+                    <a href="https://twitter.com/phil_h" target="_blank"><i class="fa fa-twitter-square"></i></a>
+                    <a href="https://www.linkedin.com/in/honigman" target="_blank"><i class="fa fa-linkedin-square"></i></a>
+                </div>
+            </div>
+
+            <div class="team-member">
+                <img class="team-member-avatar" src="/wp-content/themes/backfeed/assets/images/team/Amnon.png" alt="Avatar">
+                <div class="team-member-name">Amnon Barnea</div>
+                <div class="team-member-role">Head of design</div>
+                <div class="team-member-social-icons">
+                    <a href="https://www.linkedin.com/in/amnonbarnea" target="_blank"><i class="fa fa-linkedin-square"></i></a>
+                    <a href="https://www.facebook.com/AmnonBarneaDesign" target="_blank"><i class="fa fa-facebook-official"></i></a>
+                </div>
+            </div>
+
+            <div class="team-member">
                 <img class="team-member-avatar" src="/wp-content/themes/backfeed/assets/images/team/Yaniv.png" alt="Avatar">
                 <div class="team-member-name">Yaniv Keinan</div>
                 <div class="team-member-role">Developer</div>
                 <div class="team-member-social-icons">
                     <a href="https://twitter.com/YanivKeinan" target="_blank"><i class="fa fa-twitter-square"></i></a>
                     <a href="https://il.linkedin.com/in/yanivkeinan" target="_blank"><i class="fa fa-linkedin-square"></i></a>
+                </div>
+            </div>
+
+            <div class="team-member">
+                <img class="team-member-avatar" src="/wp-content/themes/backfeed/assets/images/team/Adam.png" alt="Avatar">
+                <div class="team-member-name">Adam Goldman</div>
+                <div class="team-member-role">Developer</div>
+                <div class="team-member-social-icons">
+                    <a href="https://www.linkedin.com/pub/adam-goldman/66/631/7a4" target="_blank"><i class="fa fa-linkedin-square"></i></a>
                 </div>
             </div>
 
@@ -198,21 +236,11 @@
             </div>
 
             <div class="team-member">
-                <img class="team-member-avatar" src="/wp-content/themes/backfeed/assets/images/team/Adam.png" alt="Avatar">
-                <div class="team-member-name">Adam Goldman</div>
+                <img class="team-member-avatar" src="/wp-content/themes/backfeed/assets/images/team/Neeraj.png" alt="Avatar">
+                <div class="team-member-name">Neeraj Jain</div>
                 <div class="team-member-role">Developer</div>
                 <div class="team-member-social-icons">
-                    <a href="https://www.linkedin.com/pub/adam-goldman/66/631/7a4" target="_blank"><i class="fa fa-linkedin-square"></i></a>
-                </div>
-            </div>
-
-            <div class="team-member">
-                <img class="team-member-avatar" src="/wp-content/themes/backfeed/assets/images/team/Philippe.png" alt="Avatar">
-                <div class="team-member-name">Philippe Honigman</div>
-                <div class="team-member-role">Serial Entrepreneur</div>
-                <div class="team-member-social-icons">
-                    <a href="https://twitter.com/phil_h" target="_blank"><i class="fa fa-twitter-square"></i></a>
-                    <a href="https://www.linkedin.com/in/honigman" target="_blank"><i class="fa fa-linkedin-square"></i></a>
+                    <a href="https://www.linkedin.com/pub/neeraj-jain/3/665/a61" target="_blank"><i class="fa fa-linkedin-square"></i></a>
                 </div>
             </div>
 
@@ -232,34 +260,6 @@
                 <div class="team-member-role">VP HR</div>
                 <div class="team-member-social-icons">
                     <a href="https://www.linkedin.com/pub/naomi-steinitz/18/100/5a3" target="_blank"><i class="fa fa-linkedin-square"></i></a>
-                </div>
-            </div>
-
-            <div class="team-member">
-                <img class="team-member-avatar" src="/wp-content/themes/backfeed/assets/images/team/Neeraj.png" alt="Avatar">
-                <div class="team-member-name">Neeraj Jain</div>
-                <div class="team-member-role">Developer</div>
-                <div class="team-member-social-icons">
-                    <a href="https://www.linkedin.com/pub/neeraj-jain/3/665/a61" target="_blank"><i class="fa fa-linkedin-square"></i></a>
-                </div>
-            </div>
-
-            <div class="team-member">
-                <img class="team-member-avatar" src="/wp-content/themes/backfeed/assets/images/team/Amnon.png" alt="Avatar">
-                <div class="team-member-name">Amnon Barnea</div>
-                <div class="team-member-role">Head of design</div>
-                <div class="team-member-social-icons">
-                    <a href="https://www.linkedin.com/in/amnonbarnea" target="_blank"><i class="fa fa-linkedin-square"></i></a>
-                    <a href="https://www.facebook.com/AmnonBarneaDesign" target="_blank"><i class="fa fa-facebook-official"></i></a>
-                </div>
-            </div>
-
-            <div class="team-member">
-                <img class="team-member-avatar" src="/wp-content/themes/backfeed/assets/images/team/Uri.jpg" alt="Avatar">
-                <div class="team-member-name">Uri Yurman</div>
-                <div class="team-member-role">CTO</div>
-                <div class="team-member-social-icons">
-                    <a href="https://il.linkedin.com/pub/uri-yurman/5a/b9b/846" target="_blank"><i class="fa fa-linkedin-square"></i></a>
                 </div>
             </div>
         </div>
