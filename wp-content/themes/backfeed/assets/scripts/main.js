@@ -43,8 +43,9 @@
             var target = $(this.hash);
             target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
             if (target.length) {
+              var headerHeight = $('#main-header-container').height();
               $('html,body').animate({
-                scrollTop: target.offset().top
+                scrollTop: target.offset().top - parseInt(headerHeight) - 30
               }, 1000);
               return false;
             }
