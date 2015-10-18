@@ -157,17 +157,6 @@
             </div>
 
             <div class="team-member">
-                <img class="team-member-avatar" src="/wp-content/themes/backfeed/assets/images/team/Jordan.png" alt="Avatar">
-                <div class="team-member-name">Jordan Greenhall</div>
-                <div class="team-member-role">Chief Ratiocinator</div>
-                <div class="team-member-social-icons">
-                    <a href="http://twitter.com/jgreenhall" target="_blank"><i class="fa fa-twitter-square"></i></a>
-                    <a href="http://www.linkedin.com/in/jordangreenhall" target="_blank"><i class="fa fa-linkedin-square"></i></a>
-                    <a href="https://medium.com/@jordangreenhall" target="_blank"><i class="fa fa-medium"></i></a>
-                </div>
-            </div>
-
-            <div class="team-member">
                 <img class="team-member-avatar" src="/wp-content/themes/backfeed/assets/images/team/Primavera.png" alt="Avatar">
                 <div class="team-member-name">Primavera De Filippi</div>
                 <div class="team-member-role">Chief Innovation Officer</div>
@@ -218,18 +207,8 @@
             </div>
 
             <div class="team-member">
-                <img class="team-member-avatar" src="/wp-content/themes/backfeed/assets/images/team/Michel.png" alt="Avatar">
-                <div class="team-member-name">Michel Avital</div>
-                <div class="team-member-role">Chief Professor</div>
-                <div class="team-member-social-icons">
-                    <a href="https://twitter.com/michelavital" target="_blank"><i class="fa fa-twitter-square"></i></a>
-                    <a href="https://www.linkedin.com/in/michelavital" target="_blank"><i class="fa fa-linkedin-square"></i></a>
-                </div>
-            </div>
-
-            <div class="team-member">
                 <img class="team-member-avatar" src="/wp-content/themes/backfeed/assets/images/team/Philippe.png" alt="Avatar">
-                <div class="team-member-name" style="font-size:75%;">Philippe Honigman</div>
+                <div class="team-member-name">Philippe Honigman</div>
                 <div class="team-member-role">Serial Entrepreneur</div>
                 <div class="team-member-social-icons">
                     <a href="https://twitter.com/phil_h" target="_blank"><i class="fa fa-twitter-square"></i></a>
@@ -259,7 +238,7 @@
             <div class="team-member">
                 <img class="team-member-avatar" src="/wp-content/themes/backfeed/assets/images/team/Neeraj.png" alt="Avatar">
                 <div class="team-member-name">Neeraj Jain</div>
-                <div class="team-member-role">Senior Back-End Developer</div>
+                <div class="team-member-role">Developer</div>
                 <div class="team-member-social-icons">
                     <a href="https://www.linkedin.com/pub/neeraj-jain/3/665/a61" target="_blank"><i class="fa fa-linkedin-square"></i></a>
                 </div>
@@ -281,6 +260,45 @@
                 <div class="team-member-role">CTO</div>
                 <div class="team-member-social-icons">
                     <a href="https://il.linkedin.com/pub/uri-yurman/5a/b9b/846" target="_blank"><i class="fa fa-linkedin-square"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+<div class="container">
+    <section id="advisers" class="row">
+        <h2 class="text-center">Advisers</h2>
+        <div class="team-members">
+
+            <div class="team-member">
+                <img class="team-member-avatar" src="/wp-content/themes/backfeed/assets/images/team/Jordan.png" alt="Avatar">
+                <div class="team-member-name">Jordan Greenhall</div>
+                <div class="team-member-role">Chief Ratiocinator</div>
+                <div class="team-member-social-icons">
+                    <a href="http://twitter.com/jgreenhall" target="_blank"><i class="fa fa-twitter-square"></i></a>
+                    <a href="http://www.linkedin.com/in/jordangreenhall" target="_blank"><i class="fa fa-linkedin-square"></i></a>
+                    <a href="https://medium.com/@jordangreenhall" target="_blank"><i class="fa fa-medium"></i></a>
+                </div>
+            </div>
+
+            <div class="team-member">
+                <img class="team-member-avatar" src="/wp-content/themes/backfeed/assets/images/team/Michel.png" alt="Avatar">
+                <div class="team-member-name">Michel Avital</div>
+                <div class="team-member-role">Chief Professor</div>
+                <div class="team-member-social-icons">
+                    <a href="https://twitter.com/michelavital" target="_blank"><i class="fa fa-twitter-square"></i></a>
+                    <a href="https://www.linkedin.com/in/michelavital" target="_blank"><i class="fa fa-linkedin-square"></i></a>
+                </div>
+            </div>
+
+            <div class="team-member">
+                <img class="team-member-avatar" src="/wp-content/themes/backfeed/assets/images/team/Lisa.jpg" alt="Avatar">
+                <div class="team-member-name">Lisa Gansky</div>
+                <div class="team-member-role">Chief Mesh</div>
+                <div class="team-member-social-icons">
+                    <a href="https://twitter.com/instigating" target="_blank"><i class="fa fa-twitter-square"></i></a>
+                    <a href="https://www.linkedin.com/in/lisagansky" target="_blank"><i class="fa fa-linkedin-square"></i></a>
                 </div>
             </div>
         </div>

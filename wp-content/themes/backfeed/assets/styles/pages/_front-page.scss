@@ -234,6 +234,16 @@
   }
 }
 
+#advisers {
+  margin-bottom: 60px;
+
+  @media (min-width: $screen-md-min) {
+    &>h2 {
+      margin-bottom: 60px;
+    }
+  }
+}
+
 #press {
   margin-bottom: 30px;
 }
