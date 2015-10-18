@@ -230,7 +230,7 @@
             <div class="team-member">
                 <img class="team-member-avatar" src="/wp-content/themes/backfeed/assets/images/team/Philippe.png" alt="Avatar">
                 <div class="team-member-name" style="font-size:75%;">Philippe Honigman</div>
-                <div class="team-member-role">Head of Decentralize Practice, EMEA</div>
+                <div class="team-member-role">Serial Entrepreneur</div>
                 <div class="team-member-social-icons">
                     <a href="https://twitter.com/phil_h" target="_blank"><i class="fa fa-twitter-square"></i></a>
                     <a href="https://www.linkedin.com/in/honigman" target="_blank"><i class="fa fa-linkedin-square"></i></a>
