@@ -64,18 +64,6 @@
           var partnerLabel = $('.partner-label').filter(':nth-of-type('+i+')');
           partnerLabel.animate({'opacity': 0});
         });
-
-        var subscribeModal = new UIMorphingButton(document.getElementById('header-subscribe'), {
-          closeEl: '#icon-close-1',
-          onBeforeOpen : function() { $('body').addClass('modal-open'); },
-          onBeforeClose : function() { $('body').removeClass('modal-open'); },
-        });
-
-        var emailModal = new UIMorphingButton(document.getElementById('header-contact-us'), {
-          closeEl: '#icon-close-2',
-          onBeforeOpen : function() { $('body').addClass('modal-open'); },
-          onBeforeClose : function() { $('body').removeClass('modal-open'); },
-        });
       },
       finalize: function() {
         // JavaScript to be fired on the home page, after the init JS

@@ -1,8 +1,4 @@
-@import url(http://fonts.googleapis.com/css?family=Droid+Serif:700italic|Lato:400,300,700);
-
-.scalable a {
-
-}
+@import url("http://fonts.googleapis.com/css?family=Droid+Serif:700italic|Lato:400,300,700");
 
 section a {
   text-decoration: underline;
@@ -34,6 +30,29 @@ ul {
   background-image: url('/wp-content/themes/backfeed/assets/images/hr.png');
   height: 6px;
   background-repeat-x: repeat;
+}
+
+.modal {
+  text-align: center;
+  padding: 0!important;
+}
+
+.modal:before {
+  content: '';
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+  margin-right: -4px;
+}
+
+.modal-dialog {
+  display: inline-block;
+  text-align: left;
+  vertical-align: middle;
+}
+
+.modal-content {
+  border-radius: 0;
 }
 
 .comment-form p,
