@@ -43,10 +43,17 @@
             var target = $(this.hash);
             target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
             if (target.length) {
-              var headerHeight = $('#main-header-container').height();
+              var headerHeight = parseInt($('#main-header-container').height());
+
+              // manually trigger sticky header
+              var htmlElement = $(document.documentElement);
+              if (htmlElement.scrollTop() == 0) htmlElement.scrollTop(1);
+
               $('html,body').animate({
-                scrollTop: target.offset().top - parseInt(headerHeight) - 30
+                // subtracting the height of the header and an extra magic 30
+                scrollTop: target.offset().top - headerHeight - 30
               }, 1000);
+
               return false;
             }
           }

@@ -1,11 +1,11 @@
 #main-header-container {
   background-color: #0b2530;
   transition: all 0.4s ease;
+  width: 100%;
+  z-index: 999;
 
   &.sticky {
     position: fixed;
-    width: 100%;
-    z-index: 999;
 
     @media (max-width: $screen-sm-min) {
       .brand img {

@@ -1,10 +1,33 @@
 #intro-section {
+  height: 620px;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   position: relative;
-  height: 620px;
   text-align: center;
+  background-image: url('/wp-content/themes/backfeed/assets/images/intro/intro-bg.png');
+}
+
+.intro-titles {
+  margin-bottom: 40px;
+}
+
+.intro-headline,
+.intro-tagline {
+  color: white;
+  font-family: 'Lato', sans-serif;
+  font-style: normal;
+}
+
+.intro-headline {
+  font-size: 48px;
+  font-weight: 900;
+}
+
+.intro-tagline {
+  font-size: 26px;
+  font-weight: normal;
 }
 
 .use-cases-container {
