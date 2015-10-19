@@ -42,3 +42,5 @@ add_filter('wp_mail_from', function() {
 $sender_email = 'info@backfeed.cc';
 return $sender_email;
 });
+
+add_filter('show_admin_bar', '__return_false');

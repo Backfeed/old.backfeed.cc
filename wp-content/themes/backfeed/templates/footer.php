@@ -9,6 +9,7 @@
     <div class="social-icons col-sm-2 col-xs-12 text-center">
       <a href="http://linkedin.com/company/backfeed" target="_blank"><i class="fa fa-linkedin"></i></a>
       <a href="http://twitter.com/backfeed_cc" target="_blank"><i class="fa fa-twitter"></i></a>
+      <a href="http://github.com/backfeed" target="_blank"><i class="fa fa-github"></i></a>
     </div>
   </div>
 </footer>

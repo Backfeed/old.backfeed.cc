@@ -30,6 +30,7 @@
             <div class="social-icons">
                 <a class="social-icon" href="http://linkedin.com/company/backfeed" target="_blank"><i class="fa fa-linkedin"></i></a>
                 <a class="social-icon" href="http://twitter.com/backfeed_cc" target="_blank"><i class="fa fa-twitter"></i></a>
+                <a class="social-icon" href="http://github.com/backfeed" target="_blank"><i class="fa fa-github"></i></a>
 
                 <div id="header-contact-us">
                     <i class="fa fa-envelope morph-button-button social-icon" data-toggle="modal" data-target="#header-contact-modal"></i>

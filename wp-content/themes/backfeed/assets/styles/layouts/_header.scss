@@ -14,7 +14,7 @@
 
       #main-header {
         flex-direction: row;
-        align-items: baseline;
+        align-items: center;
         padding-top: initial;
         padding-bottom: initial;
       }
@@ -72,10 +72,10 @@
 
   .social-icons {
     display: flex;
-    flex-direction: row;
+    flex-flow: row wrap;
+    width: 70px;
 
     @media (min-width: $screen-sm-min) {
-      flex-direction: column;
       margin-right: 15px;
       margin-left: 15px;
     }

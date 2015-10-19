@@ -22,10 +22,11 @@
         document.createElement("picture");
 
         $(window).scroll(function() {
+          var header = $('#main-header-container');
           if ($(this).scrollTop() > 1) {
-            $('#main-header-container').addClass("sticky");
+            header.addClass("sticky");
           } else {
-            $('#main-header-container').removeClass("sticky");
+            header.removeClass("sticky");
           }
         });
       },
@@ -45,13 +46,13 @@
             if (target.length) {
               var headerHeight = parseInt($('#main-header-container').height());
 
-              // manually trigger sticky header
+              // manually trigger sticky header before attempting to scroll
               var htmlElement = $(document.documentElement);
-              if (htmlElement.scrollTop() == 0) htmlElement.scrollTop(1);
+              if (htmlElement.scrollTop() === 0) htmlElement.scrollTop(1);
 
               $('html,body').animate({
-                // subtracting the height of the header and an extra magic 30
-                scrollTop: target.offset().top - headerHeight - 30
+                // subtracting the height of the header and an additional magic 50
+                scrollTop: target.offset().top - headerHeight - 50
               }, 1000);
 
               return false;
