@@ -6,7 +6,25 @@
   justify-content: center;
   position: relative;
   text-align: center;
-  background-image: url('/wp-content/themes/backfeed/assets/images/intro/intro-bg.png');
+  z-index: 0;
+
+  @media (max-width: $screen-sm-max) {
+    background-image: url('/wp-content/themes/backfeed/assets/images/intro/intro-bg.png');
+  }
+
+  video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    display: none;
+
+    @media (min-width: $screen-md-min) {
+      display: block;
+    }
+  }
 }
 
 .intro-titles {

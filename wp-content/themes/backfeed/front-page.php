@@ -1,3 +1,14 @@
+<section id="intro-section" style="display: none;">
+    <video autoplay loop muted poster="/wp-content/themes/backfeed/assets/images/intro/intro-bg.png" id="intro-video">
+        <source src="/wp-content/themes/backfeed/assets/videos/video.mp4" type="video/mp4">
+    </video>
+    <div class="intro-titles">
+        <h2 class="intro-headline">Disrupting Project Management</h2>
+        <h3 class="intro-tagline">the transition into more agile and decentralized organizations</h3>
+    </div>
+    <a href="#about" class="btn btn-intro">Learn More</a>
+</section>
+
 <div style="background-image:url('/wp-content/themes/backfeed/assets/images/pattern-about.png');">
     <div class="container">
         <section id="about" class="row with-illustration">
@@ -114,7 +125,7 @@
                 <source srcset="/wp-content/themes/backfeed/assets/images/technology/Tech-345.png" media="(min-width: 1200px)">
                 <source srcset="/wp-content/themes/backfeed/assets/images/technology/Tech-300.png, /wp-content/themes/backfeed/assets/images/technology/Tech-300-x2.png 2x" media="(min-width: 992px)">
                 <source srcset="/wp-content/themes/backfeed/assets/images/technology/Tech-300-Horizontal.png, /wp-content/themes/backfeed/assets/images/technology/Tech-300-Horizontal-x2.png 2x" media="(min-width: 624px)">
-                <img id="illustration-technology" class="center-block img-responsive" srcset="/wp-content/themes/backfeed/assets/images/technology/Tech-250.png, /wp-content/themes/backfeed/assets/images/technology/Tech-250-x2.png 2x" alt="Technology">
+                <img id="illustration-technology" class="center-block img-responsive" srcset="/wp-content/themes/backfeed/assets/images/technology/Tech-250.png, /wp-content/themes/backfeed/assets/images/technology/Tech-250-x2.png 2x" src="/wp-content/themes/backfeed/assets/images/technology/Tech-250.png" alt="Technology">
             </picture>
         </div>
         <div class="text">
@@ -163,7 +174,7 @@
                 <div class="team-member-social-icons">
                     <a href="https://twitter.com/yaoeo" target="_blank"><i class="fa fa-twitter-square"></i></a>
                     <a href="https://fr.linkedin.com/pub/primavera-de-filippi/36/585/75"><i class="fa fa-linkedin-square"></i></a>
-                    <a href="https://cyber.law.harvard.edu/people/pdefilippi" target="_blank"><i class="fa fa-google-plus-square"></i></a>
+                    <a href="https://cyber.law.harvard.edu/people/pdefilippi" target="_blank"><i class="fa fa-gavel"></i></a>
                 </div>
             </div>
 
