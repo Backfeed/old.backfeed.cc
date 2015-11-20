@@ -338,6 +338,12 @@
                     <img src="/wp-content/themes/backfeed/assets/images/partners/ouishare.png" alt="OuiShare" />
                 </a>
             </div>
+
+            <div class="partner">
+                <a href="http://ovn.space/" target="_blank">
+                    <img src="/wp-content/themes/backfeed/assets/images/partners/ovnspace.png" alt="ovnspace" />
+                </a>
+            </div>
         </div>
     </div>
 
@@ -345,6 +351,7 @@
         <div class="partner-label">Hylo</div>
         <div class="partner-label">La'zooz</div>
         <div class="partner-label">OuiShare</div>
+        <div class="partner-label">OVN.SPACE</div>
     </div>
 
 </section>
@@ -353,17 +360,19 @@
     <section id="press">
 
         <div class="press-item">
-            <div class="press-title">
-                <a target="_blank" href="http://www.geektime.com/2015/08/19/backfeed-wants-to-decentralize-the-internet-and-help-you-earn-what-you-deserve/">
-                    <img class="media-object" src="/wp-content/themes/backfeed/assets/images/press/geektime.png" alt="...">
-                </a>
-            </div>
-            <div class="press-body">
-                <a target="_blank" href="http://www.geektime.com/2015/08/19/backfeed-wants-to-decentralize-the-internet-and-help-you-earn-what-you-deserve/">
-                    <h4 class="media-heading">Backfeed wants to decentralize the Internet and help you earn what you deserve</h4>
-                </a>
-                Founded by a small group of graduate students with a vision for a fairer society, this startup aims to start a revolution as big as the Internet itself<br /><small>from GeekTime</small>
-            </div>
+            <a target="_blank" href="http://www.geektime.com/2015/08/19/backfeed-wants-to-decentralize-the-internet-and-help-you-earn-what-you-deserve/">
+                <img class="media-object center-block" src="/wp-content/themes/backfeed/assets/images/press/geektime.png" alt="GeekTime Logo">
+                <h4 class="media-heading">Backfeed wants to decentralize the Internet and help you earn what you deserve</h4>
+            </a>
+            Founded by a small group of graduate students with a vision for a fairer society, this startup aims to start a revolution as big as the Internet itself<br /><small>from GeekTime</small>
+        </div>
+
+        <div class="press-item">
+            <a target="_blank" href="http://magazine.ouishare.net/2015/11/decentralizing-part-of-ouishare-with-blockchain-experiment-1/">
+                <img class="media-object center-block" src="/wp-content/themes/backfeed/assets/images/press/ouishare.png" alt="OuiShare Logo">
+                <h4 class="media-heading">Decentralizing (part of) Ouishare With Blockchain: Experiment 1</h4>
+            </a>
+            Since our community has faced many challenges over the past years related to decision making, transparency, governance and value distribution, the idea of distributed coordination without hierarchy resonated strongly with us and made us curious<br /><small>from OuiShare</small>
         </div>
 
     </section>
