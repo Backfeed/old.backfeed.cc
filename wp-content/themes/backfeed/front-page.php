@@ -344,6 +344,12 @@
                     <img src="/wp-content/themes/backfeed/assets/images/partners/ovnspace.png" alt="ovnspace" />
                 </a>
             </div>
+
+            <div class="partner">
+                <a href="https://www.slantnews.com" target="_blank">
+                    <img src="/wp-content/themes/backfeed/assets/images/partners/slant.png" alt="ovnspace" />
+                </a>
+            </div>
         </div>
     </div>
 
@@ -352,6 +358,7 @@
         <div class="partner-label">La'zooz</div>
         <div class="partner-label">OuiShare</div>
         <div class="partner-label">OVN.SPACE</div>
+        <div class="partner-label">Slant News</div>
     </div>
 
 </section>
