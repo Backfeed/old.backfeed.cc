@@ -161,23 +161,26 @@
 .partner,
 .partner-label {
   width: 154px;
+  margin-right: 1rem;
 }
 
 .partner-label {
   opacity: 0;
 }
 
-.press-item {
+#press {
   display: flex;
-  flex-wrap: wrap;
+  flex-flow: row wrap;
   justify-content: center;
-}
 
-.press-body {
-  flex: 0 0 240px;
-  margin-left: 1rem;
-  margin-top: 1rem;
-  transition: margin 0.5s ease;
+  @media (min-width: 695px) {
+    justify-content: space-between;
+  }
+
+  a, a:hover {
+    text-decoration: none;
+    text-align: center;
+  }
   
   small {
     color: grey;
@@ -185,17 +188,11 @@
   }
 }
 
-.press-item:hover .press-body {
-  margin-left: 2rem;
-}
-
-#press a,
-#press a:hover {
-  text-decoration: none;
-}
-
-.press-title {
-  flex: 0 1 100px;
+.press-item {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: 320px;
 }
 
 .connector {
