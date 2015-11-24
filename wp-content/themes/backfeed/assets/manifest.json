@@ -30,6 +30,9 @@
     },
     "picturefill.js": {
       "bower": ["picturefill"]
+    },
+    "covervid.js": {
+      "bower": ["covervid"]
     }
   },
   "config": {
