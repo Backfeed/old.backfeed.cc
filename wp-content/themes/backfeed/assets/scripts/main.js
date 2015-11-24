@@ -75,6 +75,7 @@
       },
       finalize: function() {
         // JavaScript to be fired on the home page, after the init JS
+        $('#intro-video').coverVid(1920, 1080);
       }
     },
     // About us page, note the change from about-us to about_us.

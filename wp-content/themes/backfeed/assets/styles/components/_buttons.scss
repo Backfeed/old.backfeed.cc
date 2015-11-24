@@ -9,7 +9,8 @@
   box-shadow: 0 9px 7px rgba(0,0,0,0.35);
   text-decoration: initial;
 
-  &:hover {
+  &:hover,
+  &:focus {
     color: white;
   }
 }
