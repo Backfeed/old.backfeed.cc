@@ -1,6 +1,7 @@
-<section id="intro-section" style="display: none;">
+<section id="intro-section">
     <video autoplay loop muted poster="/wp-content/themes/backfeed/assets/images/intro/intro-bg.png" id="intro-video">
-        <source src="/wp-content/themes/backfeed/assets/videos/video.mp4" type="video/mp4">
+        <source src="/wp-content/themes/backfeed/assets/videos/intro.webm" type="video/webm">
+        <source src="/wp-content/themes/backfeed/assets/videos/intro.mp4" type="video/mp4">
     </video>
     <div class="intro-titles">
         <h2 class="intro-headline">Disrupting Project Management</h2>
