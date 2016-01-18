@@ -1,0 +1,57 @@
+.btn-intro {
+  background-color: transparent;
+  padding: 12px 58px;
+  border-radius: 10px;
+  color: white;
+  font-size: 17px;
+  text-transform: uppercase;
+  border: 4px white solid;
+  box-shadow: 0 9px 7px rgba(0,0,0,0.35);
+  text-decoration: initial;
+
+  &:hover,
+  &:focus {
+    color: white;
+  }
+}
+
+/* Style for form modal */
+.content-style-form {
+  position: relative;
+  text-align: left;
+}
+
+.content-style-form label {
+  display: block;
+  padding: 10px 0 0;
+  letter-spacing: 1px;
+  font-weight: bold;
+  margin-left: 15px;
+}
+
+.content-style-form input[type="text"],
+.content-style-form input[type="email"],
+.content-style-form textarea {
+  padding: 10px;
+  width: 100% !important;
+  border: 2px solid #ebd3bd;
+  background: transparent;
+  color: #b09a86;
+  font-weight: 400;
+  font-size: 16px;
+}
+
+.content-style-form input[type="text"]:focus,
+.content-style-form input[type="email"]:focus
+.content-style-form textarea:focus {
+  border-color: #e75854;
+  color: #e75854;
+}
+
+.content-style-form textarea {
+  resize: none;
+}
+
+.content-style-form input:focus {
+  outline: 0;
+}

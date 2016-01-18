@@ -1,0 +1,128 @@
+#main-header-container {
+  background-color: #0b2530;
+  transition: all 0.4s ease;
+  width: 100%;
+  z-index: 999;
+
+  &.sticky {
+    position: fixed;
+
+    @media (max-width: $screen-sm-min) {
+      .brand img {
+        width: 165px;
+      }
+
+      #main-header {
+        flex-direction: row;
+        align-items: center;
+        padding-top: initial;
+        padding-bottom: initial;
+      }
+
+      #menu-header-menu {
+        display: none;
+      }
+
+      #header-subscribe {
+        display: none;
+      }
+    }
+  }
+}
+
+#main-header {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  padding-top: 6px;
+  padding-bottom: 10px;
+
+  @media (min-width: $screen-sm-min) {
+    flex-direction: row;
+  }
+
+  @media (min-width: $screen-lg-min) {
+    width: 1170px;
+    margin: 0 auto;
+  }
+
+  ul {
+    display: inline-flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    font-size: 14px;
+
+    @media (min-width: 450px) and (max-width: $screen-lg-min) {
+      max-width: 350px;
+    }
+
+    & > li > a {
+      text-transform: uppercase;
+      color: white;
+      font-weight: 400;
+
+      &:focus,
+      &:hover {
+        text-decoration: none;
+        background-color: initial;
+        color: $brand-primary;
+      }
+    }
+  }
+
+  .social-icons {
+    display: flex;
+    flex-flow: row wrap;
+    width: 70px;
+
+    @media (min-width: $screen-sm-min) {
+      margin-right: 15px;
+      margin-left: 15px;
+    }
+
+    @media (min-width: $screen-md-min) {
+      justify-content: space-between;
+    }
+
+    .social-icon {
+      cursor: pointer;
+    }
+
+    i {
+      color: white;
+      padding: 10px;
+
+      &.fa-envelope {
+        color: $brand-primary;
+      }
+    }
+  }
+
+  .header-contact-methods {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    @media (min-width: $screen-sm-min) {
+      flex-direction: row;
+    }
+  }
+
+  .btn-primary {
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+}
+
+#header-contact-us {
+  .morph-content {
+    width: 470px;
+    height: 520px;
+    top: 44%!important;
+    left: 44%!important;
+  }
+
+  input[type="submit"] {
+    width: 80%;
+  }
+}
